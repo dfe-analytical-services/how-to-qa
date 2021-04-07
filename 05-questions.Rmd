@@ -1,0 +1,27 @@
+# Asking questions
+
+Whenever you get a commission, it is important to always ask the following questions:
+
+* **What do you need?** There is nothing worse than spending days working on something that is not what your customers wanted. A good tip is to provide an example chart or table with dummy data to test their requirements and give them a good idea of how you intend your output to look.
+
+* **Why do you need it?** Customers very often will not know the best way to perform analysis to get the results they are after. Are they requesting something that doesn't really do what they want it to?
+
+* **What will it be used for?** If the model will be used again in the future for slightly different purposes, it may be worth investing extra time in increasing its capabilities.
+
+* **Who will be using it?** This will help you to write the user guides and to think carefully about how outputs are presented.
+
+* **When do you need it by?** Check their diary (especially during the summer months!). People will often say they need things immediately when they don't. Discuss the work and get a clear understanding of why they've set themselves these deadlines. Always factor in time for QA and also time to share analysis with your line manager or team leader.
+
+* **Do we have something already on the shelf?** Why produce new analysis when it has already been done before?
+
+* **Are you going to need this for public use?** Always use published data to answer queries if you can. This data is already QA'd. If you do use public data, try to run things past the relevant team to double check, or at least cc them in. Be very careful about sharing pre-release data before the relevant SFR (Statistical First Release) and TSM (Teacher Supply Model) are published.
+
+If in doubt...
+
+ASK!
+
+It is better to ask someone a question that you might think of as being 'daft' or 'unnecessary' than to not ask it and then make a big mistake. The best person to ask it your line manager and team leader. If they aren't available, then ask your G6 or DD. DDs also like to know if data is being used publically.
+
+For some media queries (and some public queries) for teacher related issues, talk to Press Office.
+
+Think about policy input/views too, especially if you say something about a policy in your response/analysis.

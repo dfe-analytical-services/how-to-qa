@@ -43,7 +43,7 @@ Here are some top tips for improving your coding to aid your QA and your QAers:
 
 ## QA of models
 
-QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job:
+QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these checks are QA and build faith in a model being right.
 
 * Building in auto checks can be a great way to make QA easier. Lots of charts of outputs are also very helpful.
 
@@ -55,4 +55,6 @@ QAing models can be a big job, particularly when the model is quite large and pu
 
 * When QAing a model, QA should focus most strongly on things that have changed or been added in. Otherwise, the normal QA procedures apply.
 
-* Many models are updated regularly, usually on an annual basis. Outputs will vary from year to year. One of the most effective forms of QA for models is to investigate *how* output values change between versions of the model and discover what might be driving that.
+* Many models are updated regularly, usually on an annual basis. Outputs will vary from year to year. One of the most effective forms of QA for models is to investigate *how* output values change between versions of the model and discover what might be driving that. This can be done by testing the impact of and comparing input data values and assumptions between years and versions.
+
+* Scenario testing can be undertaken to examine how sensitive the model outputs are to different data to examine what drives the model.

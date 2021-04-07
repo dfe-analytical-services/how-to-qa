@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 QAing your own work | How to quality assure</title>
-  <meta name="description" content="Chapter 2 QAing your own work | How to quality assure" />
+  <title>Chapter 5 Asking questions | How to quality assure</title>
+  <meta name="description" content="Chapter 5 Asking questions | How to quality assure" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 QAing your own work | How to quality assure" />
+  <meta property="og:title" content="Chapter 5 Asking questions | How to quality assure" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 QAing your own work | How to quality assure" />
+  <meta name="twitter:title" content="Chapter 5 Asking questions | How to quality assure" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="getting-qa-support-from-others.html"/>
+<link rel="prev" href="syntax-coding-and-modelling.html"/>
+
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -107,47 +107,32 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qaing-your-own-work" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> QAing your own work</h1>
-<div id="self-qa" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Self QA</h2>
-<p>Before you ask anyone else to QA your work, <strong>you</strong> should QA <strong>your own</strong> work.</p>
-<p>There are many examples of self QA that you can use:</p>
+<div id="asking-questions" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Asking questions</h1>
+<p>Whenever you get a commission, it is important to always ask the following questions:</p>
 <ul>
-<li><p>Balance checks. Do percentages add up to 100%? Do totals add up correctly?</p></li>
-<li><p>Sense checks. Do outputs look rights or logical?</p>
-<ul>
-<li>Example: Suppose your analysis tells you that you have a mean average primary school size of 600 pupils across 20,000 schools. This means that you have 12 million primary pupils. Something has clearly gone wrong!</li>
-<li>Use your common sense, public data and analysis that other analysts have done to sense check your work.</li>
-<li>If things don’t look right, <strong>always</strong> investigate further.</li>
-</ul></li>
-<li><p>Spot checks. Do some spot checks of formulae, values and calculations. If your spot checks show some errors, it is worth investigating further as these errors may have been replicated elsewhere in the analysis.</p></li>
+<li><p><strong>What do you need?</strong> There is nothing worse than spending days working on something that is not what your customers wanted. A good tip is to provide an example chart or table with dummy data to test their requirements and give them a good idea of how you intend your output to look.</p></li>
+<li><p><strong>Why do you need it?</strong> Customers very often will not know the best way to perform analysis to get the results they are after. Are they requesting something that doesn’t really do what they want it to?</p></li>
+<li><p><strong>What will it be used for?</strong> If the model will be used again in the future for slightly different purposes, it may be worth investing extra time in increasing its capabilities.</p></li>
+<li><p><strong>Who will be using it?</strong> This will help you to write the user guides and to think carefully about how outputs are presented.</p></li>
+<li><p><strong>When do you need it by?</strong> Check their diary (especially during the summer months!). People will often say they need things immediately when they don’t. Discuss the work and get a clear understanding of why they’ve set themselves these deadlines. Always factor in time for QA and also time to share analysis with your line manager or team leader.</p></li>
+<li><p><strong>Do we have something already on the shelf?</strong> Why produce new analysis when it has already been done before?</p></li>
+<li><p><strong>Are you going to need this for public use?</strong> Always use published data to answer queries if you can. This data is already QA’d. If you do use public data, try to run things past the relevant team to double check, or at least cc them in. Be very careful about sharing pre-release data before the relevant SFR (Statistical First Release) and TSM (Teacher Supply Model) are published.</p></li>
 </ul>
-<p>Remember, before you ask anyone else to QA your work, you should try to <strong>prove yourself wrong</strong>.</p>
-</div>
-<div id="odd-funny-or-unexpected-figures" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Odd, funny or unexpected figures</h2>
-<p>If your analysis gives you answers that are unexpected, <strong>investigate them</strong>!</p>
-<p>For example, if the Teacher Supply Model (TSM) estimates that every subject needs more Initial Teaching Training (ITT) places this year apart from English, investigate why this is. Is a trend reversing or running counter to expectation? Are values for this year very different to previous years?</p>
-<p>It is inevitable that someone senior will ask you about any unexpected results. It is important to understand why your model is giving you such answers, and to put these answers into some context using analysis that has been done previously. If you do not have the answers to these questions prepared, it will give people less faith in you and your work.</p>
-<p>Doing these checks will lead you to either find an error, or produce a logical answer to explain this oddity to stakeholders. Either way, it’s a win!</p>
-<p>Being able to demonstrate that you haven’t just taken analysis at face value makes you look good and makes your analysis better! Always ask yourself, when looking at results, what questions are your stakeholders likely to ask? Preparing anaswers for these types of questions is a very important skill for an analyst. You can guarantee that seniour stakeholders are most likely to ask about numbers that stick out or look odd…</p>
-</div>
-<div id="finding-errors" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Finding errors</h2>
-<p>The best way to find errors, outliers or things that have gone wrong is to use charts. Charts enable quick sense checks and any ‘odd’ results will stick out like a sore thumb. One of the first things a good QAer will often do is produce some charts.</p>
-<p>How about finding a small problem within a big spreadsheet or extensive code? It is useful to always work backwards to find errors. If something looks wrong, work backwards through your spreadsheet or syntax. Look at recent changes and updates. This will enable you to find the place where an oddity first started to appear, and help you to identify the specific problem or cause.</p>
-<p>When looking for errors, keep calm and focus on each step of a complex process one piece at a time. If you get flustered or stressed, you will often miss errors, so sometimes it pays to have a drink, take a break or sleep on it. A fresh mind will often be more capable of solving a complex issue.</p>
+<p>If in doubt…</p>
+<p>ASK!</p>
+<p>It is better to ask someone a question that you might think of as being ‘daft’ or ‘unnecessary’ than to not ask it and then make a big mistake. The best person to ask it your line manager and team leader. If they aren’t available, then ask your G6 or DD. DDs also like to know if data is being used publically.</p>
+<p>For some media queries (and some public queries) for teacher related issues, talk to Press Office.</p>
+<p>Think about policy input/views too, especially if you say something about a policy in your response/analysis.</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="getting-qa-support-from-others.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="syntax-coding-and-modelling.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -178,7 +163,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/tmorley1/bookdown-how-to/edit/master/02-selfQA.Rmd",
+"link": "https://github.com/tmorley1/bookdown-how-to/edit/master/05-questions.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -186,7 +171,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/tmorley1/bookdown-how-to/blob/master/02-selfQA.Rmd",
+"link": "https://github.com/tmorley1/bookdown-how-to/blob/master/05-questions.Rmd",
 "text": null
 },
 "download": null,

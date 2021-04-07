@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Syntax, coding and modelling | How to quality assure</title>
+  <meta name="description" content="Chapter 4 Syntax, coding and modelling | How to quality assure" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Syntax, coding and modelling | How to quality assure" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Syntax, coding and modelling | How to quality assure" />
+  
+  
+  
+
+<meta name="author" content="Thomas Morley" />
+
+
+<meta name="date" content="2021-04-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="getting-qa-support-from-others.html"/>
+<link rel="next" href="asking-questions.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">How to QA</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-does-bad-qa-look-like"><i class="fa fa-check"></i><b>1.1</b> What does ‘bad’ QA look like?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="qaing-your-own-work.html"><a href="qaing-your-own-work.html"><i class="fa fa-check"></i><b>2</b> QAing your own work</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="qaing-your-own-work.html"><a href="qaing-your-own-work.html#self-qa"><i class="fa fa-check"></i><b>2.1</b> Self QA</a></li>
+<li class="chapter" data-level="2.2" data-path="qaing-your-own-work.html"><a href="qaing-your-own-work.html#odd-funny-or-unexpected-figures"><i class="fa fa-check"></i><b>2.2</b> Odd, funny or unexpected figures</a></li>
+<li class="chapter" data-level="2.3" data-path="qaing-your-own-work.html"><a href="qaing-your-own-work.html#finding-errors"><i class="fa fa-check"></i><b>2.3</b> Finding errors</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="getting-qa-support-from-others.html"><a href="getting-qa-support-from-others.html"><i class="fa fa-check"></i><b>3</b> Getting QA support from others</a></li>
+<li class="chapter" data-level="4" data-path="syntax-coding-and-modelling.html"><a href="syntax-coding-and-modelling.html"><i class="fa fa-check"></i><b>4</b> Syntax, coding and modelling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="syntax-coding-and-modelling.html"><a href="syntax-coding-and-modelling.html#how-to-qa-syntax"><i class="fa fa-check"></i><b>4.1</b> How to QA syntax</a></li>
+<li class="chapter" data-level="4.2" data-path="syntax-coding-and-modelling.html"><a href="syntax-coding-and-modelling.html#tips-for-coding"><i class="fa fa-check"></i><b>4.2</b> Tips for coding</a></li>
+<li class="chapter" data-level="4.3" data-path="syntax-coding-and-modelling.html"><a href="syntax-coding-and-modelling.html#qa-of-models"><i class="fa fa-check"></i><b>4.3</b> QA of models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="asking-questions.html"><a href="asking-questions.html"><i class="fa fa-check"></i><b>5</b> Asking questions</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">How to quality assure</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="syntax-coding-and-modelling" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Syntax, coding and modelling</h1>
+<div id="how-to-qa-syntax" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> How to QA syntax</h2>
+<p>QAing syntax can be a difficult job. Here are a few tips to help others QA your syntax.</p>
+<ul>
+<li><p>Annotate, always annotate!</p></li>
+<li><p>You should explain what each step of the code does and why. It can be very difficult to understand someone else’s code.</p></li>
+<li><p>It is much harder to QA someone else’s code if you also have to work out what each step is meant to be doing. Making each step clearer not only helps them to QA your code properly, it will also save them time.</p></li>
+<li><p>It is much easier to annotate code as you go along rather than come back to it later. Annotating code can be a pain, but once you are in the routine of annotating as you write, you will find that it quickly becomes second nature.</p></li>
+<li><p>Keep analysis and the code used to produce it together.</p></li>
+<li><p>Pasting code into Excel workbooks can be a useful way to link code and data together. This makes future updates much easier too.</p></li>
+<li><p>Self QA your syntax.</p></li>
+<li><p>The best way to QA syntax is through self QA, producing output tables to physically examine/check the data produced by each step.</p></li>
+<li><p>For example, has a merge/join done what you wanted it to? Has the number of records in your dataset increased? Have the correct variables been added in? What had happened to those records that are missing variables/values? Are there duplicates?</p></li>
+<li><p>Never assume on blind faith that data has been processed as you wanted it to be. The merge you asked the computer to do might not be the merge that the computer actually did…</p></li>
+<li><p>Think about how QAers will approach your syntax.</p></li>
+<li><p>Can they understand what you have done?</p></li>
+<li><p>Is the process logical? Does it make sense? Should it be done in a different way?</p></li>
+<li><p>Are records with missing data being handled right?</p></li>
+<li><p>Have the correct checks been undertaken to reassure the QAer that the accuracy of analysis/data processing has been tested?</p></li>
+<li><p>The QAer should also check the data itself, and undertake or suggest tests that can help prove whether the data is right.</p></li>
+</ul>
+</div>
+<div id="tips-for-coding" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Tips for coding</h2>
+<p>Here are some top tips for improving your coding to aid your QA and your QAers:</p>
+<ul>
+<li><p>Have a ‘super library’ of code that you use/create that you can refer back to.</p></li>
+<li><p>Where possible, cannibalise existing code rather than produce code from scratch.</p></li>
+<li><p>Use shortcuts, e.g. have the year/subject defined at the top of the code rather than throughout.</p></li>
+<li><p>Run on a small sample first. It is good practice to run your code on less than 1000 observations to check that there are no simple errors. It is not worth running a huge piece of code on a million records for 20 minutes to get a message saying ‘ERROR:- missing semi colon’.</p></li>
+<li><p>Take care when duplicating and merging. If you are going to go wrong with coding, it will probably involve messing up the handling of duplicates or a merge. Just because you made a merge request and a merge took place, this doesn’t necessarily mean the correct merge took place!</p></li>
+<li><p>Regular de-duplications are required to help you maintain a clean, easy to navigate directory.#</p></li>
+<li><p>Build in checks as you go along. For example, you have 1 million records for teachers, and you merge in 1 million records on the favourite colours of those teachers. Have you still only got 1 millions teachers in your dataset?</p></li>
+<li><p>You can check that merges have worked ok by running off quick output tables. Also do some spot checks, e.g. take a sample of 5 teachers and check that their data merged correctly.</p></li>
+</ul>
+</div>
+<div id="qa-of-models" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> QA of models</h2>
+<p>QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these checks are QA and build faith in a model being right.</p>
+<ul>
+<li><p>Building in auto checks can be a great way to make QA easier. Lots of charts of outputs are also very helpful.</p></li>
+<li><p>As with syntax, make sure that you annotate! What is each step of the model doing and why?</p></li>
+<li><p>Always explain what assumptions have been made and why. What is the evidence behind making these assumptions?</p></li>
+<li><p>Big models should have an assumptions log or a guide explaining <em>why</em> the model works the way it does. For example, <em>why</em> have you assumed in your analysis that 5% of teachers in future will be leaders?</p></li>
+<li><p>All the input data should come into the model from one place within the model if possible.</p></li>
+<li><p>When QAing a model, QA should focus most strongly on things that have changed or been added in. Otherwise, the normal QA procedures apply.</p></li>
+<li><p>Many models are updated regularly, usually on an annual basis. Outputs will vary from year to year. One of the most effective forms of QA for models is to investigate <em>how</em> output values change between versions of the model and discover what might be driving that. This can be done by testing the impact of and comparing input data values and assumptions between years and versions.</p></li>
+<li><p>Scenario testing can be undertaken to examine how sensitive the model outputs are to different data to examine what drives the model.</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getting-qa-support-from-others.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="asking-questions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tmorley1/bookdown-how-to/edit/master/04-howto.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/tmorley1/bookdown-how-to/blob/master/04-howto.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
