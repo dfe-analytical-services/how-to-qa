@@ -4,3 +4,4 @@ qaing-your-own-work
 self-qa
 odd-funny-or-unexpected-figures
 finding-errors
+getting-qa-support-from-others
