@@ -1,4 +1,3 @@
 introduction
 what-does-bad-qa-look-like
-the-pool-of-tears
-a-caucus-race-and-a-long-tale
+self-qa
