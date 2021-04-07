@@ -1,0 +1,25 @@
+# Syntax, coding and modelling
+
+## How to QA syntax
+
+QAing syntax can be a difficult job. Here are a few tips to help others QA your syntax.
+
+* Annotate, always annotate!
+ + You should explain what each step of the code does and why. It can be very difficult to understand someone else's code.
+ + It is much harder to QA someone else's code if you also have to work out what each step is meant to be doing. Making each step clearer not only helps them to QA your code properly, it will also save them time.
+ + It is much easier to annotate code as you go along rather than come back to it later. Annotating code can be a pain, but once you are in the routine of annotating as you write, you will find that it quickly becomes second nature.
+ 
+* Keep analysis and the code used to produce it together.
+ + Pasting code into Excel workbooks can be a useful way to link code and data together. This makes future updates much easier too.
+ 
+* Self QA your syntax.
+ + The best way to QA syntax is through self QA, producing output tables to physically examine/check the data produced by each step.
+ + For example, has a merge/join done what you wanted it to? Has the number of records in your dataset increased? Have the correct variables been added in? What had happened to those records that are missing variables/values? Are there duplicates?
+ + Never assume on blind faith that data has been processed as you wanted it to be. The merge you asked the computer to do might not be the merge that the computer actually did...
+ 
+* Think about how QAers will approach your syntax.
+ + Can they understand what you have done?
+ + Is the process logical? Does it make sense? Should it be done in a different way?
+ + Are records with missing data being handled right?
+ + Have the correct checks been undertaken to reassure the QAer that the accuracy of analysis/data processing has been tested?
+ + The QAer should also check the data itself, and undertake or suggest tests that can help prove whether the data is right.
