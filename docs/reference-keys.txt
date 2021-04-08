@@ -10,3 +10,8 @@ how-to-qa-syntax
 tips-for-coding
 qa-of-models
 asking-questions
+some-tips
+keep-it-simple
+use-critical-friends
+make-things-unambiguous
+the-future

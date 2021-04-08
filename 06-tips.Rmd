@@ -1,0 +1,55 @@
+# Some tips
+
+## Keep it simple
+
+It is important to keep things as simple as possible. Analysis is difficult enough without over complicating things!
+
+Chances are the majority of your customers are **not** analysts. Tailor your advice accordingly.
+
+Using fancy terms can often scare people and put them off, especially if they have to describe it themeselves to other people later on. Clever, simple language that it understandable to a layperson is often so much better than clever, complex language that it only understandable to someone with significant amounts of statistical knowledge.
+
+It isn't always worth going into huge complexity for a spurious level of accuracy. Try to keep the level of complexity appropriate for the problem at hand.
+
+## Use critical friends
+
+It is often useful to find friends or colleagues that you can run ideas past. Often, when we are working on a difficult problem, it is difficult to see the woods for the trees.
+
+A friend with expertise in a similar area may be able to help you take a step back and work out whether the analysis you are doing is correct for the task at hand. Some useful questions to ask are:
+
+* Is this a logical solution?
+
+* How would you do this?
+
+* Could I improve this?
+
+If they do suggest differences or provide criticism, don't take it personal. Taking other people's comments and ideas and addressing/managing them can turn a good piece of work into a brilliant one.
+
+## Make things unambiguous
+
+Sometimes people will misinterpret analysis, especially if a 'liberal interpretation' suits their ends. Where possible, try to make things crystal clear, especially in chats and when quoting results. Some things to think about...
+
+* Are teacher numbers in FTE/headcount?
+
+* Are the numbers relating to all teachers, or qualified teachers?
+
+* Do years refer to academic year or GCSE examination year? Don't use '2020', use '2019/20' or '2020/21' to avoid any ambiguity.
+
+* Make it clear whether values are estimates or actuals.
+
+* If there are caveats to results, communicate these caveats clearly.
+
+* Do figures differ to publish figures? If so, make this clear, and say **WHY**.
+
+## The future
+
+If you are asked to produce some analysis, it's likely that you (or someone else) will have to update it in the future. Therefore, everything that you do to make future updates of the analysis easier is a quick win. It may seem a pain at the time, but one day you will be grateful that you took that little bit of extra time because in the long run you will get that time back.
+
+Whenever you produce analysis you should annotate it and write notes explaining what you did as you go along. What does each step of the process do? Why did you do it? You did a conversion in your analysis - why? You used day from somewhere else - where did it come from?
+
+Annotating after you have completed your analysis is more time consuming and trickier to do. Something that is clear today won't be in the future.
+
+Give files sensible names to make different pieces of data etc. easier to find.
+
+It is extremely challenging being given some analysis and being asked to update it or change it slightly, especially when you have no idea of where different figures have come from, why weird conversions or adjustments were carried out, or how the process of the model works.
+
+You can waste hours try to work out how you carried out some previous analysis. If other people can't replicate or understand some of your old analysis, there is a reasonable chance that folks will just assume that you were wrong in the first place. Don't take that chance! Make sure all of your work has been sensibly managed to allow you to benefit from it in the future.
