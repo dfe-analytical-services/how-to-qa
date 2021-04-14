@@ -2,6 +2,12 @@
 
 ## How to QA syntax
 
+<center>
+
+<img src="https://media.istockphoto.com/vectors/coding-vector-icon-round-style-illustration-vector-id1205058662?k=6&m=1205058662&s=612x612&w=0&h=UxG7GkfbASVsp0Y7NkDLzHgV12aU1VFfGu9WE2Kb5cg=" width="200"/>
+
+</center>
+
 QAing syntax can be a difficult job. Here are a few tips to help others QA your syntax.
 
 * Annotate, always annotate!

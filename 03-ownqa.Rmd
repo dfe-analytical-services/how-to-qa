@@ -1,5 +1,11 @@
 # Getting QA support from others
 
+<center>
+
+![](https://miro.medium.com/max/687/1*q9j2k4-t5o-KZkzcEF27Pg.jpeg)
+
+</center>
+
 In this section, we will discuss some top tips that will allow others to QA your work easily. Most of these steps are straightforward, but make a huge difference to a Quality Assurer. It's important that you are a 'nice' person to do QA for!
 
 * Arrange a QA resource early. Leaving it until the last minute may result in you struggling to find someone who has time to allocate to the QA, and you might end up with someone who is less than ideal QAing your work.

@@ -2,13 +2,19 @@
 
 ## Self QA
 
+<center>
+
+![](https://coboslawfirm.com/global_pictures/Defaults/NewsletterTemplates/Are-employees-owed-overtime-for-checking-and-answering-email-after-hours8927.jpg)
+
+</center>
+
 Before you ask anyone else to QA your work, **you** should QA **your own** work.
 
 There are many examples of self QA that you can use:
 
 * Balance checks. Do percentages add up to 100%?  Do totals add up correctly?
 
-* Sense checks. Do outputs look rights or logical?
+* Sense checks. Do outputs look right or logical?
   + Example: Suppose your analysis tells you that you have a mean average primary school size of 600 pupils across 20,000 schools. This means that you have 12 million primary pupils. Something has clearly gone wrong!
   + Use your common sense, public data and analysis that other analysts have done to sense check your work.
   + If things don't look right, **always** investigate further.
@@ -18,6 +24,12 @@ There are many examples of self QA that you can use:
 Remember, before you ask anyone else to QA your work, you should try to **prove yourself wrong**.
 
 ## Odd, funny or unexpected figures
+
+<center>
+
+![](https://532386f9a72d1dd857a8-41058da2837557ec5bfc3b00e1f6cf43.ssl.cf5.rackcdn.com/wp-content/uploads/2017/02/Depositphotos_83286172_s-2015-e1486331695260.jpg)
+
+</center>
 
 If your analysis gives you answers that are unexpected, **investigate them**!
 
@@ -31,8 +43,20 @@ Being able to demonstrate that you haven't just taken analysis at face value mak
 
 ## Finding errors
 
+<center>
+
+![](https://statsland.files.wordpress.com/2012/09/outlier1.jpg)
+
+</center>
+
 The best way to find errors, outliers or things that have gone wrong is to use charts. Charts enable quick sense checks and any 'odd' results will stick out like a sore thumb. One of the first things a good QAer will often do is produce some charts.
 
 How about finding a small problem within a big spreadsheet or extensive code? It is useful to always work backwards to find errors. If something looks wrong, work backwards through your spreadsheet or syntax. Look at recent changes and updates. This will enable you to find the place where an oddity first started to appear, and help you to identify the specific problem or cause.
 
 When looking for errors, keep calm and focus on each step of a complex process one piece at a time. If you get flustered or stressed, you will often miss errors, so sometimes it pays to have a drink, take a break or sleep on it. A fresh mind will often be more capable of solving a complex issue.
+
+<center>
+
+![](https://149351115.v2.pressablecdn.com/wp-content/uploads/2019/10/MyMostEmbMistakes-1200x630.png)
+
+</center>

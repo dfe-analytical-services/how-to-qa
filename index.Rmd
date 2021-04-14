@@ -9,11 +9,23 @@ site: bookdown::bookdown_site
 
 Whenever we produce a new model or a new piece of analysis, it is important to quality assure (QA) our work. This allows us to check that our analysis is credible and provides assurance to senior leaders that modelling risks are being managed appropriately.
 
+<center>
+
+![](https://img.freepik.com/free-vector/review-rating-testimonials-online-laptop-computer-workplace-customer-evaluate-testimony-feedback-experience-concept-desk-top-view-flat-cartoon_101884-911.jpg?size=626&ext=jpg)
+
+</center>
+
 However, it is important to ensure not just that our work is QA'd, but that it is QA'd **well**. The aim of this document is to provide guidance on how to ensure that the QA being carried out is being done properly in order to provide an accurate picture of the reliability of analysis.
 
 Before discussing this, however, it is useful to think about what it means for QA to be 'bad'.
 
 ## What does 'bad' QA look like?
+
+<center>
+
+![](https://img.freepik.com/vetores-gratis/empresarios-estressados-olhando-para-um-grafico-de-resultados-ruins-os-negocios-falham-grafico-para-baixo_348082-604.jpg?size=664&ext=jpg)
+
+</center>
 
 There are many examples where QA is not up to scratch despite following the QA guidance. Here are a few of these examples:
 
@@ -28,6 +40,12 @@ There are many examples where QA is not up to scratch despite following the QA g
 
 * Assuming that things are right because the 'data' or 'the software' says so. Always avoid a 'computer says yes' attitude. Just because a computer doesn't pick up on any errors doesn't mean that the analysis is completely free from mistakes!
 
-* Confusion around what QA is needed and what QA has been done. This will be addressed within this document. An up-to-date QA log should be kept at all times to assist with keeping track of QA that has been done, and help highlight where QA is still required. A QA log template is available on the [DfE Quality Assurance page](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx)
 
 * QAers being afraid or nervous about raising concerns. This may be more of a problem when QAing for senior analysts. QA is a vital part of every project, and QAers should be made to feel that they are able to voice concerns whenever they arise. It is important to talk through each of these concerns rather that simply disregarding them.
+
+* Confusion around what QA is needed and what QA has been done. This will be addressed within this document. An up-to-date QA log should be kept at all times to assist with keeping track of QA that has been done, and help highlight where QA is still required. A QA log template is available on the [DfE Quality Assurance page](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx)
+
+<center>
+
+![](C:/Users/tmorley/OneDrive - Department for Education/Documents/Projects/How to QA/bookdown-how-to/qa-log.png)
+</center>
