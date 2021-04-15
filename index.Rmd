@@ -34,9 +34,9 @@ There are many examples where QA is not up to scratch despite following the QA g
 * Parts of the analysis are *assumed* to be 'right'. Even if results look correct, it is important to properly check the analysis that has been done. Just because something looks 'right' doesn't mean that it is!
 
 * The QAer doesn't ask any 'real' questions about **why** things have been done the way they were.
- + If a QAer says 'everything is perfect' and raises no concerns or doesn't ask any questions at all, this may suggest that they haven't actually undertaken robust QA.
- + Similarly, if someone says that they understand something very complex the first time around, they probably don't understand it. This may be a case of the work being too complex that they struggle to put into words exactly what they don't understand. It may be worth explaining complex pieces of work a couple of times anyway, to ensure that everything has been properly understood.
- + Asking questions can build understanding, and we encourage all QAers to ask questions (even very simple ones!)
+  + If a QAer says 'everything is perfect' and raises no concerns or doesn't ask any questions at all, this may suggest that they haven't actually undertaken robust QA.
+  + Similarly, if someone says that they understand something very complex the first time around, they probably don't understand it. This may be a case of the work being too complex that they struggle to put into words exactly what they don't understand. It may be worth explaining complex pieces of work a couple of times anyway, to ensure that everything has been properly understood.
+  + Asking questions can build understanding, and we encourage all QAers to ask questions (even very simple ones!)
 
 * Assuming that things are right because the 'data' or 'the software' says so. Always avoid a 'computer says yes' attitude. Just because a computer doesn't pick up on any errors doesn't mean that the analysis is completely free from mistakes!
 

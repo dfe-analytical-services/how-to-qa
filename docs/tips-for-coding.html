@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Syntax, coding and modelling | How to quality assure</title>
-  <meta name="description" content="Chapter 4 Syntax, coding and modelling | How to quality assure" />
+  <title>Chapter 4 Tips for coding | How to quality assure</title>
+  <meta name="description" content="Chapter 4 Tips for coding | How to quality assure" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Syntax, coding and modelling | How to quality assure" />
+  <meta property="og:title" content="Chapter 4 Tips for coding | How to quality assure" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Syntax, coding and modelling | How to quality assure" />
+  <meta name="twitter:title" content="Chapter 4 Tips for coding | How to quality assure" />
   
   
   
@@ -81,11 +81,11 @@
 <li class="chapter" data-level="2.3" data-path="qaing-your-own-work.html"><a href="qaing-your-own-work.html#finding-errors"><i class="fa fa-check"></i><b>2.3</b> Finding errors</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="getting-qa-support-from-others.html"><a href="getting-qa-support-from-others.html"><i class="fa fa-check"></i><b>3</b> Getting QA support from others</a></li>
-<li class="chapter" data-level="4" data-path="syntax-coding-and-modelling.html"><a href="syntax-coding-and-modelling.html"><i class="fa fa-check"></i><b>4</b> Syntax, coding and modelling</a>
+<li class="chapter" data-level="4" data-path="tips-for-coding.html"><a href="tips-for-coding.html"><i class="fa fa-check"></i><b>4</b> Tips for coding</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="syntax-coding-and-modelling.html"><a href="syntax-coding-and-modelling.html#helping-others-to-qa-your-code"><i class="fa fa-check"></i><b>4.1</b> Helping others to QA your code</a></li>
-<li class="chapter" data-level="4.2" data-path="syntax-coding-and-modelling.html"><a href="syntax-coding-and-modelling.html#tips-for-coding"><i class="fa fa-check"></i><b>4.2</b> Tips for coding</a></li>
-<li class="chapter" data-level="4.3" data-path="syntax-coding-and-modelling.html"><a href="syntax-coding-and-modelling.html#qa-of-models"><i class="fa fa-check"></i><b>4.3</b> QA of models</a></li>
+<li class="chapter" data-level="4.1" data-path="tips-for-coding.html"><a href="tips-for-coding.html#what-you-should-do"><i class="fa fa-check"></i><b>4.1</b> What you <strong>should</strong> do</a></li>
+<li class="chapter" data-level="4.2" data-path="tips-for-coding.html"><a href="tips-for-coding.html#what-you-could-do"><i class="fa fa-check"></i><b>4.2</b> What you <strong>could</strong> do</a></li>
+<li class="chapter" data-level="4.3" data-path="tips-for-coding.html"><a href="tips-for-coding.html#qa-of-models"><i class="fa fa-check"></i><b>4.3</b> QA of models</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="asking-questions.html"><a href="asking-questions.html"><i class="fa fa-check"></i><b>5</b> Asking questions</a></li>
 <li class="chapter" data-level="6" data-path="some-tips.html"><a href="some-tips.html"><i class="fa fa-check"></i><b>6</b> Some tips</a>
@@ -114,14 +114,14 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="syntax-coding-and-modelling" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Syntax, coding and modelling</h1>
-<div id="helping-others-to-qa-your-code" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Helping others to QA your code</h2>
+<div id="tips-for-coding" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Tips for coding</h1>
+<div id="what-you-should-do" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> What you <strong>should</strong> do</h2>
 <center>
 <p><img src="https://media.istockphoto.com/vectors/coding-vector-icon-round-style-illustration-vector-id1205058662?k=6&m=1205058662&s=612x612&w=0&h=UxG7GkfbASVsp0Y7NkDLzHgV12aU1VFfGu9WE2Kb5cg=" width="200"/></p>
 </center>
-<p>QAing code can be a difficult job. Here are a few tips to help others QA your code.</p>
+<p>QAing code can be a difficult job. Doing the following things will help others to QA your code.</p>
 <ul>
 <li>Annotate, always annotate!
 <ul>
@@ -131,16 +131,19 @@
 </ul></li>
 </ul>
 <center>
-<p><img src="code-example.png" /></p>
+<div class="figure">
+<img src="code-example.png" alt="" />
+<p class="caption">Code that has been annotated is much easier to follow.</p>
+</div>
 </center>
 <ul>
 <li>Keep analysis and the code used to produce it together.
 <ul>
 <li>Pasting code into Excel workbooks can be a useful way to link code and data together. This makes future updates much easier too.</li>
 </ul></li>
-<li>Self QA your syntax.
+<li>Self QA your code
 <ul>
-<li>The best way to QA syntax is through self QA, producing output tables to physically examine/check the data produced by each step.</li>
+<li>The best way to QA code is through self QA, producing output tables to physically examine/check the data produced by each step.</li>
 <li>For example, has a merge/join done what you wanted it to? Has the number of records in your dataset increased? Have the correct variables been added in? What had happened to those records that are missing variables/values? Are there duplicates?</li>
 <li>Never assume on blind faith that data has been processed as you wanted it to be. The merge you asked the computer to do might not be the merge that the computer actually did…</li>
 </ul></li>
@@ -152,7 +155,7 @@
 </div>
 </center>
 <ul>
-<li>Think about how QAers will approach your syntax.
+<li>Think about how QAers will approach your code.
 <ul>
 <li>Can they understand what you have done?</li>
 <li>Is the process logical? Does it make sense? Should it be done in a different way?</li>
@@ -162,24 +165,28 @@
 </ul></li>
 </ul>
 </div>
-<div id="tips-for-coding" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Tips for coding</h2>
-<p>Here are some top tips for improving your coding to aid your QA and your QAers:</p>
+<div id="what-you-could-do" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> What you <strong>could</strong> do</h2>
+<center>
+<p><img src="https://lh3.googleusercontent.com/proxy/UIYXgSg5_sFCnb8oXqqRgnA7Q_XusyqwCAAVECdiQXMiTSXin2u7b083gsIOG8pQgxf9XL7OxHx4h26PvvS4mLlvUke4OpCujvL5SSW2tCXEPEYDHCYDPiNcffKoLzlzoro8YjFY_4K0gt55faDYcn-o" width="400"/></p>
+</center>
+<p>The following tips might not be appropriate for every code you write, but if you can do these things too, you’ll help not only yourself, but your QAer as well!</p>
 <ul>
 <li><p>Have a ‘super library’ of code that you use/create that you can refer back to.</p></li>
 <li><p>Where possible, cannibalise existing code rather than produce code from scratch.</p></li>
 <li><p>Use shortcuts, e.g. have the year/subject defined at the top of the code rather than throughout.</p></li>
 <li><p>Run on a small sample first. It is good practice to run your code on less than 1000 observations to check that there are no simple errors. It is not worth running a huge piece of code on a million records for 20 minutes to get a message saying ‘ERROR:- missing semi colon’.</p></li>
-<li><p>Take care when duplicating and merging. If you are going to go wrong with coding, it will probably involve messing up the handling of duplicates or a merge. Just because you made a merge request and a merge took place, this doesn’t necessarily mean the correct merge took place!</p>
+<li><p>Build in checks as you go along. For example, you have 1 million records for teachers, and you merge in 1 million records on the favourite colours of those teachers. Have you still only got 1 millions teachers in your dataset?</p>
 <ul>
-<li>Regular de-duplications are required to help you maintain a clean, easy to navigate directory.#</li>
-<li>Build in checks as you go along. For example, you have 1 million records for teachers, and you merge in 1 million records on the favourite colours of those teachers. Have you still only got 1 millions teachers in your dataset?</li>
-<li>You can check that merges have worked ok by running off quick output tables. Also do some spot checks, e.g. take a sample of 5 teachers and check that their data merged correctly.</li>
+<li>When performing merges, check that everything has gone smoothly by running off some quick output tables. Spot checks can also help here, e.g. take a sample of 5 teachers and check that their data merged correctly.</li>
 </ul></li>
 </ul>
 </div>
 <div id="qa-of-models" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> QA of models</h2>
+<center>
+<p><img src="https://www.thedayspring.com.pk/wp-content/uploads/2019/03/marketing-analytics.png" width="400"/></p>
+</center>
 <p>QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these checks are QA and build faith in a model being right.</p>
 <ul>
 <li><p>Building in auto checks can be a great way to make QA easier. Lots of charts of outputs are also very helpful.</p></li>

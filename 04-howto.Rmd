@@ -1,6 +1,6 @@
-# Syntax, coding and modelling
+# Tips for coding
 
-## How to QA syntax
+## What you __should__ do
 
 <center>
 
@@ -8,31 +8,49 @@
 
 </center>
 
-QAing syntax can be a difficult job. Here are a few tips to help others QA your syntax.
+QAing code can be a difficult job. Doing the following things will help others to QA your code.
 
 * Annotate, always annotate!
- + You should explain what each step of the code does and why. It can be very difficult to understand someone else's code.
- + It is much harder to QA someone else's code if you also have to work out what each step is meant to be doing. Making each step clearer not only helps them to QA your code properly, it will also save them time.
- + It is much easier to annotate code as you go along rather than come back to it later. Annotating code can be a pain, but once you are in the routine of annotating as you write, you will find that it quickly becomes second nature.
- 
-* Keep analysis and the code used to produce it together.
- + Pasting code into Excel workbooks can be a useful way to link code and data together. This makes future updates much easier too.
- 
-* Self QA your syntax.
- + The best way to QA syntax is through self QA, producing output tables to physically examine/check the data produced by each step.
- + For example, has a merge/join done what you wanted it to? Has the number of records in your dataset increased? Have the correct variables been added in? What had happened to those records that are missing variables/values? Are there duplicates?
- + Never assume on blind faith that data has been processed as you wanted it to be. The merge you asked the computer to do might not be the merge that the computer actually did...
- 
-* Think about how QAers will approach your syntax.
- + Can they understand what you have done?
- + Is the process logical? Does it make sense? Should it be done in a different way?
- + Are records with missing data being handled right?
- + Have the correct checks been undertaken to reassure the QAer that the accuracy of analysis/data processing has been tested?
- + The QAer should also check the data itself, and undertake or suggest tests that can help prove whether the data is right.
- 
-## Tips for coding
+  + You should explain what each step of the code does and why. It can be very difficult to understand someone else's code.
+  + It is much harder to QA someone else's code if you also have to work out what each step is meant to be doing. Making each step clearer not only helps them to QA your code properly, it will also save them time.
+  + It is much easier to annotate code as you go along rather than come back to it later. Annotating code can be a pain, but once you are in the routine of annotating as you write, you will find that it quickly becomes second nature.
+  
+<center>
 
-Here are some top tips for improving your coding to aid your QA and your QAers:
+![Code that has been annotated is much easier to follow.](C:/Users/tmorley/OneDrive - Department for Education/Documents/Projects/How to QA/bookdown-how-to/code-example.png)
+
+</center>
+
+* Keep analysis and the code used to produce it together.
+  + Pasting code into Excel workbooks can be a useful way to link code and data together. This makes future updates much easier too.
+ 
+* Self QA your code
+  + The best way to QA code is through self QA, producing output tables to physically examine/check the data produced by each step.
+  + For example, has a merge/join done what you wanted it to? Has the number of records in your dataset increased? Have the correct variables been added in? What had happened to those records that are missing variables/values? Are there duplicates?
+  + Never assume on blind faith that data has been processed as you wanted it to be. The merge you asked the computer to do might not be the merge that the computer actually did...
+
+<center>
+
+![Merges might not always work as you expected...](data:image/png;base64,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)
+
+</center>
+
+* Think about how QAers will approach your code.
+  + Can they understand what you have done?
+  + Is the process logical? Does it make sense? Should it be done in a different way?
+  + Are records with missing data being handled right?
+  + Have the correct checks been undertaken to reassure the QAer that the accuracy of analysis/data processing has been tested?
+  + The QAer should also check the data itself, and undertake or suggest tests that can help prove whether the data is right.
+ 
+## What you __could__ do
+
+<center>
+
+<img src="https://lh3.googleusercontent.com/proxy/UIYXgSg5_sFCnb8oXqqRgnA7Q_XusyqwCAAVECdiQXMiTSXin2u7b083gsIOG8pQgxf9XL7OxHx4h26PvvS4mLlvUke4OpCujvL5SSW2tCXEPEYDHCYDPiNcffKoLzlzoro8YjFY_4K0gt55faDYcn-o" width="400"/>
+
+</center>
+
+The following tips might not be appropriate for every code you write, but if you can do these things too, you'll help not only yourself, but your QAer as well!
 
 * Have a 'super library' of code that you use/create that you can refer back to.
 
@@ -42,20 +60,24 @@ Here are some top tips for improving your coding to aid your QA and your QAers:
 
 * Run on a small sample first. It is good practice to run your code on less than 1000 observations to check that there are no simple errors. It is not worth running a huge piece of code on a million records for 20 minutes to get a message saying 'ERROR:- missing semi colon'.
 
-* Take care when duplicating and merging. If you are going to go wrong with coding, it will probably involve messing up the handling of duplicates or a merge. Just because you made a merge request and a merge took place, this doesn't necessarily mean the correct merge took place!
- + Regular de-duplications are required to help you maintain a clean, easy to navigate directory.#
- + Build in checks as you go along. For example, you have 1 million records for teachers, and you merge in 1 million records on the favourite colours of those teachers. Have you still only got 1 millions teachers in your dataset?
- + You can check that merges have worked ok by running off quick output tables. Also do some spot checks, e.g. take a sample of 5 teachers and check that their data merged correctly.
+* Build in checks as you go along. For example, you have 1 million records for teachers, and you merge in 1 million records on the favourite colours of those teachers. Have you still only got 1 millions teachers in your dataset?
+  + When performing merges, check that everything has gone smoothly by running off some quick output tables. Spot checks can also help here, e.g. take a sample of 5 teachers and check that their data merged correctly.
 
 ## QA of models
+
+<center>
+
+<img src="https://www.thedayspring.com.pk/wp-content/uploads/2019/03/marketing-analytics.png" width="400"/>
+
+</center>
 
 QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these checks are QA and build faith in a model being right.
 
 * Building in auto checks can be a great way to make QA easier. Lots of charts of outputs are also very helpful.
 
 * As with syntax, make sure that you annotate! What is each step of the model doing and why?
- + Always explain what assumptions have been made and why. What is the evidence behind making these assumptions?
- + Big models should have an assumptions log or a guide explaining *why* the model works the way it does. For example, *why* have you assumed in your analysis that 5% of teachers in future will be leaders?
+  + Always explain what assumptions have been made and why. What is the evidence behind making these assumptions?
+  + Big models should have an assumptions log or a guide explaining *why* the model works the way it does. For example, *why* have you assumed in your analysis that 5% of teachers in future will be leaders?
  
 * All the input data should come into the model from one place within the model if possible.
 
