@@ -2,7 +2,7 @@
 
 <center>
 
-<img src="https://mendocinocoastclinics.org/wp-content/uploads/2020/12/questioning.jpg" width="400"/>
+<img src="https://mendocinocoastclinics.org/wp-content/uploads/2020/12/questioning.jpg" title="https://mendocinocoastclinics.org/wp-content/uploads/2020/12/questioning.jpg" alt="https://mendocinocoastclinics.org/wp-content/uploads/2020/12/questioning.jpg" class="image" width="400"/>
 
 </center>
 

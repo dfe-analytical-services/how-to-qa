@@ -2,6 +2,12 @@
 
 ## Keep it simple
 
+<center>
+
+<img src="https://i.pinimg.com/originals/e0/06/30/e006309d838967c706a76a9ea1c2e97f.jpg" title="https://i.pinimg.com/originals/e0/06/30/e006309d838967c706a76a9ea1c2e97f.jpg" alt="https://i.pinimg.com/originals/e0/06/30/e006309d838967c706a76a9ea1c2e97f.jpg" class="image" width="400"/>
+
+</center>
+
 It is important to keep things as simple as possible. Analysis is difficult enough without over complicating things!
 
 Chances are the majority of your customers are **not** analysts. Tailor your advice accordingly.
@@ -11,6 +17,12 @@ Using fancy terms can often scare people and put them off, especially if they ha
 It isn't always worth going into huge complexity for a spurious level of accuracy. Try to keep the level of complexity appropriate for the problem at hand.
 
 ## Use critical friends
+
+<center>
+
+<img src="http://media.dods.co.uk/sites/media.dods.co.uk/files/image/1512%20feedback.jpg" title="http://media.dods.co.uk/sites/media.dods.co.uk/files/image/1512%20feedback.jpg" alt="http://media.dods.co.uk/sites/media.dods.co.uk/files/image/1512%20feedback.jpg" class="image" width="400"/>
+
+</center>
 
 It is often useful to find friends or colleagues that you can run ideas past. Often, when we are working on a difficult problem, it is difficult to see the woods for the trees.
 
@@ -41,6 +53,12 @@ Sometimes people will misinterpret analysis, especially if a 'liberal interpreta
 * Do figures differ to publish figures? If so, make this clear, and say **WHY**.
 
 ## The future
+
+<center>
+
+<img src="https://blogs.ibo.org/files/2020/07/iStock-Telescope_illustration-1200x800.jpg" title="https://blogs.ibo.org/files/2020/07/iStock-Telescope_illustration-1200x800.jpg" alt="https://blogs.ibo.org/files/2020/07/iStock-Telescope_illustration-1200x800.jpg" class="image" width="400"/>
+
+</center>
 
 If you are asked to produce some analysis, it's likely that you (or someone else) will have to update it in the future. Therefore, everything that you do to make future updates of the analysis easier is a quick win. It may seem a pain at the time, but one day you will be grateful that you took that little bit of extra time because in the long run you will get that time back.
 

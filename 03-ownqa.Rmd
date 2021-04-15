@@ -2,7 +2,7 @@
 
 <center>
 
-![](https://miro.medium.com/max/687/1*q9j2k4-t5o-KZkzcEF27Pg.jpeg)
+![](https://miro.medium.com/max/687/1*q9j2k4-t5o-KZkzcEF27Pg.jpeg "https://miro.medium.com/max/687/1*q9j2k4-t5o-KZkzcEF27Pg.jpeg")
 
 </center>
 

@@ -11,7 +11,7 @@ Whenever we produce a new model or a new piece of analysis, it is important to q
 
 <center>
 
-![](https://img.freepik.com/free-vector/review-rating-testimonials-online-laptop-computer-workplace-customer-evaluate-testimony-feedback-experience-concept-desk-top-view-flat-cartoon_101884-911.jpg?size=626&ext=jpg)
+![](https://img.freepik.com/free-vector/review-rating-testimonials-online-laptop-computer-workplace-customer-evaluate-testimony-feedback-experience-concept-desk-top-view-flat-cartoon_101884-911.jpg?size=626&ext=jpg "https://img.freepik.com/free-vector/review-rating-testimonials-online-laptop-computer-workplace-customer-evaluate-testimony-feedback-experience-concept-desk-top-view-flat-cartoon_101884-911.jpg?size=626&ext=jpg")
 
 </center>
 
@@ -23,7 +23,7 @@ Before discussing this, however, it is useful to think about what it means for Q
 
 <center>
 
-![](https://img.freepik.com/vetores-gratis/empresarios-estressados-olhando-para-um-grafico-de-resultados-ruins-os-negocios-falham-grafico-para-baixo_348082-604.jpg?size=664&ext=jpg)
+![](https://img.freepik.com/vetores-gratis/empresarios-estressados-olhando-para-um-grafico-de-resultados-ruins-os-negocios-falham-grafico-para-baixo_348082-604.jpg?size=664&ext=jpg "https://img.freepik.com/vetores-gratis/empresarios-estressados-olhando-para-um-grafico-de-resultados-ruins-os-negocios-falham-grafico-para-baixo_348082-604.jpg?size=664&ext=jpg")
 
 </center>
 
@@ -47,5 +47,5 @@ There are many examples where QA is not up to scratch despite following the QA g
 
 <center>
 
-![](C:/Users/tmorley/OneDrive - Department for Education/Documents/Projects/How to QA/bookdown-how-to/qa-log.png)
+![](C:/Users/tmorley/OneDrive - Department for Education/Documents/Projects/How to QA/bookdown-how-to/qa-log.png "Screenshot of DfE Modelling QA Log Template")
 </center>
