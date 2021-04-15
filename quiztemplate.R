@@ -8,7 +8,6 @@ library(shinythemes) #theme -> css
 ui <- fluidPage(
   headerPanel("Quiz"),
   mainPanel(
-    fluidRow(column(12,h5("This is question one"))),
     fluidRow(column(12,uiOutput("questiononeanswers")
       ),
   )
