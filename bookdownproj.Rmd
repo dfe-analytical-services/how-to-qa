@@ -1,0 +1,361 @@
+--- 
+title: "How to quality assure"
+author: "Thomas Morley"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+---
+
+# Introduction
+
+Whenever we produce a new model or a new piece of analysis, it is important to quality assure (QA) our work. This allows us to check that our analysis is credible and provides assurance to senior leaders that modelling risks are being managed appropriately.
+
+<center>
+
+![](https://img.freepik.com/free-vector/review-rating-testimonials-online-laptop-computer-workplace-customer-evaluate-testimony-feedback-experience-concept-desk-top-view-flat-cartoon_101884-911.jpg?size=626&ext=jpg "https://img.freepik.com/free-vector/review-rating-testimonials-online-laptop-computer-workplace-customer-evaluate-testimony-feedback-experience-concept-desk-top-view-flat-cartoon_101884-911.jpg?size=626&ext=jpg")
+
+</center>
+
+However, it is important to ensure not just that our work is QA'd, but that it is QA'd **well**. The aim of this document is to provide guidance on how to ensure that the QA being carried out is being done properly in order to provide an accurate picture of the reliability of analysis.
+
+Before discussing this, however, it is useful to think about what it means for QA to be 'bad'.
+
+## What does 'bad' QA look like?
+
+<center>
+
+![](https://img.freepik.com/vetores-gratis/empresarios-estressados-olhando-para-um-grafico-de-resultados-ruins-os-negocios-falham-grafico-para-baixo_348082-604.jpg?size=664&ext=jpg "https://img.freepik.com/vetores-gratis/empresarios-estressados-olhando-para-um-grafico-de-resultados-ruins-os-negocios-falham-grafico-para-baixo_348082-604.jpg?size=664&ext=jpg")
+
+</center>
+
+There are many examples where QA is not up to scratch despite following the QA guidance. Here are a few of these examples:
+
+* The QA is rushed at the last minute. This could be due to the urgency of the project, or pressure from senior leaders or clients, but this can lead to mistakes in the QA or 'cutting corners'. Always ensure that an appropriate amount of time is allocated for QA. This amount of time will often depend on the scale of the project, and the type of analysis that is done.
+
+* Parts of the analysis are *assumed* to be 'right'. Even if results look correct, it is important to properly check the analysis that has been done. Just because something looks 'right' doesn't mean that it is!
+
+* The QAer doesn't ask any 'real' questions about **why** things have been done the way they were.
+  + If a QAer says 'everything is perfect' and raises no concerns or doesn't ask any questions at all, this may suggest that they haven't actually undertaken robust QA.
+  + Similarly, if someone says that they understand something very complex the first time around, they probably don't understand it. This may be a case of the work being too complex that they struggle to put into words exactly what they don't understand. It may be worth explaining complex pieces of work a couple of times anyway, to ensure that everything has been properly understood.
+  + Asking questions can build understanding, and we encourage all QAers to ask questions (even very simple ones!)
+
+* Assuming that things are right because the 'data' or 'the software' says so. Always avoid a 'computer says yes' attitude. Just because a computer doesn't pick up on any errors doesn't mean that the analysis is completely free from mistakes!
+
+
+* QAers being afraid or nervous about raising concerns. This may be more of a problem when QAing for senior analysts. QA is a vital part of every project, and QAers should be made to feel that they are able to voice concerns whenever they arise. It is important to talk through each of these concerns rather that simply disregarding them.
+
+* Confusion around what QA is needed and what QA has been done. This will be addressed within this document. An up-to-date QA log should be kept at all times to assist with keeping track of QA that has been done, and help highlight where QA is still required. A QA log template is available on the [DfE Quality Assurance page](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx)
+
+<center>
+
+![](C:/Users/tmorley/OneDrive - Department for Education/Documents/Projects/How to QA/bookdown-how-to/qa-log.png "Screenshot of DfE Modelling QA Log Template")
+</center>
+
+<!--chapter:end:index.Rmd-->
+
+# QAing your own work
+
+## Self QA
+
+<center>
+
+![](https://coboslawfirm.com/global_pictures/Defaults/NewsletterTemplates/Are-employees-owed-overtime-for-checking-and-answering-email-after-hours8927.jpg "https://coboslawfirm.com/global_pictures/Defaults/NewsletterTemplates/Are-employees-owed-overtime-for-checking-and-answering-email-after-hours8927.jpg")
+
+</center>
+
+Before you ask anyone else to QA your work, **you** should QA **your own** work.
+
+There are many examples of self QA that you can use:
+
+* Balance checks. Do percentages add up to 100%?  Do totals add up correctly?
+
+* Sense checks. Do outputs look right or logical?
+  + Example: Suppose your analysis tells you that you have a mean average primary school size of 600 pupils across 20,000 schools. This means that you have 12 million primary pupils. Something has clearly gone wrong!
+  + Use your common sense, public data and analysis that other analysts have done to sense check your work.
+  + If things don't look right, **always** investigate further.
+  
+* Spot checks. Do some spot checks of formulae, values and calculations. If your spot checks show some errors, it is worth investigating further as these errors may have been replicated elsewhere in the analysis.
+
+Remember, before you ask anyone else to QA your work, you should try to **prove yourself wrong**.
+
+## Odd, funny or unexpected figures
+
+<center>
+
+![](https://532386f9a72d1dd857a8-41058da2837557ec5bfc3b00e1f6cf43.ssl.cf5.rackcdn.com/wp-content/uploads/2017/02/Depositphotos_83286172_s-2015-e1486331695260.jpg "https://532386f9a72d1dd857a8-41058da2837557ec5bfc3b00e1f6cf43.ssl.cf5.rackcdn.com/wp-content/uploads/2017/02/Depositphotos_83286172_s-2015-e1486331695260.jpg")
+
+</center>
+
+If your analysis gives you answers that are unexpected, **investigate them**!
+
+For example, if the Teacher Supply Model (TSM) estimates that every subject needs more Initial Teaching Training (ITT) places this year apart from English, investigate why this is. Is a trend reversing or running counter to expectation? Are values for this year very different to previous years?
+
+It is inevitable that someone senior will ask you about any unexpected results. It is important to understand why your model is giving you such answers, and to put these answers into some context using analysis that has been done previously. If you do not have the answers to these questions prepared, it will give people less faith in you and your work.
+
+Doing these checks will lead you to either find an error, or produce a logical answer to explain this oddity to stakeholders. Either way, it's a win!
+
+Being able to demonstrate that you haven't just taken analysis at face value makes you look good and makes your analysis better! Always ask yourself, when looking at results, what questions are your stakeholders likely to ask? Preparing anaswers for these types of questions is a very important skill for an analyst. You can guarantee that seniour stakeholders are most likely to ask about numbers that stick out or look odd...
+
+## Finding errors
+
+<center>
+
+![](https://statsland.files.wordpress.com/2012/09/outlier1.jpg "https://statsland.files.wordpress.com/2012/09/outlier1.jpg")
+
+</center>
+
+The best way to find errors, outliers or things that have gone wrong is to use charts. Charts enable quick sense checks and any 'odd' results will stick out like a sore thumb. One of the first things a good QAer will often do is produce some charts.
+
+How about finding a small problem within a big spreadsheet or extensive code? It is useful to always work backwards to find errors. If something looks wrong, work backwards through your spreadsheet or syntax. Look at recent changes and updates. This will enable you to find the place where an oddity first started to appear, and help you to identify the specific problem or cause.
+
+When looking for errors, keep calm and focus on each step of a complex process one piece at a time. If you get flustered or stressed, you will often miss errors, so sometimes it pays to have a drink, take a break or sleep on it. A fresh mind will often be more capable of solving a complex issue.
+
+<center>
+
+![](https://149351115.v2.pressablecdn.com/wp-content/uploads/2019/10/MyMostEmbMistakes-1200x630.png "https://149351115.v2.pressablecdn.com/wp-content/uploads/2019/10/MyMostEmbMistakes-1200x630.png")
+
+</center>
+
+<!--chapter:end:02-selfQA.Rmd-->
+
+# Getting QA support from others
+
+<center>
+
+![](https://miro.medium.com/max/687/1*q9j2k4-t5o-KZkzcEF27Pg.jpeg "https://miro.medium.com/max/687/1*q9j2k4-t5o-KZkzcEF27Pg.jpeg")
+
+</center>
+
+In this section, we will discuss some top tips that will allow others to QA your work easily. Most of these steps are straightforward, but make a huge difference to a Quality Assurer. It's important that you are a 'nice' person to do QA for!
+
+* Arrange a QA resource early. Leaving it until the last minute may result in you struggling to find someone who has time to allocate to the QA, and you might end up with someone who is less than ideal QAing your work.
+
+* Lay out syntax, calculations and workbooks nicely. Explain what you have done *and why* in each calculation step. This is especially important if the calculations are complex or you have made assumptions that aren't immediately obvious.
+
+* If you have pasted numbers into a workbook, explain *where* they came from. This will be useful both for QAing purposing and when carrying out future updates.
+
+* Make expectations on the QA that you need clear to the QAers. Which bits are those that need the most thorough QA? QA checklists can be very helpful. A checklist of mandatory QA activites is available on the [DfE Quality Assurance page](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx). This covers only the very basics of QA that you will need to carry out. You will need to carry out different, more specific QA checks depending on the type of work that you have done.
+
+* Offer QA assistance to others in return.
+
+**Remember**, don't make things needlessly complex! Nobody likes receiving workbooks that are a nightmare to understand, update or QA. Similarly, nobody likes long, complex formulae or syntax that tries to do 3 or 4 things in one step. These take up more time than necessary to QA and increase the likelihood of producing errors.
+
+Taking a little more time to divide processes into clearly explained baby steps makes things easier to QA in the short term and easier to update in the long team. In other words, the more time we spend on QA, the less time we have to spend on the model in future. Plus, taking these steps to 'declutter' your notebooks can reduce pressure and stress.
+
+Writing a code in a certain way or using a certain figure may seem to be obvious at the time, but might not when you or someone else looks at it in the future. For example, that decision to use a value of 233.467 in a calculation this morning was very sensible, but in six months time you'll have completely forgotten why you did that or where that number came from...
+
+<!--chapter:end:03-ownqa.Rmd-->
+
+# Tips for coding
+
+## What you __should__ do
+
+<center>
+
+<img src="https://media.istockphoto.com/vectors/coding-vector-icon-round-style-illustration-vector-id1205058662?k=6&m=1205058662&s=612x612&w=0&h=UxG7GkfbASVsp0Y7NkDLzHgV12aU1VFfGu9WE2Kb5cg=" title="https://media.istockphoto.com/vectors/coding-vector-icon-round-style-illustration-vector-id1205058662?k=6&m=1205058662&s=612x612&w=0&h=UxG7GkfbASVsp0Y7NkDLzHgV12aU1VFfGu9WE2Kb5cg=" alt="https://media.istockphoto.com/vectors/coding-vector-icon-round-style-illustration-vector-id1205058662?k=6&m=1205058662&s=612x612&w=0&h=UxG7GkfbASVsp0Y7NkDLzHgV12aU1VFfGu9WE2Kb5cg=" class="image" width="200"/>
+
+</center>
+
+QAing code can be a difficult job. Doing the following things will help others to QA your code.
+
+* Annotate, always annotate!
+  + You should explain what each step of the code does and why. It can be very difficult to understand someone else's code.
+  + It is much harder to QA someone else's code if you also have to work out what each step is meant to be doing. Making each step clearer not only helps them to QA your code properly, it will also save them time.
+  + It is much easier to annotate code as you go along rather than come back to it later. Annotating code can be a pain, but once you are in the routine of annotating as you write, you will find that it quickly becomes second nature.
+  
+<center>
+
+![Code that has been annotated is much easier to follow.](C:/Users/tmorley/OneDrive - Department for Education/Documents/Projects/How to QA/bookdown-how-to/code-example.png "A screenshot of example annotated code in R")
+
+</center>
+
+* Keep analysis and the code used to produce it together.
+  + Pasting code into Excel workbooks can be a useful way to link code and data together. This makes future updates much easier too.
+ 
+* Self QA your code
+  + The best way to QA code is through self QA, producing output tables to physically examine/check the data produced by each step.
+  + For example, has a merge/join done what you wanted it to? Has the number of records in your dataset increased? Have the correct variables been added in? What had happened to those records that are missing variables/values? Are there duplicates?
+  + Never assume on blind faith that data has been processed as you wanted it to be. The merge you asked the computer to do might not be the merge that the computer actually did...
+
+<center>
+
+![Merges might not always work as you expected...](data:image/png;base64,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 "data:image/png;base64,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")
+
+</center>
+
+* Think about how QAers will approach your code.
+  + Can they understand what you have done?
+  + Is the process logical? Does it make sense? Should it be done in a different way?
+  + Are records with missing data being handled right?
+  + Have the correct checks been undertaken to reassure the QAer that the accuracy of analysis/data processing has been tested?
+  + The QAer should also check the data itself, and undertake or suggest tests that can help prove whether the data is right.
+ 
+## What you __could__ do
+
+<center>
+
+<img src="https://lh3.googleusercontent.com/proxy/UIYXgSg5_sFCnb8oXqqRgnA7Q_XusyqwCAAVECdiQXMiTSXin2u7b083gsIOG8pQgxf9XL7OxHx4h26PvvS4mLlvUke4OpCujvL5SSW2tCXEPEYDHCYDPiNcffKoLzlzoro8YjFY_4K0gt55faDYcn-o" title="https://lh3.googleusercontent.com/proxy/UIYXgSg5_sFCnb8oXqqRgnA7Q_XusyqwCAAVECdiQXMiTSXin2u7b083gsIOG8pQgxf9XL7OxHx4h26PvvS4mLlvUke4OpCujvL5SSW2tCXEPEYDHCYDPiNcffKoLzlzoro8YjFY_4K0gt55faDYcn-o" alt="https://lh3.googleusercontent.com/proxy/UIYXgSg5_sFCnb8oXqqRgnA7Q_XusyqwCAAVECdiQXMiTSXin2u7b083gsIOG8pQgxf9XL7OxHx4h26PvvS4mLlvUke4OpCujvL5SSW2tCXEPEYDHCYDPiNcffKoLzlzoro8YjFY_4K0gt55faDYcn-o" class="image" width="400"/>
+
+</center>
+
+The following tips might not be appropriate for every code you write, but if you can do these things too, you'll help not only yourself, but your QAer as well!
+
+* Have a 'super library' of code that you use/create that you can refer back to.
+
+* Where possible, cannibalise existing code rather than produce code from scratch.
+
+* Use shortcuts, e.g. have the year/subject defined at the top of the code rather than throughout.
+
+* Run on a small sample first. It is good practice to run your code on less than 1000 observations to check that there are no simple errors. It is not worth running a huge piece of code on a million records for 20 minutes to get a message saying 'ERROR:- missing semi colon'.
+
+* Build in checks as you go along. For example, you have 1 million records for teachers, and you merge in 1 million records on the favourite colours of those teachers. Have you still only got 1 millions teachers in your dataset?
+  + When performing merges, check that everything has gone smoothly by running off some quick output tables. Spot checks can also help here, e.g. take a sample of 5 teachers and check that their data merged correctly.
+
+## QA of models
+
+<center>
+
+<img src="https://www.thedayspring.com.pk/wp-content/uploads/2019/03/marketing-analytics.png" title="https://www.thedayspring.com.pk/wp-content/uploads/2019/03/marketing-analytics.png" alt="https://www.thedayspring.com.pk/wp-content/uploads/2019/03/marketing-analytics.png" class="image" width="400"/>
+
+</center>
+
+QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these checks are QA and build faith in a model being right.
+
+* Building in auto checks can be a great way to make QA easier. Lots of charts of outputs are also very helpful.
+
+* As with syntax, make sure that you annotate! What is each step of the model doing and why?
+  + Always explain what assumptions have been made and why. What is the evidence behind making these assumptions?
+  + Big models should have an assumptions log or a guide explaining *why* the model works the way it does. For example, *why* have you assumed in your analysis that 5% of teachers in future will be leaders?
+ 
+* All the input data should come into the model from one place within the model if possible.
+
+* When QAing a model, QA should focus most strongly on things that have changed or been added in. Otherwise, the normal QA procedures apply.
+
+* Many models are updated regularly, usually on an annual basis. Outputs will vary from year to year. One of the most effective forms of QA for models is to investigate *how* output values change between versions of the model and discover what might be driving that. This can be done by testing the impact of and comparing input data values and assumptions between years and versions.
+
+* Scenario testing can be undertaken to examine how sensitive the model outputs are to different data to examine what drives the model.
+
+<!--chapter:end:04-howto.Rmd-->
+
+# Asking questions
+
+<center>
+
+<img src="https://mendocinocoastclinics.org/wp-content/uploads/2020/12/questioning.jpg" title="https://mendocinocoastclinics.org/wp-content/uploads/2020/12/questioning.jpg" alt="https://mendocinocoastclinics.org/wp-content/uploads/2020/12/questioning.jpg" class="image" width="400"/>
+
+</center>
+
+Whenever you get a commission, it is important to always ask the following questions:
+
+* **What do you need?** There is nothing worse than spending days working on something that is not what your customers wanted. A good tip is to provide an example chart or table with dummy data to test their requirements and give them a good idea of how you intend your output to look.
+
+* **Why do you need it?** Customers very often will not know the best way to perform analysis to get the results they are after. Are they requesting something that doesn't really do what they want it to?
+
+* **What will it be used for?** If the model will be used again in the future for slightly different purposes, it may be worth investing extra time in increasing its capabilities.
+
+* **Who will be using it?** This will help you to write the user guides and to think carefully about how outputs are presented.
+
+* **When do you need it by?** Check their diary (especially during the summer months!). People will often say they need things immediately when they don't. Discuss the work and get a clear understanding of why they've set themselves these deadlines. Always factor in time for QA and also time to share analysis with your line manager or team leader.
+
+* **Do we have something already on the shelf?** Why produce new analysis when it has already been done before?
+
+* **Are you going to need this for public use?** Always use published data to answer queries if you can. This data is already QA'd. If you do use public data, try to run things past the relevant team to double check, or at least cc them in. Be very careful about sharing pre-release data before the relevant SFR (Statistical First Release) and TSM (Teacher Supply Model) are published.
+
+If in doubt...
+
+ASK!
+
+It is better to ask someone a question that you might think of as being 'daft' or 'unnecessary' than to not ask it and then make a big mistake. The best person to ask it your line manager and team leader. If they aren't available, then ask your G6 or DD. DDs also like to know if data is being used publically.
+
+For some media queries (and some public queries) for teacher related issues, talk to Press Office.
+
+Think about policy input/views too, especially if you say something about a policy in your response/analysis.
+
+<!--chapter:end:05-questions.Rmd-->
+
+# Some tips
+
+## Keep it simple
+
+<center>
+
+<img src="https://i.pinimg.com/originals/e0/06/30/e006309d838967c706a76a9ea1c2e97f.jpg" title="https://i.pinimg.com/originals/e0/06/30/e006309d838967c706a76a9ea1c2e97f.jpg" alt="https://i.pinimg.com/originals/e0/06/30/e006309d838967c706a76a9ea1c2e97f.jpg" class="image" width="400"/>
+
+</center>
+
+It is important to keep things as simple as possible. Analysis is difficult enough without over complicating things!
+
+Chances are the majority of your customers are **not** analysts. Tailor your advice accordingly.
+
+Using fancy terms can often scare people and put them off, especially if they have to describe it themeselves to other people later on. Clever, simple language that it understandable to a layperson is often so much better than clever, complex language that it only understandable to someone with significant amounts of statistical knowledge.
+
+It isn't always worth going into huge complexity for a spurious level of accuracy. Try to keep the level of complexity appropriate for the problem at hand.
+
+## Use critical friends
+
+<center>
+
+<img src="http://media.dods.co.uk/sites/media.dods.co.uk/files/image/1512%20feedback.jpg" title="http://media.dods.co.uk/sites/media.dods.co.uk/files/image/1512%20feedback.jpg" alt="http://media.dods.co.uk/sites/media.dods.co.uk/files/image/1512%20feedback.jpg" class="image" width="400"/>
+
+</center>
+
+It is often useful to find friends or colleagues that you can run ideas past. Often, when we are working on a difficult problem, it is difficult to see the woods for the trees.
+
+A friend with expertise in a similar area may be able to help you take a step back and work out whether the analysis you are doing is correct for the task at hand. Some useful questions to ask are:
+
+* Is this a logical solution?
+
+* How would you do this?
+
+* Could I improve this?
+
+If they do suggest differences or provide criticism, don't take it personal. Taking other people's comments and ideas and addressing/managing them can turn a good piece of work into a brilliant one.
+
+## Make things unambiguous
+
+Sometimes people will misinterpret analysis, especially if a 'liberal interpretation' suits their ends. Where possible, try to make things crystal clear, especially in chats and when quoting results. Some things to think about...
+
+* Are teacher numbers in FTE/headcount?
+
+* Are the numbers relating to all teachers, or qualified teachers?
+
+* Do years refer to academic year or GCSE examination year? Don't use '2020', use '2019/20' or '2020/21' to avoid any ambiguity.
+
+* Make it clear whether values are estimates or actuals.
+
+* If there are caveats to results, communicate these caveats clearly.
+
+* Do figures differ to publish figures? If so, make this clear, and say **WHY**.
+
+## The future
+
+<center>
+
+<img src="https://blogs.ibo.org/files/2020/07/iStock-Telescope_illustration-1200x800.jpg" title="https://blogs.ibo.org/files/2020/07/iStock-Telescope_illustration-1200x800.jpg" alt="https://blogs.ibo.org/files/2020/07/iStock-Telescope_illustration-1200x800.jpg" class="image" width="400"/>
+
+</center>
+
+If you are asked to produce some analysis, it's likely that you (or someone else) will have to update it in the future. Therefore, everything that you do to make future updates of the analysis easier is a quick win. It may seem a pain at the time, but one day you will be grateful that you took that little bit of extra time because in the long run you will get that time back.
+
+Whenever you produce analysis you should annotate it and write notes explaining what you did as you go along. What does each step of the process do? Why did you do it? You did a conversion in your analysis - why? You used day from somewhere else - where did it come from?
+
+Annotating after you have completed your analysis is more time consuming and trickier to do. Something that is clear today won't be in the future.
+
+Give files sensible names to make different pieces of data etc. easier to find.
+
+It is extremely challenging being given some analysis and being asked to update it or change it slightly, especially when you have no idea of where different figures have come from, why weird conversions or adjustments were carried out, or how the process of the model works.
+
+You can waste hours try to work out how you carried out some previous analysis. If other people can't replicate or understand some of your old analysis, there is a reasonable chance that folks will just assume that you were wrong in the first place. Don't take that chance! Make sure all of your work has been sensibly managed to allow you to benefit from it in the future.
+
+<!--chapter:end:06-tips.Rmd-->
+
+# Quiz
+
+```{r, echo = FALSE}
+shinyAppDir(
+  system.file("C:\\Users\\tmorley\\OneDrive - Department for Education\\Documents\\Projects\\How to QA\\bookdown-how-to\\quiztemplate.R", package="shiny"),
+  options = list(width = "100%", height = 700)
+)
+```
+
+<!--chapter:end:07-quiz.Rmd-->
+

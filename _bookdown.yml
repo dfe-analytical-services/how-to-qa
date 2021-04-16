@@ -3,6 +3,7 @@ output_dir: docs
 delete_merged_file: true
 edit: https://github.com/tmorley1/bookdown-how-to/edit/master/%s
 view: https://github.com/tmorley1/bookdown-how-to/blob/master/%s
+runtime: shiny
 language:
   ui:
     chapter_name: "Chapter "

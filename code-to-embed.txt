@@ -1,0 +1,8 @@
+Some code to embed shiny app within markdown:
+
+```{r, echo = FALSE}
+shinyAppDir(
+  system.file("C:\\Users\\tmorley\\OneDrive - Department for Education\\Documents\\Projects\\How to QA\\bookdown-how-to\\quiztemplate.R", package="shiny"),
+  options = list(width = "100%", height = 700)
+)
+```
