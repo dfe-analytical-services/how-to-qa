@@ -5,8 +5,6 @@ library(shiny)
 library(tidyverse)
 library(shinythemes) #theme -> css
 
-source("C:\\Users\\tmorley\\OneDrive - Department for Education\\Documents\\Projects\\How to QA\\bookdown-how-to\\quiztemplate\\question.R")
-
 ui <- fluidPage(
   headerPanel("Quiz"),
   mainPanel(
@@ -69,7 +67,34 @@ ui <- fluidPage(
   actionButton('submit4', label = "Submit")),
   br(),
   textOutput('textquestion4'),
-  br())
+  br(),
+  textOutput('answerquestion4'),
+  br()),
+  
+  ## --- Question Five ---
+  conditionalPanel(
+    condition = ("input.submit4 != 0"),    
+    fluidRow(column(12,uiOutput("questionfiveanswers")
+    )
+    ),
+    conditionalPanel(
+      condition = ("input.submit5 != 1"),
+      actionButton('submit5', label = "Submit")),
+    br(),
+    textOutput('textquestion5'),
+    br(),
+    textOutput('answerquestion5'),
+    br()),
+  
+  conditionalPanel(
+    condition = ("input.submit5 != 0"),    
+    fluidRow(column(12,"Your score is",
+                    uiOutput("score1")
+    )
+    )),
+  
+  br()
+  
 ))
 
 server <- shinyServer( function(input, output, session) {
@@ -78,7 +103,7 @@ server <- shinyServer( function(input, output, session) {
   
   output$questiononeanswers <- renderUI({
     #Question and answers. Correct answer = q1b
-    radioButtons("qone", "A project is running to a tight deadline, and some analysis needs to be completed quickly. The analysis is fairly straightforward, but some QA needs to be done. Which of the following is the best course of action to take?", 
+    radioButtons("qone", "1. A project is running to a tight deadline, and some analysis needs to be completed quickly. The analysis is fairly straightforward, but some QA needs to be done. Which of the following is the best course of action to take?", 
                  c("Concentrate on the analysis, and complete the QA at the last minute. After all, the analysis is more important than the QA and it is unlikely that there will be any mistakes." = "q1a", 
                    "Perform relatively little QA because it is deemed unnecessary for the project." = "q1b", 
                    "Perform QA as you go along, but don't fill out a QA log as it is not required for such a small piece of work." = "q1c", 
@@ -103,7 +128,7 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Two ----------------------------------------------------------
   #Question and answers. Correct answer = q2c
   output$questiontwoanswers <- renderUI({
-    radioButtons("qtwo", "A quality assurer looks over a piece of work but is confused about the methods that have been used to arrive at the conclusions. However, the work has been checked thoroughly by the analyst responsible, and the results fit with the expected outcomes. What should the QAer do?", 
+    radioButtons("qtwo", "2. A quality assurer looks over a piece of work but is confused about the methods that have been used to arrive at the conclusions. However, the work has been checked thoroughly by the analyst responsible, and the results fit with the expected outcomes. What should the QAer do?", 
                  c("Tell the analyst that that model looks good and raises no concerns."="q2a", 
                    "Assume that the analysis is correct because the results are as expected."="q2b", 
                    "Ask the analyst for more information about the methods to try to understand the work that has been done."="q2c", 
@@ -129,7 +154,7 @@ server <- shinyServer( function(input, output, session) {
   
   #Question and answers. Correct answer = q3a
   output$questionthreeanswers <- renderUI({
-    radioButtons("qthree", "An analyst is collecting the data on the percentage of KS4 students eligible for free school meals and comparing these year on year. Which of the following statements suggests that the analyst may have made a mistake?",
+    radioButtons("qthree", "3. An analyst is collecting the data on the percentage of KS4 students eligible for free school meals and comparing these year on year. Which of the following statements suggests that the analyst may have made a mistake?",
                  c("In 2016, 400 KS4 pupils across 25,000 schools in the UK were eligible for free school meals."="q3a", 
                    "In 2018, 56% of pupils in London were eligible for free school meals, and 44% were not."="q3b", 
                    "There was a drop of 5% in the number of pupils eligible for free school meals in 2019 (an average of 220 per school) to 2020 (an average of 209 per school)."="q3c", 
@@ -155,7 +180,7 @@ server <- shinyServer( function(input, output, session) {
   
   #Question and answers. Correct answer = q4b
   output$questionfouranswers <- renderUI({
-    radioButtons("qfour", "A quality assuerer agrees to QA a piece of work, but warns the analyst that they do not have a lot of time to dedicate to the QA. What can the analyst do to help the QA'er do their job?", 
+    radioButtons("qfour", "4. A quality assurer agrees to QA a piece of work, but warns the analyst that they do not have a lot of time to dedicate to the QA. What can the analyst do to help the QAer do their job?", 
                  c("QA the work themselves rather than use a quality assurer"="q4a", 
                    "Make expectations clear to the QAers, with a clear list of what QA is necessary for this piece of work"="q4b", 
                    "Offer to assist them in QAing their work in return"="q4c", 
@@ -164,13 +189,60 @@ server <- shinyServer( function(input, output, session) {
   #Responses to answer
   observe({ 
     input$submit4 
-    isolate( textquestion4 <- if_else(input$qfour == "q4a", paste("Incorrect."),
-                              if_else(input$qfour == "q4b", paste("Correct!"),
-                              if_else(input$qfour == "q4c", paste("Incorrect."),
-                                      paste("Incorrect.")))))
+    isolate( textquestion4 <- if_else(input$qfour == "q4a", paste("Incorrect. Whilst it's useful to QA your own work to begin with, you should always aim to have a quality assurer to look over your work as well."),
+                              if_else(input$qfour == "q4b", paste("Correct! Clearly stating which bits of the work require the most thorough QA ensures that good QA is carried out that is appropriate to the project."),
+                              if_else(input$qfour == "q4c", paste("Incorrect. Whilst this would be nice, it's not going to help the QAer to QA the current project."),
+                                      paste("Incorrect. The inputs are just as important (if not more so!) as the outputs. Both should be given the same care and attention.")))))
     output$textquestion4 <- renderText({textquestion4})
   })
   #Explanation of correct answer
+  observe({ 
+    input$submit4 
+    isolate( answerquestion4 <- if_else(input$qfour == "q4b", paste(""), paste("You can help QAers by making expectations of QA clear from the outset, clearly stating which bits of the work require the most thorough QA.")))
+    output$answerquestion4 <- renderText({answerquestion4})
+  })
+  
+  ## --- Question Five ---------------------------------------------------------
+  
+  #Question and answers. Correct answer = q5a
+  output$questionfiveanswers <- renderUI({
+    radioButtons("qfive", "5. Which of the following is a good tip for coding?", 
+                 c("Keep track of where all the input data has come from"="q5a", 
+                   "Keep the code condensed, performing multiple steps in one if possible"="q5b", 
+                   "Thoroughly annotate the code after retrieving outputs and ensuring that it works"="q5c", 
+                   "Leave in bits of code that are not used any more for completeness"="q5d"), selected=character(0))
+  })
+  #Responses to answer
+  observe({ 
+    input$submit5 
+    isolate( textquestion5 <- if_else(input$qfive == "q5a", paste("Correct! It is important that it is clear for someone to see where the input data has come from, and, if possible, have all input data come from the same place."),
+                                      if_else(input$qfive == "q5b", paste("Incorrect. It is often better to keep every step separate, with annotations, to make the process clear to someone who may not be as familiar with your work."),
+                                              if_else(input$qfive == "q5c", paste("Incorrect. The code should be annotated whilst you write it, otherwise you may forget the significance of certain parts of the code!"),
+                                                      paste("Incorrect. Any unused parts of the code should be deleted.")))))
+    output$textquestion5 <- renderText({textquestion5})
+  })
+  #Explanation of correct answer
+  observe({ 
+    input$submit5 
+    isolate( answerquestion5 <- if_else(input$qfive == "q5b", paste(""), paste("It is important that it is clear for someone to see where the input data has come from, and, if possible, have all input data come from the same place. Therefore, keeping track of input data is of vital importance.")))
+    output$answerquestion5 <- renderText({answerquestion5})
+  })
+  
+  ## --- What's your score? ---------------------------------------------------
+  
+  #Correct answers are q1b, q2c, q3a, q4b, q5a
+  
+ output$score1 <- renderPrint({
+   score <- 0
+   score<- if_else(input$qone == "q1b", score + 1, score)
+   score<- if_else(input$qtwo == "q2c", score + 1, score)
+   score<- if_else(input$qthree == "q3a", score + 1, score)
+   score<- if_else(input$qfour == "q4b", score + 1, score)
+   score<- if_else(input$qfive == "q5a", score + 1, score)
+   paste(score)
+ })
+
+  
 })
 
 shinyApp(ui,server)
