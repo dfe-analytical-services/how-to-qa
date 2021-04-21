@@ -4,7 +4,7 @@
 
 <center>
 
-![](https://coboslawfirm.com/global_pictures/Defaults/NewsletterTemplates/Are-employees-owed-overtime-for-checking-and-answering-email-after-hours8927.jpg "https://coboslawfirm.com/global_pictures/Defaults/NewsletterTemplates/Are-employees-owed-overtime-for-checking-and-answering-email-after-hours8927.jpg")
+![](pictures/self_qa_pic.jpg "https://image.freepik.com/free-vector/woman-working-night-home-office-isolated-flat-vector-illustration-cartoon-female-student-learning-via-computer-designer-late-work_74855-8692.jpg")
 
 </center>
 
@@ -27,7 +27,7 @@ Remember, before you ask anyone else to QA your work, you should try to **prove 
 
 <center>
 
-![](https://532386f9a72d1dd857a8-41058da2837557ec5bfc3b00e1f6cf43.ssl.cf5.rackcdn.com/wp-content/uploads/2017/02/Depositphotos_83286172_s-2015-e1486331695260.jpg "https://532386f9a72d1dd857a8-41058da2837557ec5bfc3b00e1f6cf43.ssl.cf5.rackcdn.com/wp-content/uploads/2017/02/Depositphotos_83286172_s-2015-e1486331695260.jpg")
+![](pictures/outlier_pic.jpg "https://image.freepik.com/free-photo/red-pawn-surrounded-by-white-ones_23-2148642246.jpg")
 
 </center>
 
@@ -45,7 +45,7 @@ Being able to demonstrate that you haven't just taken analysis at face value mak
 
 <center>
 
-![](https://statsland.files.wordpress.com/2012/09/outlier1.jpg "https://statsland.files.wordpress.com/2012/09/outlier1.jpg")
+![](pictures\error_pic.jpg "https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg")
 
 </center>
 
@@ -57,6 +57,6 @@ When looking for errors, keep calm and focus on each step of a complex process o
 
 <center>
 
-![](https://149351115.v2.pressablecdn.com/wp-content/uploads/2019/10/MyMostEmbMistakes-1200x630.png "https://149351115.v2.pressablecdn.com/wp-content/uploads/2019/10/MyMostEmbMistakes-1200x630.png")
+![](pictures\work_pic.jpg "https://image.freepik.com/free-vector/serious-hardworking-employee-standing-middle-side-facing-backward-holding-magnifying-glass-illustration-marketing-strategy-with-graphs-symbols-leadership_1150-40162.jpg")
 
 </center>
