@@ -4,6 +4,8 @@
 library(shiny)
 library(tidyverse)
 library(shinythemes) #theme -> css
+library(shinydashboard)
+
 
 ui <- fluidPage(
   headerPanel("Quiz"),
@@ -231,16 +233,34 @@ server <- shinyServer( function(input, output, session) {
   ## --- What's your score? ---------------------------------------------------
   
   #Correct answers are q1b, q2c, q3a, q4b, q5a
+  score <- reactiveVal(0)
   
- output$score1 <- renderPrint({
-   score <- 0
-   score<- if_else(input$qone == "q1b", score + 1, score)
-   score<- if_else(input$qtwo == "q2c", score + 1, score)
-   score<- if_else(input$qthree == "q3a", score + 1, score)
-   score<- if_else(input$qfour == "q4b", score + 1, score)
-   score<- if_else(input$qfive == "q5a", score + 1, score)
-   paste(score)
- })
+  observeEvent(input$qone,
+  {newscore<- if(input$qone=="q1b"){score() +1} else{score()}
+  score(newscore)
+})
+
+  observeEvent(input$qtwo,
+               {newscore<- if(input$qtwo=="q2c"){score() +1} else{score()}
+               score(newscore)
+               })
+  
+  observeEvent(input$qthree,
+               {newscore<- if(input$qthree=="q3a"){score() +1} else{score()}
+               score(newscore)
+               })
+  
+  observeEvent(input$qfour,
+               {newscore<- if(input$qfour=="q4b"){score() +1} else{score()}
+               score(newscore)
+               })
+  
+  observeEvent(input$qfive,
+               {newscore<- if(input$qfive=="q5a"){score() +1} else{score()}
+               score(newscore)
+               })
+
+output$score1 <- renderValueBox(valueBox(paste(score()),subtitle="Score"))
 
   
 })
