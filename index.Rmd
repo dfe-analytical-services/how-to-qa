@@ -1,6 +1,8 @@
 --- 
 title: "How to quality assure"
-author: "Thomas Morley"
+author:
+ - Thomas Morley
+ - Thanks to Melissa Cook, James McGlade and Nicky Brassington for their help with creating this documentation
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
@@ -9,15 +11,17 @@ site: bookdown::bookdown_site
 
 Whenever we produce a new model or a new piece of analysis, it is important to quality assure (QA) our work. This allows us to check that our analysis is credible and provides assurance to senior leaders that modelling risks are being managed appropriately.
 
+The principles of good QA are outlined in the DfE QA framework (which can be found [here](https://educationgovuk.sharepoint.com/:w:/r/sites/sarpi/g/_layouts/15/Doc.aspx?sourcedoc=%7BE1DED116-2A85-4754-993F-A6E458DA3A59%7D&file=Quality%20Assurance%20of%20Models%20at%20DfE_April_2020.docx&action=default&mobileredirect=true)). The QA framework sets out a list of rules that one must abide by when QAing a piece of work, yet provides very few examples.
+
 <center>
 
 ![](pictures/intro_pic.jpg "https://img.freepik.com/free-vector/review-rating-testimonials-online-laptop-computer-workplace-customer-evaluate-testimony-feedback-experience-concept-desk-top-view-flat-cartoon_101884-911.jpg?size=626&ext=jpg")
 
 </center>
 
-However, it is important to ensure not just that our work is QA'd, but that it is QA'd **well**. The aim of this document is to provide guidance on how to ensure that the QA being carried out is being done properly in order to provide an accurate picture of the reliability of analysis.
+The purpose of this documentation is to provide extra examples that support the QA framework. It is important to ensure not just that our work is QA'd, but that it is QA'd **well**. The aim of this documentation is to provide guidance on how to ensure that the QA being carried out is being done properly in order to provide an accurate picture of the reliability of analysis. It is aimed at both quality assurers (teaching a QAer how to properly QA a piece of work) and at original code/model authors (teaching an analyst best practice that will allow a piece of work to be QA'd easily).
 
-Before discussing this, however, it is useful to think about what it means for QA to be 'bad'.
+Before discussing 'good' QA, however, it is useful to think about what it means for QA to be 'bad'.
 
 ## What does 'bad' QA look like?
 
