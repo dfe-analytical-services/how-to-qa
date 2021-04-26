@@ -5,30 +5,42 @@ library(shiny)
 library(tidyverse)
 library(shinythemes) #theme -> css
 library(shinydashboard)
+library(shinyWidgets)
 
 
-ui <- fluidPage(
-  headerPanel("Quiz"),
+ui <- navbarPage("QA Quiz",
+  theme = shinytheme("spacelab"),
   mainPanel(
-  
-    ## --- Question One ---
+    ## --- Intro --------------------------------------------------------------
+  conditionalPanel(
+    condition=("input.begin != 1"), #panel is hidden once "Begin quiz" is hit
+    fluidRow(column(12,"Time to test your QA knowledge! This quiz contains 5 multiple choice questions. Click below to begin.")),
+    br(),
+    actionButton('begin', label = "Begin Quiz!")),
     
+    ## --- Question One -------------------------------------------------------
+  conditionalPanel(
+    condition = ("input.next1 != 1 && input.begin != 0"), #panel is shown once "Begin QuiZ" is hit and hidden once "Next Question" is hit
       fluidRow(column(12,uiOutput("questiononeanswers")
       )
   ),
   conditionalPanel(
-    condition = ("input.submit1 != 1"),
+    condition = ("input.submit1 != 1"), #Submit button is hidden once "Submit" is hit
     actionButton('submit1', label = "Submit")),
   br(),
-  textOutput('textquestion1'),
+  textOutput('textquestion1'), #Displays "Correct" or "Incorrect" text
   br(),
-  textOutput('answerquestion1'),
+  textOutput('answerquestion1'), #Provides more feedback if question is incorrect
   br(),
+  conditionalPanel(
+    condition = ("input.submit1 != 0"), #Next Question button only displayed after answer submitted
+    actionButton('next1', label = "Next Question"))),
   
-  ## --- Question Two ---
+  ## --- Question Two ---------------------------------------------------------
   
   conditionalPanel(
-  condition = ("input.submit1 != 0"),  
+    #Only show panel after Next has been hit for Q1, before Next has been hit for Q2
+  condition = ("input.next1 != 0 && input.next2 != 1"),  
   fluidRow(column(12,uiOutput("questiontwoanswers")
   )
   ),
@@ -39,12 +51,15 @@ ui <- fluidPage(
   textOutput('textquestion2'),
   br(),
   textOutput('answerquestion2'),
-  br()),
+  br(),
+  conditionalPanel(
+    condition = ("input.submit2 != 0"),
+    actionButton('next2', label = "Next Question"))),
   
-  ## --- Question Three ---
+  ## --- Question Three -------------------------------------------------------
   
   conditionalPanel(
-    condition = ("input.submit2 != 0"),  
+    condition = ("input.next2 != 0 && input.next3 != 1"),  
   fluidRow(column(12,uiOutput("questionthreeanswers")
   )
   ),
@@ -55,12 +70,15 @@ ui <- fluidPage(
   textOutput('textquestion3'),
   br(),
   textOutput('answerquestion3'),
-  br()),
+  br(),
+  conditionalPanel(
+    condition = ("input.submit3 != 0"),
+    actionButton('next3', label = "Next Question"))),
 
-  ## --- Question Four ---
+  ## --- Question Four --------------------------------------------------------
   
   conditionalPanel(
-    condition = ("input.submit3 != 0"),    
+    condition = ("input.next3 != 0 && input.next4 != 1"),    
   fluidRow(column(12,uiOutput("questionfouranswers")
   )
   ),
@@ -71,11 +89,14 @@ ui <- fluidPage(
   textOutput('textquestion4'),
   br(),
   textOutput('answerquestion4'),
-  br()),
-  
-  ## --- Question Five ---
+  br(),
   conditionalPanel(
-    condition = ("input.submit4 != 0"),    
+    condition = ("input.submit4 != 0"),
+    actionButton('next4', label = "Next Question"))),
+  
+  ## --- Question Five --------------------------------------------------------
+  conditionalPanel(
+    condition = ("input.next4 != 0 && input.next5 != 1"),    
     fluidRow(column(12,uiOutput("questionfiveanswers")
     )
     ),
@@ -86,14 +107,29 @@ ui <- fluidPage(
     textOutput('textquestion5'),
     br(),
     textOutput('answerquestion5'),
-    br()),
+    br(),
+    conditionalPanel(
+      condition = ("input.submit5 != 0"),
+      actionButton('next5', label = "Get results"))),
   
   conditionalPanel(
-    condition = ("input.submit5 != 0"),    
-    fluidRow(column(12,"Your score is",
-                    uiOutput("score1")
+    condition = ("input.next5 != 0"),    
+    fluidRow(column(4,"Your score is",
+                    
+             conditionalPanel(
+               condition = ("output.scorecolour != 'FALSE'"),
+               fluidRow(column(4,
+                               uiOutput("score1",style="Background-color: #d4f7d2;"))),
+               fluidRow(column(12,"Nice work, well done!"))),
+             
+             conditionalPanel(
+               condition = ("output.scorecolour != 'TRUE'"),
+               fluidRow(column(4,
+                               uiOutput("score2",style="Background-color: #f7e1e1;"))),
+               fluidRow(column(12,"Revisit some of the earlier topics and try the quiz again."))),
     )
-    )),
+    ),
+  ),
   
   br()
   
@@ -105,11 +141,17 @@ server <- shinyServer( function(input, output, session) {
   
   output$questiononeanswers <- renderUI({
     #Question and answers. Correct answer = q1b
-    radioButtons("qone", "1. A project is running to a tight deadline, and some analysis needs to be completed quickly. The analysis is fairly straightforward, but some QA needs to be done. Which of the following is the best course of action to take?", 
-                 c("Concentrate on the analysis, and complete the QA at the last minute. After all, the analysis is more important than the QA and it is unlikely that there will be any mistakes." = "q1a", 
+    radioGroupButtons(inputId = "qone",
+                      label = "1. A project is running to a tight deadline, and some analysis needs to be completed quickly. The analysis is fairly straightforward, but some QA needs to be done. Which of the following is the best course of action to take?", 
+                 choices = c("Concentrate on the analysis, and complete the QA at the last minute. After all, the analysis is more important than the QA and it is unlikely that there will be any mistakes." = "q1a", 
                    "Perform relatively little QA because it is deemed unnecessary for the project." = "q1b", 
                    "Perform QA as you go along, but don't fill out a QA log as it is not required for such a small piece of work." = "q1c", 
-                   "Perform all checks listed on the QA log, and put in extra time to ensure that this has been done." = "q1d"), selected=character(0))
+                   "Perform all checks listed on the QA log, and put in extra time to ensure that this has been done." = "q1d"),
+                 selected=character(0), #No initial selection
+                 status = "primary", #This is the style/colour of the radioGroupButtons
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick is option selected
+                                  no = icon("remove", lib = "glyphicon")), #Cross if option not selected
+                 direction = "vertical")#Option displayed vertically
   })
   #Responses to answers
   observe({ 
@@ -130,11 +172,15 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Two ----------------------------------------------------------
   #Question and answers. Correct answer = q2c
   output$questiontwoanswers <- renderUI({
-    radioButtons("qtwo", "2. A quality assurer looks over a piece of work but is confused about the methods that have been used to arrive at the conclusions. However, the work has been checked thoroughly by the analyst responsible, and the results fit with the expected outcomes. What should the QAer do?", 
+    radioGroupButtons("qtwo", "2. A quality assurer looks over a piece of work but is confused about the methods that have been used to arrive at the conclusions. However, the work has been checked thoroughly by the analyst responsible, and the results fit with the expected outcomes. What should the QAer do?", 
                  c("Tell the analyst that that model looks good and raises no concerns."="q2a", 
                    "Assume that the analysis is correct because the results are as expected."="q2b", 
                    "Ask the analyst for more information about the methods to try to understand the work that has been done."="q2c", 
-                   "Feedback that the model does not meet QA standards because the method is too complicated to understand."="q2d"), selected=character(0))
+                   "Feedback that the model does not meet QA standards because the method is too complicated to understand."="q2d"),
+                 selected=character(0),
+                 status = "primary",
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
+                 direction = "vertical")
   })
   #Responses to answers
   observe({ 
@@ -156,11 +202,15 @@ server <- shinyServer( function(input, output, session) {
   
   #Question and answers. Correct answer = q3a
   output$questionthreeanswers <- renderUI({
-    radioButtons("qthree", "3. An analyst is collecting the data on the percentage of KS4 students eligible for free school meals and comparing these year on year. Which of the following statements suggests that the analyst may have made a mistake?",
+    radioGroupButtons("qthree", "3. An analyst is collecting the data on the percentage of KS4 students eligible for free school meals and comparing these year on year. Which of the following statements suggests that the analyst may have made a mistake?",
                  c("In 2016, 400 KS4 pupils across 25,000 schools in the UK were eligible for free school meals."="q3a", 
                    "In 2018, 56% of pupils in London were eligible for free school meals, and 44% were not."="q3b", 
                    "There was a drop of 5% in the number of pupils eligible for free school meals in 2019 (an average of 220 per school) to 2020 (an average of 209 per school)."="q3c", 
-                   "There is a bigger percentage of KS4 pupils eligible for free school meals in 2019 (62%) than in 2020 (59%)."="q3d"), selected=character(0))
+                   "There is a bigger percentage of KS4 pupils eligible for free school meals in 2019 (62%) than in 2020 (59%)."="q3d"), 
+                 selected=character(0),
+                 status = "primary",
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
+                 direction = "vertical")
   })
   #Responses to answer
   observe({ 
@@ -182,11 +232,15 @@ server <- shinyServer( function(input, output, session) {
   
   #Question and answers. Correct answer = q4b
   output$questionfouranswers <- renderUI({
-    radioButtons("qfour", "4. A quality assurer agrees to QA a piece of work, but warns the analyst that they do not have a lot of time to dedicate to the QA. What can the analyst do to help the QAer do their job?", 
+    radioGroupButtons("qfour", "4. A quality assurer agrees to QA a piece of work, but warns the analyst that they do not have a lot of time to dedicate to the QA. What can the analyst do to help the QAer do their job?", 
                  c("QA the work themselves rather than use a quality assurer"="q4a", 
                    "Make expectations clear to the QAers, with a clear list of what QA is necessary for this piece of work"="q4b", 
                    "Offer to assist them in QAing their work in return"="q4c", 
-                   "Tell the quality assurer to focus on QAing the outputs rather than the inputs"="q4d"), selected=character(0))
+                   "Tell the quality assurer to focus on QAing the outputs rather than the inputs"="q4d"), 
+                 selected=character(0),
+                 status = "primary",
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
+                 direction = "vertical")
   })
   #Responses to answer
   observe({ 
@@ -208,11 +262,15 @@ server <- shinyServer( function(input, output, session) {
   
   #Question and answers. Correct answer = q5a
   output$questionfiveanswers <- renderUI({
-    radioButtons("qfive", "5. Which of the following is a good tip for coding?", 
+    radioGroupButtons("qfive", "5. Which of the following is a good tip for coding?", 
                  c("Keep track of where all the input data has come from"="q5a", 
                    "Keep the code condensed, performing multiple steps in one if possible"="q5b", 
                    "Thoroughly annotate the code after retrieving outputs and ensuring that it works"="q5c", 
-                   "Leave in bits of code that are not used any more for completeness"="q5d"), selected=character(0))
+                   "Leave in bits of code that are not used any more for completeness"="q5d"), 
+                 selected=character(0),
+                 status = "primary",
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
+                 direction = "vertical")
   })
   #Responses to answer
   observe({ 
@@ -235,34 +293,48 @@ server <- shinyServer( function(input, output, session) {
   #Correct answers are q1b, q2c, q3a, q4b, q5a
   score <- reactiveVal(0)
   
-  observeEvent(input$qone,
+  observeEvent(input$submit1,
   {newscore<- if(input$qone=="q1b"){score() +1} else{score()}
   score(newscore)
 })
 
-  observeEvent(input$qtwo,
+  observeEvent(input$aubmit2,
                {newscore<- if(input$qtwo=="q2c"){score() +1} else{score()}
                score(newscore)
                })
   
-  observeEvent(input$qthree,
+  observeEvent(input$submit3,
                {newscore<- if(input$qthree=="q3a"){score() +1} else{score()}
                score(newscore)
                })
   
-  observeEvent(input$qfour,
+  observeEvent(input$submit4,
                {newscore<- if(input$qfour=="q4b"){score() +1} else{score()}
                score(newscore)
                })
   
-  observeEvent(input$qfive,
+  observeEvent(input$submit5,
                {newscore<- if(input$qfive=="q5a"){score() +1} else{score()}
                score(newscore)
                })
 
-output$score1 <- renderValueBox(valueBox(paste(score()),subtitle="Score"))
+output$score1 <- renderValueBox({valueBox(paste(score()),subtitle="Score")})
 
-  
+output$score2 <- renderValueBox({valueBox(paste(score()),subtitle="Score")})
+#For some reason R shiny doesn't like outputting the score twice, so defined
+#two different scores for different colour output
+
+output$scorecolour <- renderText({
+  if(score() >= 4) {
+    "TRUE"
+    }
+  else {
+    "FALSE"
+  }
+})
+outputOptions(output, "scorecolour", suspendWhenHidden=FALSE)
+
+
 })
 
 shinyApp(ui,server)
