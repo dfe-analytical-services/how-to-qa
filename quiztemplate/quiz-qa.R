@@ -7,6 +7,7 @@ library(shinythemes) #theme -> css
 library(shinydashboard)
 library(shinyWidgets)
 
+## --- UI --- 
 
 ui <- navbarPage("QA Quiz",
   theme = shinytheme("spacelab"),
@@ -45,176 +46,185 @@ ui <- navbarPage("QA Quiz",
   )
   ),
   conditionalPanel(
-    condition = ("input.submit2 != 1"),
+    condition = ("input.submit2 != 1"),#Submit button is hidden once "Submit" is hit
   actionButton('submit2', label = "Submit")),
   br(),
-  textOutput('textquestion2'),
+  textOutput('textquestion2'),#Displays "Correct" or "Incorrect" text
   br(),
-  textOutput('answerquestion2'),
+  textOutput('answerquestion2'),#Provides more feedback if question is incorrect
   br(),
   conditionalPanel(
-    condition = ("input.submit2 != 0"),
+    condition = ("input.submit2 != 0"),#Next Question button only displayed after answer submitted
     actionButton('next2', label = "Next Question"))),
   
   ## --- Question Three -------------------------------------------------------
   
   conditionalPanel(
+    #Only show panel after Next has been hit for Q2, before Next has been hit for Q3
     condition = ("input.next2 != 0 && input.next3 != 1"),  
   fluidRow(column(12,uiOutput("questionthreeanswers")
   )
   ),
   conditionalPanel(
-    condition = ("input.submit3 != 1"),
+    condition = ("input.submit3 != 1"),#Submit button is hidden once "Submit" is hit
   actionButton('submit3', label = "Submit")),
   br(),
-  textOutput('textquestion3'),
+  textOutput('textquestion3'),#Displays "Correct" or "Incorrect" text
   br(),
-  textOutput('answerquestion3'),
+  textOutput('answerquestion3'),#Provides more feedback if question is incorrect
   br(),
   conditionalPanel(
-    condition = ("input.submit3 != 0"),
+    condition = ("input.submit3 != 0"),#Next Question button only displayed after answer submitted
     actionButton('next3', label = "Next Question"))),
 
   ## --- Question Four --------------------------------------------------------
   
   conditionalPanel(
+    #Only show panel after Next has been hit for Q3, before Next has been hit for Q4
     condition = ("input.next3 != 0 && input.next4 != 1"),    
   fluidRow(column(12,uiOutput("questionfouranswers")
   )
   ),
   conditionalPanel(
-    condition = ("input.submit4 != 1"),
+    condition = ("input.submit4 != 1"),#Submit button is hidden once "Submit" is hit
   actionButton('submit4', label = "Submit")),
   br(),
-  textOutput('textquestion4'),
+  textOutput('textquestion4'),#Displays "Correct" or "Incorrect" text
   br(),
-  textOutput('answerquestion4'),
+  textOutput('answerquestion4'),#Provides more feedback if question is incorrect
   br(),
   conditionalPanel(
-    condition = ("input.submit4 != 0"),
+    condition = ("input.submit4 != 0"),#Next Question button only displayed after answer submitted
     actionButton('next4', label = "Next Question"))),
   
   ## --- Question Five --------------------------------------------------------
   conditionalPanel(
+    #Only show panel after Next has been hit for Q4, before Next has been hit for Q5
     condition = ("input.next4 != 0 && input.next5 != 1"),    
     fluidRow(column(12,uiOutput("questionfiveanswers")
     )
     ),
     conditionalPanel(
-      condition = ("input.submit5 != 1"),
+      condition = ("input.submit5 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit5', label = "Submit")),
     br(),
-    textOutput('textquestion5'),
+    textOutput('textquestion5'),#Displays "Correct" or "Incorrect" text
     br(),
-    textOutput('answerquestion5'),
+    textOutput('answerquestion5'),#Provides more feedback if question is incorrect
     br(),
     conditionalPanel(
-      condition = ("input.submit5 != 0"),
+      condition = ("input.submit5 != 0"),#Next Question button only displayed after answer submitted
       actionButton('next5', label = "Next question"))),
   
   ## --- Question Six ---------------------------------------------------------
   conditionalPanel(
+    #Only show panel after Next has been hit for Q5, before Next has been hit for Q6
     condition = ("input.next5 != 0 && input.next6 != 1"),    
     fluidRow(column(12,uiOutput("questionsixanswers")
     )
     ),
     conditionalPanel(
-      condition = ("input.submit6 != 1"),
+      condition = ("input.submit6 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit6', label = "Submit")),
     br(),
-    textOutput('textquestion6'),
+    textOutput('textquestion6'),#Displays "Correct" or "Incorrect" text
     br(),
-    textOutput('answerquestion6'),
+    textOutput('answerquestion6'),#Provides more feedback if question is incorrect
     br(),
     conditionalPanel(
-      condition = ("input.submit6 != 0"),
+      condition = ("input.submit6 != 0"),#Next Question button only displayed after answer submitted
       actionButton('next6', label = "Next question"))),
   
   ## --- Question Seven --------------------------------------------------------
   conditionalPanel(
+    #Only show panel after Next has been hit for Q6, before Next has been hit for Q7
     condition = ("input.next6 != 0 && input.next7 != 1"),    
     fluidRow(column(12,uiOutput("questionsevenanswers")
     )
     ),
     conditionalPanel(
-      condition = ("input.submit7 != 1"),
+      condition = ("input.submit7 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit7', label = "Submit")),
     br(),
-    textOutput('textquestion7'),
+    textOutput('textquestion7'),#Displays "Correct" or "Incorrect" text
     br(),
-    textOutput('answerquestion7'),
+    textOutput('answerquestion7'),#Provides more feedback if question is incorrect
     br(),
     conditionalPanel(
-      condition = ("input.submit7 != 0"),
+      condition = ("input.submit7 != 0"),#Next Question button only displayed after answer submitted
       actionButton('next7', label = "Next question"))),
   
   ## --- Question Eight --------------------------------------------------------
   conditionalPanel(
+    #Only show panel after Next has been hit for Q7, before Next has been hit for Q8
     condition = ("input.next7 != 0 && input.next8 != 1"),    
     fluidRow(column(12,uiOutput("questioneightanswers")
     )
     ),
     conditionalPanel(
-      condition = ("input.submit8 != 1"),
+      condition = ("input.submit8 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit8', label = "Submit")),
     br(),
-    textOutput('textquestion8'),
+    textOutput('textquestion8'),#Displays "Correct" or "Incorrect" text
     br(),
-    textOutput('answerquestion8'),
+    textOutput('answerquestion8'),#Provides more feedback if question is incorrect
     br(),
     conditionalPanel(
-      condition = ("input.submit8 != 0"),
+      condition = ("input.submit8 != 0"),#Next Question button only displayed after answer submitted
       actionButton('next8', label = "Next question"))),
   
   ## --- Question Nine ---------------------------------------------------------
   conditionalPanel(
+    #Only show panel after Next has been hit for Q8, before Next has been hit for Q9
     condition = ("input.next8 != 0 && input.next9 != 1"),    
     fluidRow(column(12,uiOutput("questionnineanswers")
     )
     ),
     conditionalPanel(
-      condition = ("input.submit9 != 1"),
+      condition = ("input.submit9 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit9', label = "Submit")),
     br(),
-    textOutput('textquestion9'),
+    textOutput('textquestion9'),#Displays "Correct" or "Incorrect" text
     br(),
-    textOutput('answerquestion9'),
+    textOutput('answerquestion9'),#Provides more feedback if question is incorrect
     br(),
     conditionalPanel(
-      condition = ("input.submit9 != 0"),
+      condition = ("input.submit9 != 0"),#Next Question button only displayed after answer submitted
       actionButton('next9', label = "Next question"))),
   
   ## --- Question Ten ----------------------------------------------------------
   conditionalPanel(
+    #Only show panel after Next has been hit for Q9, before Next has been hit for Q10
     condition = ("input.next9 != 0 && input.next10 != 1"),    
     fluidRow(column(12,uiOutput("questiontenanswers")
     )
     ),
     conditionalPanel(
-      condition = ("input.submit10 != 1"),
+      condition = ("input.submit10 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit10', label = "Submit")),
     br(),
-    textOutput('textquestion10'),
+    textOutput('textquestion10'),#Displays "Correct" or "Incorrect" text
     br(),
-    textOutput('answerquestion10'),
+    textOutput('answerquestion10'),#Provides more feedback if question is incorrect
     br(),
     conditionalPanel(
-      condition = ("input.submit10 != 0"),
+      condition = ("input.submit10 != 0"),#Get score button only displayed after answer submitted
       actionButton('next10', label = "Get score"))),
   
   ## --- Score ----------------------------------------------------------------
   
   conditionalPanel(
+    #Only show panel after Get Score button has been hit
     condition = ("input.next10 != 0"),    
     fluidRow(column(4,"Your score is",
                     
-             conditionalPanel(
+             conditionalPanel( #if score is high, display in green box and give 'well done' message
                condition = ("output.scorecolour != 'FALSE'"),
                fluidRow(column(6,
                                uiOutput("score1",style="Background-color: #d4f7d2;"))),
                fluidRow(column(12,"Nice work, well done!"))),
              
-             conditionalPanel(
+             conditionalPanel( #if score is low, display in red box and give 'try harder' message
                condition = ("output.scorecolour != 'TRUE'"),
                fluidRow(column(6,
                                uiOutput("score2",style="Background-color: #f7e1e1;"))),
@@ -226,6 +236,9 @@ ui <- navbarPage("QA Quiz",
   br()
   
 ))
+
+
+## --- SERVER -----------------------------------------------------------------
 
 server <- shinyServer( function(input, output, session) {
   
@@ -241,9 +254,9 @@ server <- shinyServer( function(input, output, session) {
                    "Perform all checks listed on the QA log, and put in extra time to ensure that this has been done." = "q1d"),
                  selected=character(0), #No initial selection
                  status = "primary", #This is the style/colour of the radioGroupButtons
-                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick is option selected
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
                                   no = icon("remove", lib = "glyphicon")), #Cross if option not selected
-                 direction = "vertical")#Option displayed vertically
+                 direction = "vertical")#Options displayed vertically
   })
   #Responses to answers
   observe({ 
@@ -269,10 +282,11 @@ server <- shinyServer( function(input, output, session) {
                    "Assume that the analysis is correct because the results are as expected."="q2b", 
                    "Ask the analyst for more information about the methods to try to understand the work that has been done."="q2c", 
                    "Feedback that the model does not meet QA standards because the method is too complicated to understand."="q2d"),
-                 selected=character(0),
-                 status = "primary",
-                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
-                 direction = "vertical")
+                 selected=character(0),#No initial selection
+                 status = "primary",#This is the style/colour of the radioGroupButtons
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"),#Tick if option selected
+                                  no = icon("remove", lib = "glyphicon")),#Cross if option not selected
+                 direction = "vertical")#Options displayed vertically
   })
   #Responses to answers
   observe({ 
@@ -299,10 +313,11 @@ server <- shinyServer( function(input, output, session) {
                    "In 2018, 56% of pupils in London were eligible for free school meals, and 44% were not."="q3b", 
                    "There was a drop of 5% in the number of pupils eligible for free school meals in 2019 (an average of 220 per school) to 2020 (an average of 209 per school)."="q3c", 
                    "There is a bigger percentage of KS4 pupils eligible for free school meals in 2019 (62%) than in 2020 (59%)."="q3d"), 
-                 selected=character(0),
-                 status = "primary",
-                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
-                 direction = "vertical")
+                 selected=character(0),#No initial selection
+                 status = "primary",#This is the style/colour of the radioGroupButtons
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"),#Tick if option selected
+                                  no = icon("remove", lib = "glyphicon")),#Cross if option not selected
+                 direction = "vertical")#Options displayed vertically
   })
   #Responses to answer
   observe({ 
@@ -329,10 +344,11 @@ server <- shinyServer( function(input, output, session) {
                    "Make expectations clear to the QAers, with a clear list of what QA is necessary for this piece of work"="q4b", 
                    "Offer to assist them in QAing their work in return"="q4c", 
                    "Tell the quality assurer to focus on QAing the outputs rather than the inputs"="q4d"), 
-                 selected=character(0),
-                 status = "primary",
-                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
-                 direction = "vertical")
+                 selected=character(0),#No initial selection
+                 status = "primary",#This is the style/colour of the radioGroupButtons
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
+                                  no = icon("remove", lib = "glyphicon")),#Cross if option not selected
+                 direction = "vertical")#Options displayed vertically
   })
   #Responses to answer
   observe({ 
@@ -359,10 +375,11 @@ server <- shinyServer( function(input, output, session) {
                    "Keep the code condensed, performing multiple steps in one if possible"="q5b", 
                    "Thoroughly annotate the code after retrieving outputs and ensuring that it works"="q5c", 
                    "Leave in bits of code that are not used any more for completeness"="q5d"), 
-                 selected=character(0),
-                 status = "primary",
-                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
-                 direction = "vertical")
+                 selected=character(0),#No initial selection
+                 status = "primary",#This is the style/colour of the radioGroupButtons
+                 checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
+                                  no = icon("remove", lib = "glyphicon")),#Cross if option not selected
+                 direction = "vertical")#Options displayed vertically
   })
   #Responses to answer
   observe({ 
@@ -389,10 +406,11 @@ server <- shinyServer( function(input, output, session) {
                         "Incorrect"="q6b", 
                         "Incorrect"="q6c", 
                         "Incorrect"="q6d"), 
-                      selected=character(0),
-                      status = "primary",
-                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
-                      direction = "vertical")
+                      selected=character(0),#No initial selection
+                      status = "primary",#This is the style/colour of the radioGroupButtons
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
+                                       no= icon("remove", lib = "glyphicon")),#Cross if option not selected
+                      direction = "vertical")#Options displayed vertically
   })
   #Responses to answer
   observe({ 
@@ -419,10 +437,11 @@ server <- shinyServer( function(input, output, session) {
                         "Incorrect"="q7b", 
                         "Incorrect"="q7c", 
                         "Incorrect"="q7d"), 
-                      selected=character(0),
-                      status = "primary",
-                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
-                      direction = "vertical")
+                      selected=character(0),#No initial selection
+                      status = "primary",#This is the style/colour of the radioGroupButtons
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
+                                       no = icon("remove", lib = "glyphicon")),#Cross if option not selected
+                      direction = "vertical")#Options displayed vertically
   })
   #Responses to answer
   observe({ 
@@ -449,10 +468,11 @@ server <- shinyServer( function(input, output, session) {
                         "Incorrect"="q8b", 
                         "Incorrect"="q8c", 
                         "Incorrect"="q8d"), 
-                      selected=character(0),
-                      status = "primary",
-                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
-                      direction = "vertical")
+                      selected=character(0),#No initial selection
+                      status = "primary",#This is the style/colour of the radioGroupButtons
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
+                                       no = icon("remove", lib = "glyphicon")),#Cross if option not selected
+                      direction = "vertical")#Options displayed vertically
   })
   #Responses to answer
   observe({ 
@@ -479,10 +499,11 @@ server <- shinyServer( function(input, output, session) {
                         "Incorrect"="q9b", 
                         "Incorrect"="q9c", 
                         "Incorrect"="q9d"), 
-                      selected=character(0),
-                      status = "primary",
-                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
-                      direction = "vertical")
+                      selected=character(0),#No initial selection
+                      status = "primary",#This is the style/colour of the radioGroupButtons
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
+                                       no = icon("remove", lib = "glyphicon")),#Cross if option not selected
+                      direction = "vertical")#Options displayed vertically
   })
   #Responses to answer
   observe({ 
@@ -509,10 +530,11 @@ server <- shinyServer( function(input, output, session) {
                         "Incorrect"="q10b", 
                         "Incorrect"="q10c", 
                         "Incorrect"="q10d"), 
-                      selected=character(0),
-                      status = "primary",
-                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
-                      direction = "vertical")
+                      selected=character(0),#No initial selection
+                      status = "primary",#This is the style/colour of the radioGroupButtons
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
+                                       no = icon("remove", lib = "glyphicon")),#Cross if option not selected
+                      direction = "vertical")#Options displayed vertically
   })
   #Responses to answer
   observe({ 
@@ -533,75 +555,75 @@ server <- shinyServer( function(input, output, session) {
   ## --- What's your score? ---------------------------------------------------
   
   #Correct answers are q1b, q2c, q3a, q4b, q5a, q6a, q7a, q8a, q9a, q10a
-  score <- reactiveVal(0)
+  score <- reactiveVal(0)#score initially set to zero
   
   observeEvent(input$submit1,
   {req(input$qone)
-    newscore<- if(input$qone=="q1b"){score() +1} else{score()}
+    newscore<- if(input$qone=="q1b"){score() +1} else{score()}#score increases by 1 if answer correct
   score(newscore)
 })
 
   observeEvent(input$submit2,
                {req(input$qtwo)
-                 newscore<- if(input$qtwo=="q2c"){score() +1} else{score()}
+                 newscore<- if(input$qtwo=="q2c"){score() +1} else{score()}#score increases by 1 if answer correct
                score(newscore)
                })
   
   observeEvent(input$submit3,
                {req(input$qthree)
-                 newscore<- if(input$qthree=="q3a"){score() +1} else{score()}
+                 newscore<- if(input$qthree=="q3a"){score() +1} else{score()}#score increases by 1 if answer correct
                score(newscore)
                })
   
   observeEvent(input$submit4,
                {req(input$qfour)
-                 newscore<- if(input$qfour=="q4b"){score() +1} else{score()}
+                 newscore<- if(input$qfour=="q4b"){score() +1} else{score()}#score increases by 1 if answer correct
                score(newscore)
                })
   
   observeEvent(input$submit5,
                {req(input$qfive)
-                 newscore<- if(input$qfive=="q5a"){score() +1} else{score()}
+                 newscore<- if(input$qfive=="q5a"){score() +1} else{score()}#score increases by 1 if answer correct
                score(newscore)
                })
   
   observeEvent(input$submit6,
                {req(input$qsix)
-                 newscore<- if(input$qsix=="q6a"){score() +1} else{score()}
+                 newscore<- if(input$qsix=="q6a"){score() +1} else{score()}#score increases by 1 if answer correct
                  score(newscore)
                })
   
   observeEvent(input$submit7,
                {req(input$qseven)
-                 newscore<- if(input$qseven=="q7a"){score() +1} else{score()}
+                 newscore<- if(input$qseven=="q7a"){score() +1} else{score()}#score increases by 1 if answer correct
                  score(newscore)
                })
   
   observeEvent(input$submit8,
                {req(input$qeight)
-                 newscore<- if(input$qeight=="q8a"){score() +1} else{score()}
+                 newscore<- if(input$qeight=="q8a"){score() +1} else{score()}#score increases by 1 if answer correct
                  score(newscore)
                })
   
   observeEvent(input$submit9,
                {req(input$qnine)
-                 newscore<- if(input$qnine=="q9a"){score() +1} else{score()}
+                 newscore<- if(input$qnine=="q9a"){score() +1} else{score()}#score increases by 1 if answer correct
                  score(newscore)
                })
   
   observeEvent(input$submit10,
                {req(input$qten)
-                 newscore<- if(input$qten=="q10a"){score() +1} else{score()}
+                 newscore<- if(input$qten=="q10a"){score() +1} else{score()}#score increases by 1 if answer correct
                  score(newscore)
                })
 
-output$score1 <- renderValueBox({valueBox(paste(score()*10, "%"),subtitle="Score percentage")})
+output$score1 <- renderValueBox({valueBox(paste(score()*10, "%"),subtitle="Score percentage")}) #Outputs score as a percentage
 
 output$score2 <- renderValueBox({valueBox(paste(score()*10, "%"),subtitle="Score percentage")})
-#For some reason R shiny doesn't like outputting the score twice, so defined
+#For some reason R shiny doesn't like outputting the same score twice, so defined
 #two different scores for different colour output
 
-output$scorecolour <- renderText({
+output$scorecolour <- renderText({ #if score is seven or higher, display in a green box. Otherwise red
   if(score() >= 7) {
     "TRUE"
     }
@@ -613,5 +635,7 @@ outputOptions(output, "scorecolour", suspendWhenHidden=FALSE)
 
 
 })
+
+## --- BUILD APP --------------------------------------------------------------
 
 shinyApp(ui,server)
