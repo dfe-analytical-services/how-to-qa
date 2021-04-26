@@ -15,7 +15,7 @@ ui <- navbarPage("QA Quiz",
     ## --- Intro --------------------------------------------------------------
   conditionalPanel(
     condition=("input.begin != 1"), #panel is hidden once "Begin quiz" is hit
-    fluidRow(column(12,"Time to test your QA knowledge! This quiz contains 5 multiple choice questions. Click below to begin.")),
+    fluidRow(column(12,"Time to test your QA knowledge! This quiz contains 10 multiple choice questions. Click below to begin.")),
     br(),
     actionButton('begin', label = "Begin Quiz!")),
     
