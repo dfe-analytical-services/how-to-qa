@@ -110,21 +110,113 @@ ui <- navbarPage("QA Quiz",
     br(),
     conditionalPanel(
       condition = ("input.submit5 != 0"),
-      actionButton('next5', label = "Get results"))),
+      actionButton('next5', label = "Next question"))),
+  
+  ## --- Question Six ---------------------------------------------------------
+  conditionalPanel(
+    condition = ("input.next5 != 0 && input.next6 != 1"),    
+    fluidRow(column(12,uiOutput("questionsixanswers")
+    )
+    ),
+    conditionalPanel(
+      condition = ("input.submit6 != 1"),
+      actionButton('submit6', label = "Submit")),
+    br(),
+    textOutput('textquestion6'),
+    br(),
+    textOutput('answerquestion6'),
+    br(),
+    conditionalPanel(
+      condition = ("input.submit6 != 0"),
+      actionButton('next6', label = "Next question"))),
+  
+  ## --- Question Seven --------------------------------------------------------
+  conditionalPanel(
+    condition = ("input.next6 != 0 && input.next7 != 1"),    
+    fluidRow(column(12,uiOutput("questionsevenanswers")
+    )
+    ),
+    conditionalPanel(
+      condition = ("input.submit7 != 1"),
+      actionButton('submit7', label = "Submit")),
+    br(),
+    textOutput('textquestion7'),
+    br(),
+    textOutput('answerquestion7'),
+    br(),
+    conditionalPanel(
+      condition = ("input.submit7 != 0"),
+      actionButton('next7', label = "Next question"))),
+  
+  ## --- Question Eight --------------------------------------------------------
+  conditionalPanel(
+    condition = ("input.next7 != 0 && input.next8 != 1"),    
+    fluidRow(column(12,uiOutput("questioneightanswers")
+    )
+    ),
+    conditionalPanel(
+      condition = ("input.submit8 != 1"),
+      actionButton('submit8', label = "Submit")),
+    br(),
+    textOutput('textquestion8'),
+    br(),
+    textOutput('answerquestion8'),
+    br(),
+    conditionalPanel(
+      condition = ("input.submit8 != 0"),
+      actionButton('next8', label = "Next question"))),
+  
+  ## --- Question Nine ---------------------------------------------------------
+  conditionalPanel(
+    condition = ("input.next8 != 0 && input.next9 != 1"),    
+    fluidRow(column(12,uiOutput("questionnineanswers")
+    )
+    ),
+    conditionalPanel(
+      condition = ("input.submit9 != 1"),
+      actionButton('submit9', label = "Submit")),
+    br(),
+    textOutput('textquestion9'),
+    br(),
+    textOutput('answerquestion9'),
+    br(),
+    conditionalPanel(
+      condition = ("input.submit9 != 0"),
+      actionButton('next9', label = "Next question"))),
+  
+  ## --- Question Ten ----------------------------------------------------------
+  conditionalPanel(
+    condition = ("input.next9 != 0 && input.next10 != 1"),    
+    fluidRow(column(12,uiOutput("questiontenanswers")
+    )
+    ),
+    conditionalPanel(
+      condition = ("input.submit10 != 1"),
+      actionButton('submit10', label = "Submit")),
+    br(),
+    textOutput('textquestion10'),
+    br(),
+    textOutput('answerquestion10'),
+    br(),
+    conditionalPanel(
+      condition = ("input.submit10 != 0"),
+      actionButton('next10', label = "Get score"))),
+  
+  ## --- Score ----------------------------------------------------------------
   
   conditionalPanel(
-    condition = ("input.next5 != 0"),    
+    condition = ("input.next10 != 0"),    
     fluidRow(column(4,"Your score is",
                     
              conditionalPanel(
                condition = ("output.scorecolour != 'FALSE'"),
-               fluidRow(column(4,
+               fluidRow(column(6,
                                uiOutput("score1",style="Background-color: #d4f7d2;"))),
                fluidRow(column(12,"Nice work, well done!"))),
              
              conditionalPanel(
                condition = ("output.scorecolour != 'TRUE'"),
-               fluidRow(column(4,
+               fluidRow(column(6,
                                uiOutput("score2",style="Background-color: #f7e1e1;"))),
                fluidRow(column(12,"Revisit some of the earlier topics and try the quiz again."))),
     )
@@ -288,9 +380,159 @@ server <- shinyServer( function(input, output, session) {
     output$answerquestion5 <- renderText({answerquestion5})
   })
   
+  ## --- Question Six ---------------------------------------------------------
+  
+  #Question and answers. Correct answer = q6a
+  output$questionsixanswers <- renderUI({
+    radioGroupButtons("qsix", "6. What's the answer?", 
+                      c("Correct"="q6a", 
+                        "Incorrect"="q6b", 
+                        "Incorrect"="q6c", 
+                        "Incorrect"="q6d"), 
+                      selected=character(0),
+                      status = "primary",
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
+                      direction = "vertical")
+  })
+  #Responses to answer
+  observe({ 
+    input$submit6 
+    isolate( textquestion6 <- if_else(input$qsix == "q6a", paste("Correct!"),
+                              if_else(input$qsix == "q6b", paste("Incorrect."),
+                              if_else(input$qsix == "q6c", paste("Incorrect."),
+                              paste("Incorrect.")))))
+    output$textquestion6 <- renderText({textquestion6})
+  })
+  #Explanation of correct answer
+  observe({ 
+    input$submit6 
+    isolate( answerquestion6 <- if_else(input$qsix == "q6a", paste(""), paste("The correct answer was the one that said correct.")))
+    output$answerquestion6 <- renderText({answerquestion6})
+  })
+  
+  ## --- Question Seven -------------------------------------------------------
+  
+  #Question and answers. Correct answer = q7a
+  output$questionsevenanswers <- renderUI({
+    radioGroupButtons("qseven", "7. What's the answer?", 
+                      c("Correct"="q7a", 
+                        "Incorrect"="q7b", 
+                        "Incorrect"="q7c", 
+                        "Incorrect"="q7d"), 
+                      selected=character(0),
+                      status = "primary",
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
+                      direction = "vertical")
+  })
+  #Responses to answer
+  observe({ 
+    input$submit7 
+    isolate( textquestion7 <- if_else(input$qseven == "q7a", paste("Correct!"),
+                                      if_else(input$qseven == "q7b", paste("Incorrect."),
+                                              if_else(input$qseven == "q7c", paste("Incorrect."),
+                                                      paste("Incorrect.")))))
+    output$textquestion7 <- renderText({textquestion7})
+  })
+  #Explanation of correct answer
+  observe({ 
+    input$submit7
+    isolate( answerquestion7 <- if_else(input$qseven == "q7a", paste(""), paste("The correct answer was the one that said correct.")))
+    output$answerquestion7 <- renderText({answerquestion7})
+  })
+  
+  ## --- Question Eight -------------------------------------------------------
+  
+  #Question and answers. Correct answer = q8a
+  output$questioneightanswers <- renderUI({
+    radioGroupButtons("qeight", "8. What's the answer?", 
+                      c("Correct"="q8a", 
+                        "Incorrect"="q8b", 
+                        "Incorrect"="q8c", 
+                        "Incorrect"="q8d"), 
+                      selected=character(0),
+                      status = "primary",
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
+                      direction = "vertical")
+  })
+  #Responses to answer
+  observe({ 
+    input$submit8 
+    isolate( textquestion8 <- if_else(input$qeight == "q8a", paste("Correct!"),
+                                      if_else(input$qeight == "q8b", paste("Incorrect."),
+                                              if_else(input$qeight == "q8c", paste("Incorrect."),
+                                                      paste("Incorrect.")))))
+    output$textquestion8 <- renderText({textquestion8})
+  })
+  #Explanation of correct answer
+  observe({ 
+    input$submit8
+    isolate( answerquestion8 <- if_else(input$qeight == "q8a", paste(""), paste("The correct answer was the one that said correct.")))
+    output$answerquestion8 <- renderText({answerquestion8})
+  })
+  
+  ## --- Question Nine -------------------------------------------------------
+  
+  #Question and answers. Correct answer = q9a
+  output$questionnineanswers <- renderUI({
+    radioGroupButtons("qnine", "9. What's the answer?", 
+                      c("Correct"="q9a", 
+                        "Incorrect"="q9b", 
+                        "Incorrect"="q9c", 
+                        "Incorrect"="q9d"), 
+                      selected=character(0),
+                      status = "primary",
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
+                      direction = "vertical")
+  })
+  #Responses to answer
+  observe({ 
+    input$submit9 
+    isolate( textquestion9 <- if_else(input$qnine == "q9a", paste("Correct!"),
+                                      if_else(input$qnine == "q9b", paste("Incorrect."),
+                                              if_else(input$qnine == "q9c", paste("Incorrect."),
+                                                      paste("Incorrect.")))))
+    output$textquestion9 <- renderText({textquestion9})
+  })
+  #Explanation of correct answer
+  observe({ 
+    input$submit9
+    isolate( answerquestion9 <- if_else(input$qnine == "q9a", paste(""), paste("The correct answer was the one that said correct.")))
+    output$answerquestion9 <- renderText({answerquestion9})
+  })
+  
+  ## --- Question Ten -------------------------------------------------------
+  
+  #Question and answers. Correct answer = q10a
+  output$questiontenanswers <- renderUI({
+    radioGroupButtons("qten", "10. What's the answer?", 
+                      c("Correct"="q10a", 
+                        "Incorrect"="q10b", 
+                        "Incorrect"="q10c", 
+                        "Incorrect"="q10d"), 
+                      selected=character(0),
+                      status = "primary",
+                      checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon")),
+                      direction = "vertical")
+  })
+  #Responses to answer
+  observe({ 
+    input$submit10 
+    isolate( textquestion10 <- if_else(input$qten == "q10a", paste("Correct!"),
+                                      if_else(input$qten == "q10b", paste("Incorrect."),
+                                              if_else(input$qten == "q10c", paste("Incorrect."),
+                                                      paste("Incorrect.")))))
+    output$textquestion10 <- renderText({textquestion10})
+  })
+  #Explanation of correct answer
+  observe({ 
+    input$submit10
+    isolate( answerquestion10 <- if_else(input$qten == "q10a", paste(""), paste("The correct answer was the one that said correct.")))
+    output$answerquestion10 <- renderText({answerquestion10})
+  })
+  
   ## --- What's your score? ---------------------------------------------------
   
-  #Correct answers are q1b, q2c, q3a, q4b, q5a
+  #Correct answers are q1b, q2c, q3a, q4b, q5a, q6a, q7a, q8a, q9a, q10a
   score <- reactiveVal(0)
   
   observeEvent(input$submit1,
@@ -322,15 +564,45 @@ server <- shinyServer( function(input, output, session) {
                  newscore<- if(input$qfive=="q5a"){score() +1} else{score()}
                score(newscore)
                })
+  
+  observeEvent(input$submit6,
+               {req(input$qsix)
+                 newscore<- if(input$qsix=="q6a"){score() +1} else{score()}
+                 score(newscore)
+               })
+  
+  observeEvent(input$submit7,
+               {req(input$qseven)
+                 newscore<- if(input$qseven=="q7a"){score() +1} else{score()}
+                 score(newscore)
+               })
+  
+  observeEvent(input$submit8,
+               {req(input$qeight)
+                 newscore<- if(input$qeight=="q8a"){score() +1} else{score()}
+                 score(newscore)
+               })
+  
+  observeEvent(input$submit9,
+               {req(input$qnine)
+                 newscore<- if(input$qnine=="q9a"){score() +1} else{score()}
+                 score(newscore)
+               })
+  
+  observeEvent(input$submit10,
+               {req(input$qten)
+                 newscore<- if(input$qten=="q10a"){score() +1} else{score()}
+                 score(newscore)
+               })
 
-output$score1 <- renderValueBox({valueBox(paste(score()),subtitle="Score")})
+output$score1 <- renderValueBox({valueBox(paste(score()*10, "%"),subtitle="Score percentage")})
 
-output$score2 <- renderValueBox({valueBox(paste(score()),subtitle="Score")})
+output$score2 <- renderValueBox({valueBox(paste(score()*10, "%"),subtitle="Score percentage")})
 #For some reason R shiny doesn't like outputting the score twice, so defined
 #two different scores for different colour output
 
 output$scorecolour <- renderText({
-  if(score() >= 4) {
+  if(score() >= 7) {
     "TRUE"
     }
   else {
