@@ -20,7 +20,7 @@ ui <- navbarPage("QA Quiz",
     
     ## --- Question One -------------------------------------------------------
   conditionalPanel(
-    condition = ("input.next1 != 1 && input.begin != 0"), #panel is shown once "Begin QuiZ" is hit and hidden once "Next Question" is hit
+    condition = ("input.begin != 0 && input.next1 != 1"), #panel is shown once "Begin QuiZ" is hit and hidden once "Next Question" is hit
       fluidRow(column(12,uiOutput("questiononeanswers")
       )
   ),
@@ -138,7 +138,7 @@ ui <- navbarPage("QA Quiz",
 server <- shinyServer( function(input, output, session) {
   
   ## --- Question One ---------------------------------------------------------
-  
+
   output$questiononeanswers <- renderUI({
     #Question and answers. Correct answer = q1b
     radioGroupButtons(inputId = "qone",
@@ -155,7 +155,7 @@ server <- shinyServer( function(input, output, session) {
   })
   #Responses to answers
   observe({ 
-    input$submit1 
+    input$submit1
     isolate( textquestion1 <- if_else(input$qone == "q1a", paste("Incorrect. QA should always be completed alongside the analysis."),
                               if_else(input$qone == "q1b", paste("Correct! QA should always be proportionate to the analysis being done."),
                               if_else(input$qone == "q1c", paste("Incorrect. It is good practice to always complete a QA log, regardless of size and scope of the model."),
@@ -164,7 +164,7 @@ server <- shinyServer( function(input, output, session) {
   })
   #Explanation of correct answer
   observe({ 
-    input$submit1 
+    input$submit1
     isolate( answerquestion1 <- if_else(input$qone == "q1b", paste(""), paste("QA should always be proportionate to the analysis being done. Therefore, it is good to perform relatively little QA if this is deemed proportional to the project.")))
     output$answerquestion1 <- renderText({answerquestion1})
   })
@@ -294,27 +294,32 @@ server <- shinyServer( function(input, output, session) {
   score <- reactiveVal(0)
   
   observeEvent(input$submit1,
-  {newscore<- if(input$qone=="q1b"){score() +1} else{score()}
+  {req(input$qone)
+    newscore<- if(input$qone=="q1b"){score() +1} else{score()}
   score(newscore)
 })
 
-  observeEvent(input$aubmit2,
-               {newscore<- if(input$qtwo=="q2c"){score() +1} else{score()}
+  observeEvent(input$submit2,
+               {req(input$qtwo)
+                 newscore<- if(input$qtwo=="q2c"){score() +1} else{score()}
                score(newscore)
                })
   
   observeEvent(input$submit3,
-               {newscore<- if(input$qthree=="q3a"){score() +1} else{score()}
+               {req(input$qthree)
+                 newscore<- if(input$qthree=="q3a"){score() +1} else{score()}
                score(newscore)
                })
   
   observeEvent(input$submit4,
-               {newscore<- if(input$qfour=="q4b"){score() +1} else{score()}
+               {req(input$qfour)
+                 newscore<- if(input$qfour=="q4b"){score() +1} else{score()}
                score(newscore)
                })
   
   observeEvent(input$submit5,
-               {newscore<- if(input$qfive=="q5a"){score() +1} else{score()}
+               {req(input$qfive)
+                 newscore<- if(input$qfive=="q5a"){score() +1} else{score()}
                score(newscore)
                })
 
