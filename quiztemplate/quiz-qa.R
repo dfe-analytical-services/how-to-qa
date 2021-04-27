@@ -22,9 +22,10 @@ ui <- navbarPage("QA Quiz",
     ## --- Question One -------------------------------------------------------
   conditionalPanel(
     condition = ("input.begin != 0 && input.next1 != 1"), #panel is shown once "Begin QuiZ" is hit and hidden once "Next Question" is hit
-      fluidRow(column(12,uiOutput("questiononeanswers")
-      )
-  ),
+    fluidRow(column(6, textOutput("questiononequestion"))),
+    fluidRow(column(1,uiOutput("questiononeanswers"), align="right"),
+             column(5,br(),
+                    tableOutput("questiononeoptions"))),
   conditionalPanel(
     condition = ("input.submit1 != 1"), #Submit button is hidden once "Submit" is hit
     actionButton('submit1', label = "Submit")),
@@ -42,9 +43,10 @@ ui <- navbarPage("QA Quiz",
   conditionalPanel(
     #Only show panel after Next has been hit for Q1, before Next has been hit for Q2
   condition = ("input.next1 != 0 && input.next2 != 1"),  
-  fluidRow(column(12,uiOutput("questiontwoanswers")
-  )
-  ),
+  fluidRow(column(6, textOutput("questiontwoquestion"))),
+  fluidRow(column(1,uiOutput("questiontwoanswers"), align="right"),
+           column(5,br(),
+                  tableOutput("questiontwooptions"))),
   conditionalPanel(
     condition = ("input.submit2 != 1"),#Submit button is hidden once "Submit" is hit
   actionButton('submit2', label = "Submit")),
@@ -62,9 +64,10 @@ ui <- navbarPage("QA Quiz",
   conditionalPanel(
     #Only show panel after Next has been hit for Q2, before Next has been hit for Q3
     condition = ("input.next2 != 0 && input.next3 != 1"),  
-  fluidRow(column(12,uiOutput("questionthreeanswers")
-  )
-  ),
+    fluidRow(column(6, textOutput("questionthreequestion"))),
+    fluidRow(column(1,uiOutput("questionthreeanswers"), align="right"),
+             column(5,br(),
+                    tableOutput("questionthreeoptions"))),
   conditionalPanel(
     condition = ("input.submit3 != 1"),#Submit button is hidden once "Submit" is hit
   actionButton('submit3', label = "Submit")),
@@ -82,9 +85,10 @@ ui <- navbarPage("QA Quiz",
   conditionalPanel(
     #Only show panel after Next has been hit for Q3, before Next has been hit for Q4
     condition = ("input.next3 != 0 && input.next4 != 1"),    
-  fluidRow(column(12,uiOutput("questionfouranswers")
-  )
-  ),
+    fluidRow(column(6, textOutput("questionfourquestion"))),
+    fluidRow(column(1,uiOutput("questionfouranswers"), align="right"),
+             column(5,br(),
+                    tableOutput("questionfouroptions"))),
   conditionalPanel(
     condition = ("input.submit4 != 1"),#Submit button is hidden once "Submit" is hit
   actionButton('submit4', label = "Submit")),
@@ -101,9 +105,10 @@ ui <- navbarPage("QA Quiz",
   conditionalPanel(
     #Only show panel after Next has been hit for Q4, before Next has been hit for Q5
     condition = ("input.next4 != 0 && input.next5 != 1"),    
-    fluidRow(column(12,uiOutput("questionfiveanswers")
-    )
-    ),
+    fluidRow(column(6, textOutput("questionfivequestion"))),
+    fluidRow(column(1,uiOutput("questionfiveanswers"), align="right"),
+             column(5,br(),
+                    tableOutput("questionfiveoptions"))),
     conditionalPanel(
       condition = ("input.submit5 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit5', label = "Submit")),
@@ -120,9 +125,10 @@ ui <- navbarPage("QA Quiz",
   conditionalPanel(
     #Only show panel after Next has been hit for Q5, before Next has been hit for Q6
     condition = ("input.next5 != 0 && input.next6 != 1"),    
-    fluidRow(column(12,uiOutput("questionsixanswers")
-    )
-    ),
+    fluidRow(column(6, textOutput("questionsixquestion"))),
+    fluidRow(column(1,uiOutput("questionsixanswers"), align="right"),
+             column(5,br(),
+                    tableOutput("questionsixoptions"))),
     conditionalPanel(
       condition = ("input.submit6 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit6', label = "Submit")),
@@ -139,9 +145,10 @@ ui <- navbarPage("QA Quiz",
   conditionalPanel(
     #Only show panel after Next has been hit for Q6, before Next has been hit for Q7
     condition = ("input.next6 != 0 && input.next7 != 1"),    
-    fluidRow(column(12,uiOutput("questionsevenanswers")
-    )
-    ),
+    fluidRow(column(6, textOutput("questionsevenquestion"))),
+    fluidRow(column(1,uiOutput("questionsevenanswers"), align="right"),
+             column(5,br(),
+                    tableOutput("questionsevenoptions"))),
     conditionalPanel(
       condition = ("input.submit7 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit7', label = "Submit")),
@@ -158,9 +165,10 @@ ui <- navbarPage("QA Quiz",
   conditionalPanel(
     #Only show panel after Next has been hit for Q7, before Next has been hit for Q8
     condition = ("input.next7 != 0 && input.next8 != 1"),    
-    fluidRow(column(12,uiOutput("questioneightanswers")
-    )
-    ),
+    fluidRow(column(6, textOutput("questioneightquestion"))),
+    fluidRow(column(1,uiOutput("questioneightanswers"), align="right"),
+             column(5,br(),
+                    tableOutput("questioneightoptions"))),
     conditionalPanel(
       condition = ("input.submit8 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit8', label = "Submit")),
@@ -177,9 +185,10 @@ ui <- navbarPage("QA Quiz",
   conditionalPanel(
     #Only show panel after Next has been hit for Q8, before Next has been hit for Q9
     condition = ("input.next8 != 0 && input.next9 != 1"),    
-    fluidRow(column(12,uiOutput("questionnineanswers")
-    )
-    ),
+    fluidRow(column(6, textOutput("questionninequestion"))),
+    fluidRow(column(1,uiOutput("questionnineanswers"), align="right"),
+             column(5,br(),
+                    tableOutput("questionnineoptions"))),
     conditionalPanel(
       condition = ("input.submit9 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit9', label = "Submit")),
@@ -196,9 +205,10 @@ ui <- navbarPage("QA Quiz",
   conditionalPanel(
     #Only show panel after Next has been hit for Q9, before Next has been hit for Q10
     condition = ("input.next9 != 0 && input.next10 != 1"),    
-    fluidRow(column(12,uiOutput("questiontenanswers")
-    )
-    ),
+    fluidRow(column(6, textOutput("questiontenquestion"))),
+    fluidRow(column(1,uiOutput("questiontenanswers"), align="right"),
+             column(5,br(),
+                    tableOutput("questiontenoptions"))),
     conditionalPanel(
       condition = ("input.submit10 != 1"),#Submit button is hidden once "Submit" is hit
       actionButton('submit10', label = "Submit")),
@@ -244,20 +254,31 @@ server <- shinyServer( function(input, output, session) {
   
   ## --- Question One ---------------------------------------------------------
 
+  output$questiononequestion <- renderText({"1. A project is running to a tight deadline, and some analysis needs to be completed quickly. The analysis is fairly straightforward, but some QA needs to be done. Which of the following is the best course of action to take?"})
+  
   output$questiononeanswers <- renderUI({
     #Question and answers. Correct answer = q1b
     radioGroupButtons(inputId = "qone",
-                      label = "1. A project is running to a tight deadline, and some analysis needs to be completed quickly. The analysis is fairly straightforward, but some QA needs to be done. Which of the following is the best course of action to take?", 
-                 choices = c("Concentrate on the analysis, and complete the QA at the last minute. After all, the analysis is more important than the QA and it is unlikely that there will be any mistakes." = "q1a", 
-                   "Perform relatively little QA because it is deemed unnecessary for the project." = "q1b", 
-                   "Perform QA as you go along, but don't fill out a QA log as it is not required for such a small piece of work." = "q1c", 
-                   "Perform all checks listed on the QA log, and put in extra time to ensure that this has been done." = "q1d"),
+                      label = "", 
+                 choices = c("a." = "q1a", 
+                   "b." = "q1b", 
+                   "c." = "q1c", 
+                   "d." = "q1d"),
                  selected=character(0), #No initial selection
                  status = "primary", #This is the style/colour of the radioGroupButtons
                  checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
                                   no = icon("remove", lib = "glyphicon")), #Cross if option not selected
                  direction = "vertical")#Options displayed vertically
   })
+  
+  output$questiononeoptions <- renderTable({c("Concentrate on the analysis, and complete the QA at the last minute. After all, the analysis is more important than the QA and it is unlikely that there will be any mistakes.", 
+                                              "Perform relatively little QA because it is deemed unnecessary for the project.", 
+                                              "Perform QA as you go along, but don't fill out a QA log as it is not required for such a small piece of work.", 
+                                              "Perform all checks listed on the QA log, and put in extra time to ensure that this has been done.")}, colnames=FALSE)
+  
+  
+  
+  
   #Responses to answers
   observe({ 
     input$submit1
@@ -276,18 +297,27 @@ server <- shinyServer( function(input, output, session) {
   
   ## --- Question Two ----------------------------------------------------------
   #Question and answers. Correct answer = q2c
+  
+  output$questiontwoquestion <- renderText({"2. A quality assurer looks over a piece of work but is confused about the methods that have been used to arrive at the conclusions. However, the work has been checked thoroughly by the analyst responsible, and the results fit with the expected outcomes. What should the QAer do?"})
+  
   output$questiontwoanswers <- renderUI({
-    radioGroupButtons("qtwo", "2. A quality assurer looks over a piece of work but is confused about the methods that have been used to arrive at the conclusions. However, the work has been checked thoroughly by the analyst responsible, and the results fit with the expected outcomes. What should the QAer do?", 
-                 c("Tell the analyst that that model looks good and raises no concerns."="q2a", 
-                   "Assume that the analysis is correct because the results are as expected."="q2b", 
-                   "Ask the analyst for more information about the methods to try to understand the work that has been done."="q2c", 
-                   "Feedback that the model does not meet QA standards because the method is too complicated to understand."="q2d"),
+    radioGroupButtons("qtwo", "", 
+                 c("a."="q2a", 
+                   "b."="q2b", 
+                   "c."="q2c", 
+                   "d."="q2d"),
                  selected=character(0),#No initial selection
                  status = "primary",#This is the style/colour of the radioGroupButtons
                  checkIcon = list(yes = icon("ok", lib = "glyphicon"),#Tick if option selected
                                   no = icon("remove", lib = "glyphicon")),#Cross if option not selected
                  direction = "vertical")#Options displayed vertically
   })
+  
+  output$questiontwooptions <- renderTable({c("Tell the analyst that that model looks good and raises no concerns.", 
+                                              "Assume that the analysis is correct because the results are as expected.", 
+                                              "Ask the analyst for more information about the methods to try to understand the work that has been done.", 
+                                              "Feedback that the model does not meet QA standards because the method is too complicated to understand.")}, colnames=FALSE)
+  
   #Responses to answers
   observe({ 
     input$submit2 
@@ -307,18 +337,26 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Three -------------------------------------------------------
   
   #Question and answers. Correct answer = q3a
+  output$questionthreequestion <- renderText({"3. An analyst is collecting the data on the percentage of KS4 students eligible for free school meals and comparing these year on year. Which of the following statements suggests that the analyst may have made a mistake?"})
+  
   output$questionthreeanswers <- renderUI({
-    radioGroupButtons("qthree", "3. An analyst is collecting the data on the percentage of KS4 students eligible for free school meals and comparing these year on year. Which of the following statements suggests that the analyst may have made a mistake?",
-                 c("In 2016, 400 KS4 pupils across 25,000 schools in the UK were eligible for free school meals."="q3a", 
-                   "In 2018, 56% of pupils in London were eligible for free school meals, and 44% were not."="q3b", 
-                   "There was a drop of 5% in the number of pupils eligible for free school meals in 2019 (an average of 220 per school) to 2020 (an average of 209 per school)."="q3c", 
-                   "There is a bigger percentage of KS4 pupils eligible for free school meals in 2019 (62%) than in 2020 (59%)."="q3d"), 
+    radioGroupButtons("qthree", "",
+                 c("a."="q3a", 
+                   "b."="q3b", 
+                   "c."="q3c", 
+                   "d."="q3d"), 
                  selected=character(0),#No initial selection
                  status = "primary",#This is the style/colour of the radioGroupButtons
                  checkIcon = list(yes = icon("ok", lib = "glyphicon"),#Tick if option selected
                                   no = icon("remove", lib = "glyphicon")),#Cross if option not selected
                  direction = "vertical")#Options displayed vertically
   })
+  
+  output$questionthreeoptions <- renderTable({c("In 2016, 400 KS4 pupils across 25,000 schools in the UK were eligible for free school meals.", 
+                                                "In 2018, 56% of pupils in London were eligible for free school meals, and 44% were not.", 
+                                                "There was a drop of 5% in the number of pupils eligible for free school meals in 2019 (an average of 220 per school) to 2020 (an average of 209 per school).", 
+                                                "There is a bigger percentage of KS4 pupils eligible for free school meals in 2019 (62%) than in 2020 (59%).")}, colnames=FALSE)
+  
   #Responses to answer
   observe({ 
     input$submit3 
@@ -338,18 +376,26 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Four ---------------------------------------------------------
   
   #Question and answers. Correct answer = q4b
+  output$questionfourquestion <- renderText({"4. A quality assurer agrees to QA a piece of work, but warns the analyst that they do not have a lot of time to dedicate to the QA. What can the analyst do to help the QAer do their job?"})
+  
   output$questionfouranswers <- renderUI({
-    radioGroupButtons("qfour", "4. A quality assurer agrees to QA a piece of work, but warns the analyst that they do not have a lot of time to dedicate to the QA. What can the analyst do to help the QAer do their job?", 
-                 c("QA the work themselves rather than use a quality assurer"="q4a", 
-                   "Make expectations clear to the QAers, with a clear list of what QA is necessary for this piece of work"="q4b", 
-                   "Offer to assist them in QAing their work in return"="q4c", 
-                   "Tell the quality assurer to focus on QAing the outputs rather than the inputs"="q4d"), 
+    radioGroupButtons("qfour", "", 
+                 c("a."="q4a", 
+                   "b."="q4b", 
+                   "c."="q4c", 
+                   "d."="q4d"), 
                  selected=character(0),#No initial selection
                  status = "primary",#This is the style/colour of the radioGroupButtons
                  checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
                                   no = icon("remove", lib = "glyphicon")),#Cross if option not selected
                  direction = "vertical")#Options displayed vertically
   })
+  
+  output$questionfouroptions <- renderTable({c("QA the work themselves rather than use a quality assurer", 
+                                               "Make expectations clear to the QAers, with a clear list of what QA is necessary for this piece of work", 
+                                               "Offer to assist them in QAing their work in return", 
+                                               "Tell the quality assurer to focus on QAing the outputs rather than the inputs")},colnames=FALSE)
+  
   #Responses to answer
   observe({ 
     input$submit4 
@@ -369,18 +415,27 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Five ---------------------------------------------------------
   
   #Question and answers. Correct answer = q5a
+  
+  output$questionfivequestion <- renderText({"5. Which of the following is a good tip for coding?"})
+  
   output$questionfiveanswers <- renderUI({
-    radioGroupButtons("qfive", "5. Which of the following is a good tip for coding?", 
-                 c("Keep track of where all the input data has come from"="q5a", 
-                   "Keep the code condensed, performing multiple steps in one if possible"="q5b", 
-                   "Thoroughly annotate the code after retrieving outputs and ensuring that it works"="q5c", 
-                   "Leave in bits of code that are not used any more for completeness"="q5d"), 
+    radioGroupButtons("qfive", "", 
+                 c("a."="q5a", 
+                   "b."="q5b", 
+                   "c."="q5c", 
+                   "d."="q5d"), 
                  selected=character(0),#No initial selection
                  status = "primary",#This is the style/colour of the radioGroupButtons
                  checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
                                   no = icon("remove", lib = "glyphicon")),#Cross if option not selected
                  direction = "vertical")#Options displayed vertically
   })
+  
+  output$questionfiveoptions <- renderTable({c("Keep track of where all the input data has come from", 
+                                               "Keep the code condensed, performing multiple steps in one if possible", 
+                                               "Thoroughly annotate the code after retrieving outputs and ensuring that it works", 
+                                               "Leave in bits of code that are not used any more for completeness")},colnames = FALSE)
+  
   #Responses to answer
   observe({ 
     input$submit5 
@@ -400,18 +455,27 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Six ---------------------------------------------------------
   
   #Question and answers. Correct answer = q6a
+  
+  output$questionsixquestion <- renderText({"6. What's the answer?"})
+  
   output$questionsixanswers <- renderUI({
-    radioGroupButtons("qsix", "6. What's the answer?", 
-                      c("Correct"="q6a", 
-                        "Incorrect"="q6b", 
-                        "Incorrect"="q6c", 
-                        "Incorrect"="q6d"), 
+    radioGroupButtons("qsix", "", 
+                      c("a."="q6a", 
+                        "b."="q6b", 
+                        "c."="q6c", 
+                        "d."="q6d"), 
                       selected=character(0),#No initial selection
                       status = "primary",#This is the style/colour of the radioGroupButtons
                       checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
                                        no= icon("remove", lib = "glyphicon")),#Cross if option not selected
                       direction = "vertical")#Options displayed vertically
   })
+  
+  output$questionsixoptions <- renderTable({c("Correct", 
+                                              "Incorrect", 
+                                              "Incorrect", 
+                                              "Incorrect")}, colnames=FALSE)
+  
   #Responses to answer
   observe({ 
     input$submit6 
@@ -431,18 +495,27 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Seven -------------------------------------------------------
   
   #Question and answers. Correct answer = q7a
+  
+  output$questionsevenquestion <- renderText({"7. What's the answer?"})
+  
   output$questionsevenanswers <- renderUI({
-    radioGroupButtons("qseven", "7. What's the answer?", 
-                      c("Correct"="q7a", 
-                        "Incorrect"="q7b", 
-                        "Incorrect"="q7c", 
-                        "Incorrect"="q7d"), 
+    radioGroupButtons("qseven", "", 
+                      c("a."="q7a", 
+                        "b."="q7b", 
+                        "c."="q7c", 
+                        "d."="q7d"), 
                       selected=character(0),#No initial selection
                       status = "primary",#This is the style/colour of the radioGroupButtons
                       checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
                                        no = icon("remove", lib = "glyphicon")),#Cross if option not selected
                       direction = "vertical")#Options displayed vertically
   })
+  
+  output$questionsevenoptions <- renderTable({c("Correct", 
+                                              "Incorrect", 
+                                              "Incorrect", 
+                                              "Incorrect")}, colnames=FALSE)
+  
   #Responses to answer
   observe({ 
     input$submit7 
@@ -462,18 +535,27 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Eight -------------------------------------------------------
   
   #Question and answers. Correct answer = q8a
+  
+  output$questioneightquestion <- renderText({"8. What's the answer?"})
+  
   output$questioneightanswers <- renderUI({
-    radioGroupButtons("qeight", "8. What's the answer?", 
-                      c("Correct"="q8a", 
-                        "Incorrect"="q8b", 
-                        "Incorrect"="q8c", 
-                        "Incorrect"="q8d"), 
+    radioGroupButtons("qeight", "", 
+                      c("a."="q8a", 
+                        "b."="q8b", 
+                        "c."="q8c", 
+                        "d."="q8d"), 
                       selected=character(0),#No initial selection
                       status = "primary",#This is the style/colour of the radioGroupButtons
                       checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
                                        no = icon("remove", lib = "glyphicon")),#Cross if option not selected
                       direction = "vertical")#Options displayed vertically
   })
+  
+  output$questioneightoptions <- renderTable({c("Correct", 
+                                              "Incorrect", 
+                                              "Incorrect", 
+                                              "Incorrect")}, colnames=FALSE)
+  
   #Responses to answer
   observe({ 
     input$submit8 
@@ -493,18 +575,27 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Nine -------------------------------------------------------
   
   #Question and answers. Correct answer = q9a
+  
+  output$questionninequestion <- renderText({"9. What's the answer?"})
+  
   output$questionnineanswers <- renderUI({
-    radioGroupButtons("qnine", "9. What's the answer?", 
-                      c("Correct"="q9a", 
-                        "Incorrect"="q9b", 
-                        "Incorrect"="q9c", 
-                        "Incorrect"="q9d"), 
+    radioGroupButtons("qnine", "", 
+                      c("a."="q9a", 
+                        "b."="q9b", 
+                        "c."="q9c", 
+                        "d."="q9d"), 
                       selected=character(0),#No initial selection
                       status = "primary",#This is the style/colour of the radioGroupButtons
                       checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
                                        no = icon("remove", lib = "glyphicon")),#Cross if option not selected
                       direction = "vertical")#Options displayed vertically
   })
+  
+  output$questionnineoptions <- renderTable({c("Correct", 
+                                              "Incorrect", 
+                                              "Incorrect", 
+                                              "Incorrect")}, colnames=FALSE)
+  
   #Responses to answer
   observe({ 
     input$submit9 
@@ -524,18 +615,27 @@ server <- shinyServer( function(input, output, session) {
   ## --- Question Ten -------------------------------------------------------
   
   #Question and answers. Correct answer = q10a
+  
+  output$questiontenquestion <- renderText({"10. What's the answer?"})
+  
   output$questiontenanswers <- renderUI({
-    radioGroupButtons("qten", "10. What's the answer?", 
-                      c("Correct"="q10a", 
-                        "Incorrect"="q10b", 
-                        "Incorrect"="q10c", 
-                        "Incorrect"="q10d"), 
+    radioGroupButtons("qten", "", 
+                      c("a."="q10a", 
+                        "b."="q10b", 
+                        "c."="q10c", 
+                        "d."="q10d"), 
                       selected=character(0),#No initial selection
                       status = "primary",#This is the style/colour of the radioGroupButtons
                       checkIcon = list(yes = icon("ok", lib = "glyphicon"), #Tick if option selected
                                        no = icon("remove", lib = "glyphicon")),#Cross if option not selected
                       direction = "vertical")#Options displayed vertically
   })
+  
+  output$questiontenoptions <- renderTable({c("Correct", 
+                                              "Incorrect", 
+                                              "Incorrect", 
+                                              "Incorrect")}, colnames=FALSE)
+  
   #Responses to answer
   observe({ 
     input$submit10 
