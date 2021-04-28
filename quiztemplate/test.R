@@ -3,14 +3,12 @@ library(tidyverse)
 library(shinythemes) #theme -> css
 library(shinydashboard)
 library(shinyWidgets)
+library(DT)
 
 ui <- navbarPage("QA Quiz",
                  theme = shinytheme("spacelab"),
                  mainPanel(
-  fluidRow(column(6, textOutput("questiononequestion"))),
-  fluidRow(column(1,uiOutput("questiononeanswers"), align="right"),
-                  column(5,br(),
-                         tableOutput("questiononeoptions")))))
+  fluidRow(column(4,  DT::dataTableOutput('questionone'),))))
 
 server <- shinyServer( function(input, output, session) {
 
@@ -31,11 +29,38 @@ server <- shinyServer( function(input, output, session) {
                       direction = "vertical")#Options displayed vertically
       })
   
-  output$questiononeoptions <- renderTable({c("Concentrate on the analysis, and complete the QA at the last minute. After all, the analysis is more important than the QA and it is unlikely that there will be any mistakes.", 
-                                              "Perform relatively little QA because it is deemed unnecessary for the project.", 
-                                              "Perform QA as you go along, but don't fill out a QA log as it is not required for such a small piece of work.", 
-                                              "Perform all checks listed on the QA log, and put in extra time to ensure that this has been done.")}, colnames=FALSE)
+  answersone <- c("Concentrate on the analysis, and complete the QA at the last minute. After all, the analysis is more important than the QA and it is unlikely that there will be any mistakes.", 
+                 "Perform relatively little QA because it is deemed unnecessary for the project.", 
+                 "Perform QA as you go along, but don't fill out a QA log as it is not required for such a small piece of work.", 
+                 "Perform all checks listed on the QA log, and put in extra time to ensure that this has been done.")
   
+  output$questiononeoptions <- DT::renderDataTable(data.frame(answersone))
+ 
+  m = matrix(
+    as.character(1:4), nrow = 4, ncol = 1, byrow = TRUE,
+    dimnames = list(list("Concentrate on the analysis, and complete the QA at the last minute. After all, the analysis is more important than the QA and it is unlikely that there will be any mistakes.", 
+                 "Perform relatively little QA because it is deemed unnecessary for the project.", 
+                 "Perform QA as you go along, but don't fill out a QA log as it is not required for such a small piece of work.", 
+                 "Perform all checks listed on the QA log, and put in extra time to ensure that this has been done."),"Answer")
+  )
+  for (i in seq_len(nrow(m))) {
+    m[i, ] = sprintf(
+      '<input type="radio" id="qone" name="qone" value="%s"/>',
+      month.abb[i], m[i, ]
+    )
+  }
+  m
+  output$questionone = DT::renderDataTable(
+    m, escape = FALSE, selection = 'none', server = FALSE,
+    options = list(dom = 't', paging = FALSE, ordering = FALSE),
+    callback = JS("table.rows().every(function(i, tab, row) {
+          var $this = $(this.node());
+          $this.attr('id', this.data()[0]);
+          $this.addClass('shiny-input-radiogroup');
+        });
+        Shiny.unbindAll(table.table().node());
+        Shiny.bindAll(table.table().node());")
+  )
   
 })
 

@@ -1,5 +1,7 @@
 # Tips for coding
 
+The aim of this chapter is to summarise the guidance set out in the DfE ['Good Coding Guidance'](https://dfe-analytical-services.github.io/good-code-practice/). Throughout this chapter, you will see section of the 'Good Coding Guidance' referred to - plesae see these sections for more information on each of the points raised.
+
 ## What you __should__ do
 
 <center>
@@ -13,6 +15,7 @@ QAing code can be a difficult job. Doing the following things will help others t
   + You should explain what each step of the code does and why. It can be very difficult to understand someone else's code.
   + It is much harder to QA someone else's code if you also have to work out what each step is meant to be doing. Making each step clearer not only helps them to QA your code properly, it will also save them time.
   + It is much easier to annotate code as you go along rather than come back to it later. Annotating code can be a pain, but once you are in the routine of annotating as you write, you will find that it quickly becomes second nature.
+  + See (section 4.1)[https://dfe-analytical-services.github.io/good-code-practice/good.html#descriptive-and-informative-comments] of the 'Good Coding Guidance' for more information and examples of annotating code.
   
 <center>
 
@@ -21,12 +24,15 @@ QAing code can be a difficult job. Doing the following things will help others t
 </center>
 
 * Keep analysis and the code used to produce it together.
-  + Pasting code into Excel workbooks can be a useful way to link code and data together. This makes future updates much easier too.
+  + Use a folder structure that makes it clear where code is stored and where data is stored.
+  + Ensure you have the code on a git version control, with a clear summary of changes that have been made each time the code is committed.
+  + For more information on version control, see [chapter 7](https://dfe-analytical-services.github.io/good-code-practice/VC.html) of the 'Good Coding Guidance'.
  
 * Self QA your code
   + The best way to QA code is through self QA, producing output tables to physically examine/check the data produced by each step.
   + For example, has a merge/join done what you wanted it to? Has the number of records in your dataset increased? Have the correct variables been added in? What had happened to those records that are missing variables/values? Are there duplicates?
   + Never assume on blind faith that data has been processed as you wanted it to be. The merge you asked the computer to do might not be the merge that the computer actually did...
+  + For more information on testing code, please see [chapter 6](https://dfe-analytical-services.github.io/good-code-practice/testing.html) of the 'Good Coding Guidance'.
 
 <center>
 
@@ -61,6 +67,8 @@ The following tips might not be appropriate for every code you write, but if you
 
 * Build in checks as you go along. For example, you have 1 million records for teachers, and you merge in 1 million records on the favourite colours of those teachers. Have you still only got 1 millions teachers in your dataset?
   + When performing merges, check that everything has gone smoothly by running off some quick output tables. Spot checks can also help here, e.g. take a sample of 5 teachers and check that their data merged correctly.
+  
+* See [chapter 3](https://dfe-analytical-services.github.io/good-code-practice/fundamentals.html) of the 'Good Coding Guidance' for a more comprehensive list of coding tips.
 
 ## QA of models
 

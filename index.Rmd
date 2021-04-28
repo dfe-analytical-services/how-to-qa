@@ -1,8 +1,8 @@
 --- 
 title: "How to quality assure"
 author:
- - Thomas Morley
- - Thanks to Melissa Cook, James McGlade and Nicky Brassington for their help with creating this documentation
+ - Department for Education guidance
+ - The first version of this guidance was written by Thomas Morley, with help from Melissa Cook, James McGlade and Nicky Brassington. It is intended to be a living document and we'd very much welcome suggestions for improvements or additions. Please contact the Modelling Improvement and Assurance Unit. There will be reviewed by the DfE QA team, and any approved changes will be made.
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
