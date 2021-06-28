@@ -1,6 +1,6 @@
 # Tips for coding
 
-The aim of this chapter is to summarise the guidance set out in the DfE ['Good Coding Guidance'](https://dfe-analytical-services.github.io/good-code-practice/). Throughout this chapter, you will see section of the 'Good Coding Guidance' referred to - plesae see these sections for more information on each of the points raised.
+The aim of this chapter is to summarise the guidance set out in the DfE ['Good Coding Guidance'](https://dfe-analytical-services.github.io/good-code-practice/). Throughout this chapter, you will see sections of the 'Good Coding Guidance' referred to - please see these sections for more information on each of the points raised.
 
 ## What you __should__ do
 
@@ -15,7 +15,7 @@ QAing code can be a difficult job. Doing the following things will help others t
   + You should explain what each step of the code does and why. It can be very difficult to understand someone else's code.
   + It is much harder to QA someone else's code if you also have to work out what each step is meant to be doing. Making each step clearer not only helps them to QA your code properly, it will also save them time.
   + It is much easier to annotate code as you go along rather than come back to it later. Annotating code can be a pain, but once you are in the routine of annotating as you write, you will find that it quickly becomes second nature.
-  + See (section 4.1)[https://dfe-analytical-services.github.io/good-code-practice/good.html#descriptive-and-informative-comments] of the 'Good Coding Guidance' for more information and examples of annotating code.
+  + See [section 4.1](https://dfe-analytical-services.github.io/good-code-practice/good.html#descriptive-and-informative-comments) of the 'Good Coding Guidance' for more information and examples of annotating code.
   
 <center>
 

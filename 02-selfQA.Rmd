@@ -39,7 +39,7 @@ It is inevitable that someone senior will ask you about any unexpected results. 
 
 Doing these checks will lead you to either find an error, or produce a logical answer to explain this oddity to stakeholders. Either way, it's a win!
 
-Being able to demonstrate that you haven't just taken analysis at face value makes you look good and makes your analysis better! Always ask yourself, when looking at results, what questions are your stakeholders likely to ask? Preparing anaswers for these types of questions is a very important skill for an analyst. You can guarantee that seniour stakeholders are most likely to ask about numbers that stick out or look odd...
+Being able to demonstrate that you haven't just taken analysis at face value makes you look good and makes your analysis better! Always ask yourself, when looking at results, what questions are your stakeholders likely to ask? Preparing anaswers for these types of questions is a very important skill for an analyst. You can guarantee that senior stakeholders are most likely to ask about numbers that stick out or look odd...
 
 ## Finding errors
 
