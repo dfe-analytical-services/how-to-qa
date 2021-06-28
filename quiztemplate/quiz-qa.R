@@ -352,7 +352,7 @@ server <- shinyServer( function(input, output, session) {
                  direction = "vertical")#Options displayed vertically
   })
   
-  output$questionthreeoptions <- renderTable({c("In 2016, 400 KS4 pupils across 25,000 schools in the UK were eligible for free school meals.", 
+  output$questionthreeoptions <- renderTable({c("In 2016, 48% of KS4 pupils in the UK (approximately 10,000) were eligible for free school meals.", 
                                                 "In 2018, 56% of pupils in London were eligible for free school meals, and 44% were not.", 
                                                 "There was a drop of 5% in the number of pupils eligible for free school meals in 2019 (an average of 220 per school) to 2020 (an average of 209 per school).", 
                                                 "There is a bigger percentage of KS4 pupils eligible for free school meals in 2019 (62%) than in 2020 (59%).")}, colnames=FALSE)
@@ -360,7 +360,7 @@ server <- shinyServer( function(input, output, session) {
   #Responses to answer
   observe({ 
     input$submit3 
-    isolate( textquestion3 <- if_else(input$qthree == "q3a", paste("Correct! 400 pupils across 25,000 schools suggests 10 million KS4 pupils, which is clearly not true."),
+    isolate( textquestion3 <- if_else(input$qthree == "q3a", paste("Correct! This suggests just over 20,000 KS4 pupils in total, which is far too few."),
                               if_else(input$qthree == "q3b", paste("Incorrect. Performing a quick balance check, we see that the percentages add to 100% as expected."),
                               if_else(input$qthree == "q3c", paste("Incorrect. A quick calculation shows us that 5% of 220 is 11, so the statement is true."),
                                       paste("Incorrect. The statement appears to be correct from the data shown.")))))
@@ -369,7 +369,7 @@ server <- shinyServer( function(input, output, session) {
   #Explanation of correct answer
   observe({ 
     input$submit3 
-    isolate( answerquestion3 <- if_else(input$qthree == "q3a", paste(""), paste("It is important to perform sense checks on outputs. Performing a quick sense check on the first statement suggests the UK has 10 million KS4 pupils (400 across 25,000 schools), which is clearly not true.")))
+    isolate( answerquestion3 <- if_else(input$qthree == "q3a", paste(""), paste("It is important to perform sense checks on outputs. Performing a quick sense check on the first statement suggests the UK has just over 20,000 KS4 pupils in total, which is far too few."")))
     output$answerquestion3 <- renderText({answerquestion3})
   })
   
@@ -456,7 +456,7 @@ server <- shinyServer( function(input, output, session) {
   
   #Question and answers. Correct answer = q6a
   
-  output$questionsixquestion <- renderText({"6. What's the answer?"})
+  output$questionsixquestion <- renderText({"6. You have written a piece of code to produce some tables from a dataset. The tables are then published in a powerpoint report. Which of the following would a quality assurer *not* be interested in?"})
   
   output$questionsixanswers <- renderUI({
     radioGroupButtons("qsix", "", 
@@ -471,24 +471,24 @@ server <- shinyServer( function(input, output, session) {
                       direction = "vertical")#Options displayed vertically
   })
   
-  output$questionsixoptions <- renderTable({c("Correct", 
-                                              "Incorrect", 
-                                              "Incorrect", 
-                                              "Incorrect")}, colnames=FALSE)
+  output$questionsixoptions <- renderTable({c("The lay out of the code.", 
+                                              "The commentary within the powerpoint report.", 
+                                              "Where the original data came from.", 
+                                              "The colour scheme of the powerpoint report.")}, colnames=FALSE)
   
   #Responses to answer
   observe({ 
     input$submit6 
-    isolate( textquestion6 <- if_else(input$qsix == "q6a", paste("Correct!"),
-                              if_else(input$qsix == "q6b", paste("Incorrect."),
-                              if_else(input$qsix == "q6c", paste("Incorrect."),
-                              paste("Incorrect.")))))
+    isolate( textquestion6 <- if_else(input$qsix == "q6a", paste("Incorrect. The lay out of the code is very important in helping the quality assurer to understand what is being done."),
+                              if_else(input$qsix == "q6b", paste("Incorrect. It is important that the quality assurer checks that the commentary matches up with the tables produced by the code."),
+                              if_else(input$qsix == "q6c", paste("Incorrect. It is important that the quality assurer checks that the original data has been imported correctly in the code, and that any caveats associated with the original data have been explained within the report."),
+                              paste("Correct! The colour scheme is likely to be least important to the quality assurer as this does not affect the analysis that has been carried out.")))))
     output$textquestion6 <- renderText({textquestion6})
   })
   #Explanation of correct answer
   observe({ 
     input$submit6 
-    isolate( answerquestion6 <- if_else(input$qsix == "q6a", paste(""), paste("The correct answer was the one that said correct.")))
+    isolate( answerquestion6 <- if_else(input$qsix == "q6d", paste(""), paste("The colour scheme is likely to be least important to the quality assurer as this does not affect the analysis that has been carried out.")))
     output$answerquestion6 <- renderText({answerquestion6})
   })
   
@@ -496,7 +496,7 @@ server <- shinyServer( function(input, output, session) {
   
   #Question and answers. Correct answer = q7a
   
-  output$questionsevenquestion <- renderText({"7. What's the answer?"})
+  output$questionsevenquestion <- renderText({"7. You have built a model that processes a dataset. The dataset is refreshed on an annual basis. A full QA check was carried out after the model was initially built. Which of the following QA checks is not necessary to complete each following year as data is refreshed?"})
   
   output$questionsevenanswers <- renderUI({
     radioGroupButtons("qseven", "", 
@@ -511,32 +511,32 @@ server <- shinyServer( function(input, output, session) {
                       direction = "vertical")#Options displayed vertically
   })
   
-  output$questionsevenoptions <- renderTable({c("Correct", 
-                                              "Incorrect", 
-                                              "Incorrect", 
-                                              "Incorrect")}, colnames=FALSE)
+  output$questionsevenoptions <- renderTable({c("Checking that the methodology behind the model is correct.", 
+                                              "Investigating how output values have changed between versions of the model.", 
+                                              "Checking that the format of the new dataset matches the format of the previous dataset.", 
+                                              "Evaluating assumptions within the data.")}, colnames=FALSE)
   
   #Responses to answer
   observe({ 
     input$submit7 
-    isolate( textquestion7 <- if_else(input$qseven == "q7a", paste("Correct!"),
-                                      if_else(input$qseven == "q7b", paste("Incorrect."),
-                                              if_else(input$qseven == "q7c", paste("Incorrect."),
-                                                      paste("Incorrect.")))))
+    isolate( textquestion7 <- if_else(input$qseven == "q7a", paste("The methodology behind the model would have been QA'd when the model was originally created, and would not need to be checked again after a data refresh."),
+                                      if_else(input$qseven == "q7b", paste("Incorrect. It is important to ensure that output values make sense after every data refresh, and any change in output values is understood."),
+                                              if_else(input$qseven == "q7c", paste("Incorrect. It is vital that the format of the new dataset matches the old one otherwise the model may not run correctly."),
+                                                      paste("Incorrect. Assumptions made within the data may change as new data is collected - it is important that any assumptions are tracked and managed within the model.")))))
     output$textquestion7 <- renderText({textquestion7})
   })
   #Explanation of correct answer
   observe({ 
     input$submit7
-    isolate( answerquestion7 <- if_else(input$qseven == "q7a", paste(""), paste("The correct answer was the one that said correct.")))
+    isolate( answerquestion7 <- if_else(input$qseven == "q7a", paste(""), paste("The methodology behind the model would have been QA'd when the model was originally created, and would not need to be checked again after a data refresh.")))
     output$answerquestion7 <- renderText({answerquestion7})
   })
   
   ## --- Question Eight -------------------------------------------------------
   
-  #Question and answers. Correct answer = q8a
+  #Question and answers. Correct answer = q8c
   
-  output$questioneightquestion <- renderText({"8. What's the answer?"})
+  output$questioneightquestion <- renderText({"8. A customer has commissioned a piece of analysis from you. The analysis will focus on the number of students currently undertaking teacher training courses, and looking at their various characteristics i.e. gender, sexuality, race, etc. The work must be completed by the end of the month. Which of the following questions would be the most useful to ask during the initial meeting with the customer?"})
   
   output$questioneightanswers <- renderUI({
     radioGroupButtons("qeight", "", 
@@ -551,32 +551,32 @@ server <- shinyServer( function(input, output, session) {
                       direction = "vertical")#Options displayed vertically
   })
   
-  output$questioneightoptions <- renderTable({c("Correct", 
-                                              "Incorrect", 
-                                              "Incorrect", 
-                                              "Incorrect")}, colnames=FALSE)
+  output$questioneightoptions <- renderTable({c("How strict is this deadline?", 
+                                              "How many charts do you want me to produce?", 
+                                              "Why do you need this analysis to be carried out?", 
+                                              "What colours should I use on the charts?")}, colnames=FALSE)
   
   #Responses to answer
   observe({ 
     input$submit8 
-    isolate( textquestion8 <- if_else(input$qeight == "q8a", paste("Correct!"),
-                                      if_else(input$qeight == "q8b", paste("Incorrect."),
-                                              if_else(input$qeight == "q8c", paste("Incorrect."),
-                                                      paste("Incorrect.")))))
+    isolate( textquestion8 <- if_else(input$qeight == "q8a", paste("Incorrect. Whilst it's good to check how strict the deadline is, there are more important things to ask first! In fact, asking this might make your customer lose faith in your ability to complete the work on time."),
+                                      if_else(input$qeight == "q8b", paste("Incorrect. The number of charts that need to be produced will probably become clearer once you've had a look at the data."),
+                                              if_else(input$qeight == "q8c", paste("Correct! Asking this question will help you to determine the best way to carry out your analysis, as well as giving you vital information on who will be using the analysis."),
+                                                      paste("Incorrect. The colour scheme is something that can be discussed at a later date when the charts have been created - there are more important things to discuss first!")))))
     output$textquestion8 <- renderText({textquestion8})
   })
   #Explanation of correct answer
   observe({ 
     input$submit8
-    isolate( answerquestion8 <- if_else(input$qeight == "q8a", paste(""), paste("The correct answer was the one that said correct.")))
+    isolate( answerquestion8 <- if_else(input$qeight == "q8c", paste(""), paste("Asking \"Why do you need this analysis to be carried out?\" will help you to determine the best way to carry out your analysis, as well as giving you vital information on who will be using the analysis, so this would be the best question to ask during your initial meeting.")))
     output$answerquestion8 <- renderText({answerquestion8})
   })
   
   ## --- Question Nine -------------------------------------------------------
   
-  #Question and answers. Correct answer = q9a
+  #Question and answers. Correct answer = q9c
   
-  output$questionninequestion <- renderText({"9. What's the answer?"})
+  output$questionninequestion <- renderText({"9. You have performed a piece of analysis on the number of teachers in London schools. You are now writing a report on this analysis. You begin the report by stating that all numbers refer to qualified teachers and that data was collected in 2020. You also make it clear that the numbers given are headcount and include teachers who may be on extended leave but still employed by the school. Why might there be some ambiguity in your opening statements?"})
   
   output$questionnineanswers <- renderUI({
     radioGroupButtons("qnine", "", 
@@ -591,32 +591,32 @@ server <- shinyServer( function(input, output, session) {
                       direction = "vertical")#Options displayed vertically
   })
   
-  output$questionnineoptions <- renderTable({c("Correct", 
-                                              "Incorrect", 
-                                              "Incorrect", 
-                                              "Incorrect")}, colnames=FALSE)
+  output$questionnineoptions <- renderTable({c("The numbers may refer to FTE positions.", 
+                                              "The numbers may refer to teachers that are on training placements.", 
+                                              "The numbers may refer to teachers in position in AY 2019-20.", 
+                                              "The numbers may refer to teachers who are on maternity leave.")}, colnames=FALSE)
   
   #Responses to answer
   observe({ 
     input$submit9 
-    isolate( textquestion9 <- if_else(input$qnine == "q9a", paste("Correct!"),
-                                      if_else(input$qnine == "q9b", paste("Incorrect."),
-                                              if_else(input$qnine == "q9c", paste("Incorrect."),
-                                                      paste("Incorrect.")))))
+    isolate( textquestion9 <- if_else(input$qnine == "q9a", paste("Incorrect. It is clearly stated that the numbers refer to headcount rather than FTE, so there should be no ambiguity here."),
+                                      if_else(input$qnine == "q9b", paste("Incorrect. It is clearly stated that the numbers only encompass qualified teachers, so there should be no ambiguity here."),
+                                              if_else(input$qnine == "q9c", paste("Correct! By just stating that data was collected in 2020, this leaves some ambiguity over whether the data was collected in AY 2019-20 or AY 2020-21."),
+                                                      paste("Incorrect. It is clearly stated that the data includes those staff on extended leave, so there should be no ambiguity here.")))))
     output$textquestion9 <- renderText({textquestion9})
   })
   #Explanation of correct answer
   observe({ 
     input$submit9
-    isolate( answerquestion9 <- if_else(input$qnine == "q9a", paste(""), paste("The correct answer was the one that said correct.")))
+    isolate( answerquestion9 <- if_else(input$qnine == "q9c", paste(""), paste("Just stating the year 2020, rather than giving specific information (such as AY 2019-20) can lead to some ambiguities in the data.")))
     output$answerquestion9 <- renderText({answerquestion9})
   })
   
   ## --- Question Ten -------------------------------------------------------
   
-  #Question and answers. Correct answer = q10a
+  #Question and answers. Correct answer = q10c
   
-  output$questiontenquestion <- renderText({"10. What's the answer?"})
+  output$questiontenquestion <- renderText({"10. You have been asked to update a model that you built several years ago, in order to process some new data. You look at the model but you can't quite remember how it works or what it does. Which of the following actions will help you the most?"})
   
   output$questiontenanswers <- renderUI({
     radioGroupButtons("qten", "", 
@@ -631,30 +631,30 @@ server <- shinyServer( function(input, output, session) {
                       direction = "vertical")#Options displayed vertically
   })
   
-  output$questiontenoptions <- renderTable({c("Correct", 
-                                              "Incorrect", 
-                                              "Incorrect", 
-                                              "Incorrect")}, colnames=FALSE)
+  output$questiontenoptions <- renderTable({c("Trying to replicate the old analysis to understand how the model works.", 
+                                              "Adjusting any new data to suit the old model.", 
+                                              "Reading through any notes that you made on the model to try to better understand it.", 
+                                              "Deleting any files that seem like they are unimportant.")}, colnames=FALSE)
   
   #Responses to answer
   observe({ 
     input$submit10 
-    isolate( textquestion10 <- if_else(input$qten == "q10a", paste("Correct!"),
-                                      if_else(input$qten == "q10b", paste("Incorrect."),
-                                              if_else(input$qten == "q10c", paste("Incorrect."),
-                                                      paste("Incorrect.")))))
+    isolate( textquestion10 <- if_else(input$qten == "q10a", paste("Incorrect. You could waste many hours trying to replicate old analysis and still not improve your understanding of the model."),
+                                      if_else(input$qten == "q10b", paste("Incorrect. Since a full update of the model is required, it is likely the new data will not suit the old model, and changing this data may affect your outcomes."),
+                                              if_else(input$qten == "q10c", paste("Correct! This is why it is so important to ensure that you have made clear notes and thoroughly annotated any code."),
+                                                      paste("Incorrect. If you don't fully understand the model, you cannot make a clear judgement on what is or isn't important.")))))
     output$textquestion10 <- renderText({textquestion10})
   })
   #Explanation of correct answer
   observe({ 
     input$submit10
-    isolate( answerquestion10 <- if_else(input$qten == "q10a", paste(""), paste("The correct answer was the one that said correct.")))
+    isolate( answerquestion10 <- if_else(input$qten == "q10c", paste(""), paste("To understand the model clearly, the most useful course of action is to read through any notes and documentation on the model. This is why it is so important to ensure that you have made clear notes and thoroughly annotated any code.")))
     output$answerquestion10 <- renderText({answerquestion10})
   })
   
   ## --- What's your score? ---------------------------------------------------
   
-  #Correct answers are q1b, q2c, q3a, q4b, q5a, q6a, q7a, q8a, q9a, q10a
+  #Correct answers are q1b, q2c, q3a, q4b, q5a, q6d, q7a, q8c, q9c, q10c
   score <- reactiveVal(0)#score initially set to zero
   
   observeEvent(input$submit1,
@@ -689,7 +689,7 @@ server <- shinyServer( function(input, output, session) {
   
   observeEvent(input$submit6,
                {req(input$qsix)
-                 newscore<- if(input$qsix=="q6a"){score() +1} else{score()}#score increases by 1 if answer correct
+                 newscore<- if(input$qsix=="q6d"){score() +1} else{score()}#score increases by 1 if answer correct
                  score(newscore)
                })
   
@@ -701,19 +701,19 @@ server <- shinyServer( function(input, output, session) {
   
   observeEvent(input$submit8,
                {req(input$qeight)
-                 newscore<- if(input$qeight=="q8a"){score() +1} else{score()}#score increases by 1 if answer correct
+                 newscore<- if(input$qeight=="q8c"){score() +1} else{score()}#score increases by 1 if answer correct
                  score(newscore)
                })
   
   observeEvent(input$submit9,
                {req(input$qnine)
-                 newscore<- if(input$qnine=="q9a"){score() +1} else{score()}#score increases by 1 if answer correct
+                 newscore<- if(input$qnine=="q9c"){score() +1} else{score()}#score increases by 1 if answer correct
                  score(newscore)
                })
   
   observeEvent(input$submit10,
                {req(input$qten)
-                 newscore<- if(input$qten=="q10a"){score() +1} else{score()}#score increases by 1 if answer correct
+                 newscore<- if(input$qten=="q10c"){score() +1} else{score()}#score increases by 1 if answer correct
                  score(newscore)
                })
 
