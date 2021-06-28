@@ -369,7 +369,7 @@ server <- shinyServer( function(input, output, session) {
   #Explanation of correct answer
   observe({ 
     input$submit3 
-    isolate( answerquestion3 <- if_else(input$qthree == "q3a", paste(""), paste("It is important to perform sense checks on outputs. Performing a quick sense check on the first statement suggests the UK has just over 20,000 KS4 pupils in total, which is far too few."")))
+    isolate( answerquestion3 <- if_else(input$qthree == "q3a", paste(""), paste("It is important to perform sense checks on outputs. Performing a quick sense check on the first statement suggests the UK has just over 20,000 KS4 pupils in total, which is far too few.")))
     output$answerquestion3 <- renderText({answerquestion3})
   })
   
@@ -448,7 +448,7 @@ server <- shinyServer( function(input, output, session) {
   #Explanation of correct answer
   observe({ 
     input$submit5 
-    isolate( answerquestion5 <- if_else(input$qfive == "q5b", paste(""), paste("It is important that it is clear for someone to see where the input data has come from, and, if possible, have all input data come from the same place. Therefore, keeping track of input data is of vital importance.")))
+    isolate( answerquestion5 <- if_else(input$qfive == "q5a", paste(""), paste("It is important that it is clear for someone to see where the input data has come from, and, if possible, have all input data come from the same place. Therefore, keeping track of input data is of vital importance.")))
     output$answerquestion5 <- renderText({answerquestion5})
   })
   
@@ -519,7 +519,7 @@ server <- shinyServer( function(input, output, session) {
   #Responses to answer
   observe({ 
     input$submit7 
-    isolate( textquestion7 <- if_else(input$qseven == "q7a", paste("The methodology behind the model would have been QA'd when the model was originally created, and would not need to be checked again after a data refresh."),
+    isolate( textquestion7 <- if_else(input$qseven == "q7a", paste("Correct! The methodology behind the model would have been QA'd when the model was originally created, and would not need to be checked again after a data refresh."),
                                       if_else(input$qseven == "q7b", paste("Incorrect. It is important to ensure that output values make sense after every data refresh, and any change in output values is understood."),
                                               if_else(input$qseven == "q7c", paste("Incorrect. It is vital that the format of the new dataset matches the old one otherwise the model may not run correctly."),
                                                       paste("Incorrect. Assumptions made within the data may change as new data is collected - it is important that any assumptions are tracked and managed within the model.")))))
