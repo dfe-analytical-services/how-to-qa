@@ -1,7 +1,7 @@
 # Quiz
 
-Here is the quiz:
-
 ```{r, out.width=1500, echo=FALSE}
 knitr::include_url("https://rsconnect/rsc/content/197", height = 600)
 ```
+
+If the quiz is not working, try refreshing the page. If you are still having problems, please email thomas.morley@education.gov.uk
