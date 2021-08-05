@@ -1,4 +1,6 @@
 bookdown::gitbook:
+  includes:
+    before_body: hero-image.html
   css: style.css
   config:
     toc:
