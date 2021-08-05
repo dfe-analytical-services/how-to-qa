@@ -1,8 +1,8 @@
 book_filename: "bookdownproj"
 output_dir: docs
 delete_merged_file: true
-edit: https://github.com/tmorley1/bookdown-how-to/edit/master/%s
-view: https://github.com/tmorley1/bookdown-how-to/blob/master/%s
+edit: https://github.com/dfe-analytical-services/how-to-qa/edit/master/%s
+view: https://github.com/dfe-analytical-services/how-to-qa/blob/master/%s
 runtime: shiny
 language:
   ui:

@@ -5,6 +5,7 @@ author:
  - The first version of this guidance was written by Thomas Morley, with help from Melissa Cook, James McGlade and Nicky Brassington. It is intended to be a living document and we'd very much welcome suggestions for improvements or additions. Please contact the Modelling Improvement and Assurance Unit. There will be reviewed by the DfE QA team, and any approved changes will be made.
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+favicon: pictures/qa_logo.png
 ---
 
 # Introduction
