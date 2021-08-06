@@ -2,7 +2,7 @@
 title: "How to quality assure"
 author:
  - Department for Education guidance
- - The first version of this guidance was written by Thomas Morley, with help from Melissa Cook, James McGlade and Nicky Brassington. It is intended to be a living document and we'd very much welcome suggestions for improvements or additions. Please contact the Modelling Improvement and Assurance Unit. There will be reviewed by the DfE QA team, and any approved changes will be made.
+ - The first version of this guidance was written by Thomas Morley, with help from Melissa Cook, James McGlade and Nicky Brassington. It is intended to be a living document and we'd very much welcome suggestions for improvements or additions. Please contact the Modelling Improvement and Assurance Unit. Suggestions will be reviewed by the DfE QA team, and any approved changes will be made.
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 favicon: pictures/qa_logo.png
@@ -22,7 +22,9 @@ The principles of good QA are outlined in the DfE QA framework (which can be fou
 
 The purpose of this documentation is to provide extra examples that support the QA framework. It is important to ensure not just that our work is QA'd, but that it is QA'd **well**. The aim of this documentation is to provide guidance on how to ensure that the QA being carried out is being done properly in order to provide an accurate picture of the reliability of analysis. It is aimed at both quality assurers (teaching a QAer how to properly QA a piece of work) and at original code/model authors (teaching an analyst best practice that will allow a piece of work to be QA'd easily).
 
-Before discussing 'good' QA, however, it is useful to think about what it means for QA to be 'bad'.
+By necessity, this guidance isn't comprehensive. QA takes different forms depending on the work that is being carried out. If you are still unsure on how to carry out good QA in your area, contact your [QA officer](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/QA-Officers'N.aspx)).
+
+Before discussing 'good' QA, it is useful to think about what it means for QA to be 'bad'.
 
 ## What does 'bad' QA look like?
 

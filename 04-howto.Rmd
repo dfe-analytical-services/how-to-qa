@@ -1,4 +1,4 @@
-# Tips for coding
+# Coding
 
 The aim of this chapter is to summarise the guidance set out in the DfE ['Good Coding Guidance'](https://dfe-analytical-services.github.io/good-code-practice/). Throughout this chapter, you will see sections of the 'Good Coding Guidance' referred to - please see these sections for more information on each of the points raised.
 
