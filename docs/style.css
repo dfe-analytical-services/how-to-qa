@@ -43,11 +43,11 @@ pre code {
 }
 
 .hero-image {
-  width: "100%";
+  width: 100%;
   height: 340px;
   object-fit: cover;
 }
 
 .page-inner {
-  padding-top: 400px !important;
+  padding-top: 350px !important;
 }
