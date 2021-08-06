@@ -5,7 +5,7 @@ self-qa
 odd-funny-or-unexpected-figures
 finding-errors
 getting-qa-support-from-others
-tips-for-coding
+coding
 what-you-should-do
 what-you-could-do
 qa-of-models
