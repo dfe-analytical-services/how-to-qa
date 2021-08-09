@@ -56,3 +56,37 @@ There are many examples where QA is not up to scratch despite following the QA g
 
 ![](pictures/qa-log.png "Screenshot of DfE Modelling QA Log Template")
 </center>
+
+## What can happen without sufficient QA
+
+In this section, we briefly discuss two examples of where QA wasn't implemented properly, and the effect that this had.
+
+* The InterCity West Coast Rail franchise
+
+In 2012, a franchise competition to see who would continue to run the InterCity West Coast Rail franchise was set up by DfT. However, DfT made fundamental errors in the way it calculated risks for each big. Real and inflated financial figures were mixed up and the spreadsheet contained elements of double counting. This resulted in an unsuitable company being chosen for the franchise.
+
+When faced with accusations from Virgin Trains, who had expected to win the franchise, DfT assured them that their maths was correct. However, when legal action was launched, a more thorough check was conducted, which brought to light the significant errors and cost £8.9m.
+
+As a result of this, £40m was reimbursed to bidding companies and 3 civil servants were suspended. Altogether, this cost the taxpayer almost £50m.
+
+"*Significant risk issues were identified through internal and external quality assurance procedures over the course of the ICWC franchise process*" - House of Commons Liaison Committee.
+
+You can read a news article about the InterCity West Coast Rail franchise [here](https://www.politics.co.uk/news/2013/02/26/complete-lack-of-common-sense-the-disaster-of-the-west-coast-franchise/), and find a Lessons Learned document published by the NAO [here](https://www.nao.org.uk/wp-content/uploads/2012/12/1213796.pdf).
+
+<center>
+
+![](pictures/trains.jpg "The InterCity West Coast Rail franchise disaster cost the taxpayer almost £50m.")
+</center>
+
+* The Teacher Pay Grant Project
+
+Following the publication of the 2018/19 Teacher Pay Grant, DfE quickly discovered that the published allocations were incorrect. 4 year olds had been double counted in the data due to inclusion in both early years and school datasets. This resulted in almost 9,000 schools being allocated a different amount of money than they should have been, and cost roughly £1.1m.
+
+The team had QA in place, but there was still an issue here. Policy kept changing, means that the team had to move quickly and rush to use new data without speaking to experts. When the work changed, they should have gone back to the QA plan and updated it. More time should have been made to allow for sense checks and to allow the team to get a better understanding of the dataset. A combination of significant time pressure and rapidly changing scope led to the team cutting corners, which resulted in these mistakes being made.
+
+You can read a news article about the Teacher Pay Grant project [here](https://www.tes.com/news/schools-receive-more-cash-after-dfe-admits-double-counting-pupils).
+
+<center>
+
+![](pictures/teacher.jfif "https://th.bing.com/th/id/OIP.ksHQOJUXkeRtoFJ9b5bSmQHaE7?pid=ImgDet&rs=1")
+</center>

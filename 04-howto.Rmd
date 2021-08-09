@@ -68,6 +68,8 @@ The following tips might not be appropriate for every code you write, but if you
 * Build in checks as you go along. For example, you have 1 million records for teachers, and you merge in 1 million records on the favourite colours of those teachers. Have you still only got 1 millions teachers in your dataset?
   + When performing merges, check that everything has gone smoothly by running off some quick output tables. Spot checks can also help here, e.g. take a sample of 5 teachers and check that their data merged correctly.
   
+* A good folder structure can help other users to follow your code, and know where to look for different files. A recommended structure is to have separate folders for 'Data', 'Outputs' and 'Scripts'. Then it is clear exactly what is being fed into the model, and what is being produced by the model.
+  
 * See [chapter 3](https://dfe-analytical-services.github.io/good-code-practice/fundamentals.html) of the 'Good Coding Guidance' for a more comprehensive list of coding tips.
 
 ## QA of models
@@ -77,7 +79,7 @@ The following tips might not be appropriate for every code you write, but if you
 ![](pictures\modelling_pic.jpg "https://image.freepik.com/free-vector/tiny-people-analyst-data-scientist-working-with-data-data-driven-business-model-comprehensive-data-strategies-new-economic-model-concept_335657-2420.jpg")
 </center>
 
-QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these checks are QA and build faith in a model being right.
+QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these are QA checks and build faith in a model being right.
 
 * Building in auto checks can be a great way to make QA easier. Lots of charts of outputs are also very helpful.
 

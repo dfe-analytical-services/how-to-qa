@@ -1,5 +1,6 @@
 introduction
 what-does-bad-qa-look-like
+what-can-happen-without-sufficient-qa
 qaing-your-own-work
 self-qa
 odd-funny-or-unexpected-figures

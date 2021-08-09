@@ -16,9 +16,13 @@ In this section, we will discuss some top tips that will allow others to QA your
 
 * Make expectations on the QA that you need clear to the QAers. Which bits are those that need the most thorough QA? QA checklists can be very helpful. A checklist of mandatory QA activities is available on the [DfE Quality Assurance page](https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx). This covers only the very basics of QA that you will need to carry out. You will need to carry out different, more specific QA checks depending on the type of work that you have done.
 
+* It can be useful to run through the work with a QAer beforehand. Taking half an hour to meet with a QAer and explain the purpose of the work and the expected outcomes can often save a lot of time and give the QAer a head start when it comes to reading your work.
+
 * Offer QA assistance to others in return.
 
 **Remember**, don't make things needlessly complex! Nobody likes receiving workbooks that are a nightmare to understand, update or QA. Similarly, nobody likes long, complex formulae or syntax that tries to do 3 or 4 things in one step. These take up more time than necessary to QA and increase the likelihood of producing errors.
+
+The length of time a QAer should spend on a piece of work depends on the type of work being done. However, as a general rule of thumb, if it's taking a QAer longer than two hours to check a piece of work, it is likely that the work is too complex and needs to be simplified by splitting the work into smaller, more manageable chunks.
 
 Taking a little more time to divide processes into clearly explained baby steps makes things easier to QA in the short term and easier to update in the long term. In other words, the more time we spend on QA, the less time we have to spend on the model in future. Plus, taking these steps to 'declutter' your notebooks can reduce pressure and stress.
 

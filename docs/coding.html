@@ -25,7 +25,7 @@
 <meta name="author" content="The first version of this guidance was written by Thomas Morley, with help from Melissa Cook, James McGlade and Nicky Brassington. It is intended to be a living document and we’d very much welcome suggestions for improvements or additions. Please contact the Modelling Improvement and Assurance Unit. Suggestions will be reviewed by the DfE QA team, and any approved changes will be made." />
 
 
-<meta name="date" content="2021-08-06" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -74,6 +74,7 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-does-bad-qa-look-like"><i class="fa fa-check"></i><b>1.1</b> What does ‘bad’ QA look like?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#what-can-happen-without-sufficient-qa"><i class="fa fa-check"></i><b>1.2</b> What can happen without sufficient QA</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="qaing-your-own-work.html"><a href="qaing-your-own-work.html"><i class="fa fa-check"></i><b>2</b> QAing your own work</a>
 <ul>
@@ -191,6 +192,7 @@
 <ul>
 <li>When performing merges, check that everything has gone smoothly by running off some quick output tables. Spot checks can also help here, e.g. take a sample of 5 teachers and check that their data merged correctly.</li>
 </ul></li>
+<li><p>A good folder structure can help other users to follow your code, and know where to look for different files. A recommended structure is to have separate folders for ‘Data’, ‘Outputs’ and ‘Scripts’. Then it is clear exactly what is being fed into the model, and what is being produced by the model.</p></li>
 <li><p>See <a href="https://dfe-analytical-services.github.io/good-code-practice/fundamentals.html">chapter 3</a> of the ‘Good Coding Guidance’ for a more comprehensive list of coding tips.</p></li>
 </ul>
 </div>
@@ -199,7 +201,7 @@
 <center>
 <img src="pictures/modelling_pic.jpg" title="https://image.freepik.com/free-vector/tiny-people-analyst-data-scientist-working-with-data-data-driven-business-model-comprehensive-data-strategies-new-economic-model-concept_335657-2420.jpg" />
 </center>
-<p>QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these checks are QA and build faith in a model being right.</p>
+<p>QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these are QA checks and build faith in a model being right.</p>
 <ul>
 <li><p>Building in auto checks can be a great way to make QA easier. Lots of charts of outputs are also very helpful.</p></li>
 <li><p>As with syntax, make sure that you annotate! What is each step of the model doing and why?</p>
