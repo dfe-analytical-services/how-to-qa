@@ -90,3 +90,21 @@ You can read a news article about the Teacher Pay Grant project [here](https://w
 
 ![](pictures/teacher.jfif "https://th.bing.com/th/id/OIP.ksHQOJUXkeRtoFJ9b5bSmQHaE7?pid=ImgDet&rs=1")
 </center>
+
+## What does QA involve?
+
+Here is a chronological list of tasks and activities that should be carried out during a project cycle:
+
+1. Assemble a QA plan and consider how the work will be QA'd. A template for the QA plan is available [here](https://educationgovuk.sharepoint.com/:w:/r/sites/sarpi/g/_layouts/15/Doc.aspx?sourcedoc=%7B09C73885-8C47-4191-9B29-6C34C203723D%7D&file=QA_plan_template.docx&action=default&mobileredirect=true). The QA plan should cover roles and responsibilities, as well as plans for specific activities and documentation. At this stage, it is important to think about who will be doing the QA, and how the work can be QA'd properly.
+
+2. Ensure you are doing the right work. Make sure you are on the same page as the commissioners of the project, and be clear on what questions you are trying to ensure. Question the methodology to make sure you are taking the correct steps. A list of the questions you may wish to ask are given in [Chapter 2][Asking questions].
+
+3. Do the work, and self-QA as you go along. Self-QAing your work will help others to QA your work later on (see [Chapter 3][QAing your own work]). If you are writing code, ensure that you maintain coding standards (see [Chapter 4][Coding]).
+
+4. Have the work QA'd by someone else (see [Chapter 5][Getting QA support from others]). Make sure you've taken all the correct steps to make the QA process as smooth and straightforward as possible. Arrange a meeting to discuss your work with the QAer and make time to answer any questions they may have.
+
+5. Summarise QA and request analytical assurance (if appropriate).
+
+6. Repeat! Every time you go around the analytical cycle, QA must be carried out!
+
+![The Analytical Cycle, taken from The Aqua Book (HMT, 2015)](pictures/analytical-cycle.png "The Analytical Cycle")

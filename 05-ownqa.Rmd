@@ -10,7 +10,9 @@ In this section, we will discuss some top tips that will allow others to QA your
 
 * Arrange a QA resource early. Leaving it until the last minute may result in you struggling to find someone who has time to allocate to the QA, and you might end up with someone who is less than ideal QAing your work.
 
-* Lay out syntax, calculations and workbooks nicely. Explain what you have done *and why* in each calculation step. This is especially important if the calculations are complex or you have made assumptions that aren't immediately obvious.
+* Make sure syntax and calculation are clear. Explain what you have done *and why* in each calculation step. This is especially important if the calculations are complex or you have made assumptions that aren't immediately obvious.
+
+* Make sure workbooks are laid out nicely. This can include simple steps such as making sure that calculations flow from left to right, to including separate tabs for assumptions and version control. For more information, and to see some examples, take a look at the [DfE Spreadsheet Standards](https://dfe-analytical-services.github.io/spreadsheet-standards/).
 
 * If you have pasted numbers into a workbook, explain *where* they came from. This will be useful both for QAing purposing and when carrying out future updates.
 

@@ -1,0 +1,579 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={How to quality assure},
+  pdfauthor={Department for Education guidance; The first version of this guidance was written by Thomas Morley, with help from Melissa Cook, James McGlade and Nicky Brassington. It is intended to be a living document and we'd very much welcome suggestions for improvements or additions. Please contact the Modelling Improvement and Assurance Unit. Suggestions will be reviewed by the DfE QA team, and any approved changes will be made.},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{How to quality assure}
+\author{Department for Education guidance \and The first version of this guidance was written by Thomas Morley, with help from Melissa Cook, James McGlade and Nicky Brassington. It is intended to be a living document and we'd very much welcome suggestions for improvements or additions. Please contact the Modelling Improvement and Assurance Unit. Suggestions will be reviewed by the DfE QA team, and any approved changes will be made.}
+\date{2021-09-20}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Whenever we produce a new model or a new piece of analysis, it is important to quality assure (QA) our work. This allows us to check that our analysis is credible and provides assurance to senior leaders that modelling risks are being managed appropriately.
+
+The principles of good QA are outlined in the DfE QA framework (which can be found \href{https://educationgovuk.sharepoint.com/:w:/r/sites/sarpi/g/_layouts/15/Doc.aspx?sourcedoc=\%7BE1DED116-2A85-4754-993F-A6E458DA3A59\%7D\&file=Quality\%20Assurance\%20of\%20Models\%20at\%20DfE_April_2020.docx\&action=default\&mobileredirect=true}{here}). The QA framework sets out a list of rules that one must abide by when QAing a piece of work, yet provides very few examples.
+
+\includegraphics{pictures/intro_pic.jpg}
+
+The purpose of this documentation is to provide extra examples that support the QA framework. It is important to ensure not just that our work is QA'd, but that it is QA'd \textbf{well}. The aim of this documentation is to provide guidance on how to ensure that the QA being carried out is being done properly in order to provide an accurate picture of the reliability of analysis. It is aimed at both quality assurers (teaching a QAer how to properly QA a piece of work) and at original code/model authors (teaching an analyst best practice that will allow a piece of work to be QA'd easily).
+
+By necessity, this guidance isn't comprehensive. QA takes different forms depending on the work that is being carried out. If you are still unsure on how to carry out good QA in your area, contact your \href{https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/QA-Officers'N.aspx}{QA officer}).
+
+Before discussing `good' QA, it is useful to think about what it means for QA to be `bad'.
+
+\hypertarget{what-does-bad-qa-look-like}{%
+\subsection{What does `bad' QA look like?}\label{what-does-bad-qa-look-like}}
+
+\includegraphics{pictures/bad_qa_pic.jpg}
+
+There are many examples where QA is not up to scratch despite following the QA guidance. Here are a few of these examples:
+
+\begin{itemize}
+\item
+  The QA is rushed at the last minute. This could be due to the urgency of the project, or pressure from senior leaders or clients, but this can lead to mistakes in the QA or `cutting corners'. Always ensure that an appropriate amount of time is allocated for QA. This amount of time will often depend on the scale of the project, and the type of analysis that is done.
+\item
+  Parts of the analysis are \emph{assumed} to be `right'. Even if results look correct, it is important to properly check the analysis that has been done. Just because something looks `right' doesn't mean that it is!
+\item
+  The QAer doesn't ask any `real' questions about \textbf{why} things have been done the way they were.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If a QAer says `everything is perfect' and raises no concerns or doesn't ask any questions at all, this may suggest that they haven't actually undertaken robust QA.
+  \item
+    Similarly, if someone says that they understand something very complex the first time around, they probably don't understand it. This may be a case of the work being too complex that they struggle to put into words exactly what they don't understand. It may be worth explaining complex pieces of work a couple of times anyway, to ensure that everything has been properly understood.
+  \item
+    Asking questions can build understanding, and we encourage all QAers to ask questions (even very simple ones!)
+  \end{itemize}
+\item
+  Assuming that things are right because the `data' or `the software' says so. Always avoid a `computer says yes' attitude. Just because a computer doesn't pick up on any errors doesn't mean that the analysis is completely free from mistakes!
+\item
+  QAers being afraid or nervous about raising concerns. This may be more of a problem when QAing for senior analysts. QA is a vital part of every project, and QAers should be made to feel that they are able to voice concerns whenever they arise. It is important to talk through each of these concerns rather that simply disregarding them.
+\item
+  Confusion around what QA is needed and what QA has been done. This will be addressed within this document. An up-to-date QA log should be kept at all times to assist with keeping track of QA that has been done, and help highlight where QA is still required. A QA log template is available on the \href{https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx}{DfE Quality Assurance page}
+\end{itemize}
+
+\includegraphics{pictures/qa-log.png}
+
+\hypertarget{what-can-happen-without-sufficient-qa}{%
+\subsection{What can happen without sufficient QA}\label{what-can-happen-without-sufficient-qa}}
+
+In this section, we briefly discuss two examples of where QA wasn't implemented properly, and the effect that this had.
+
+\begin{itemize}
+\tightlist
+\item
+  The InterCity West Coast Rail franchise
+\end{itemize}
+
+In 2012, a franchise competition to see who would continue to run the InterCity West Coast Rail franchise was set up by DfT. However, DfT made fundamental errors in the way it calculated risks for each big. Real and inflated financial figures were mixed up and the spreadsheet contained elements of double counting. This resulted in an unsuitable company being chosen for the franchise.
+
+When faced with accusations from Virgin Trains, who had expected to win the franchise, DfT assured them that their maths was correct. However, when legal action was launched, a more thorough check was conducted, which brought to light the significant errors and cost £8.9m.
+
+As a result of this, £40m was reimbursed to bidding companies and 3 civil servants were suspended. Altogether, this cost the taxpayer almost £50m.
+
+``\emph{Significant risk issues were identified through internal and external quality assurance procedures over the course of the ICWC franchise process}'' - House of Commons Liaison Committee.
+
+You can read a news article about the InterCity West Coast Rail franchise \href{https://www.politics.co.uk/news/2013/02/26/complete-lack-of-common-sense-the-disaster-of-the-west-coast-franchise/}{here}, and find a Lessons Learned document published by the NAO \href{https://www.nao.org.uk/wp-content/uploads/2012/12/1213796.pdf}{here}.
+
+\includegraphics{pictures/trains.jpg}
+
+\begin{itemize}
+\tightlist
+\item
+  The Teacher Pay Grant Project
+\end{itemize}
+
+Following the publication of the 2018/19 Teacher Pay Grant, DfE quickly discovered that the published allocations were incorrect. 4 year olds had been double counted in the data due to inclusion in both early years and school datasets. This resulted in almost 9,000 schools being allocated a different amount of money than they should have been, and cost roughly £1.1m.
+
+The team had QA in place, but there was still an issue here. Policy kept changing, means that the team had to move quickly and rush to use new data without speaking to experts. When the work changed, they should have gone back to the QA plan and updated it. More time should have been made to allow for sense checks and to allow the team to get a better understanding of the dataset. A combination of significant time pressure and rapidly changing scope led to the team cutting corners, which resulted in these mistakes being made.
+
+You can read a news article about the Teacher Pay Grant project \href{https://www.tes.com/news/schools-receive-more-cash-after-dfe-admits-double-counting-pupils}{here}.
+
+\includegraphics{pictures/teacher.jfif}
+
+\hypertarget{what-does-qa-involve}{%
+\subsection{What does QA involve?}\label{what-does-qa-involve}}
+
+Here is a chronological list of tasks and activities that should be carried out during a project cycle:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Assemble a QA plan and consider how the work will be QA'd.~A template for the QA plan is available \href{https://educationgovuk.sharepoint.com/:w:/r/sites/sarpi/g/_layouts/15/Doc.aspx?sourcedoc=\%7B09C73885-8C47-4191-9B29-6C34C203723D\%7D\&file=QA_plan_template.docx\&action=default\&mobileredirect=true}{here}. The QA plan should cover roles and responsibilities, as well as plans for specific activities and documentation. At this stage, it is important to think about who will be doing the QA, and how the work can be QA'd properly.
+\item
+  Ensure you are doing the right work. Make sure you are on the same page as the commissioners of the project, and be clear on what questions you are trying to ensure. Question the methodology to make sure you are taking the correct steps. A list of the questions you may wish to ask are given in \protect\hyperlink{asking-questions}{Chapter 2}.
+\item
+  Do the work, and self-QA as you go along. Self-QAing your work will help others to QA your work later on (see \protect\hyperlink{qaing-your-own-work}{Chapter 3}). If you are writing code, ensure that you maintain coding standards (see \protect\hyperlink{coding}{Chapter 4}).
+\item
+  Have the work QA'd by someone else (see \protect\hyperlink{getting-qa-support-from-others}{Chapter 5}). Make sure you've taken all the correct steps to make the QA process as smooth and straightforward as possible. Arrange a meeting to discuss your work with the QAer and make time to answer any questions they may have.
+\item
+  Summarise QA and request analytical assurance (if appropriate).
+\item
+  Repeat! Every time you go around the analytical cycle, QA must be carried out!
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{pictures/analytical-cycle.png}
+\caption{The Analytical Cycle, taken from The Aqua Book (HMT, 2015)}
+\end{figure}
+
+\hypertarget{asking-questions}{%
+\section{Asking questions}\label{asking-questions}}
+
+\includegraphics{pictures/questions_pic.jpg}
+
+Whenever you get a commission, it is important to always ask the following questions:
+
+\begin{itemize}
+\item
+  \textbf{What do you need?} There is nothing worse than spending days working on something that is not what your customers wanted. A good tip is to provide an example chart or table with dummy data to test their requirements and give them a good idea of how you intend your output to look.
+\item
+  \textbf{Why do you need it?} Customers very often will not know the best way to perform analysis to get the results they are after. Are they requesting something that doesn't really do what they want it to?
+\item
+  \textbf{What will it be used for?} If the model will be used again in the future for slightly different purposes, it may be worth investing extra time in increasing its capabilities.
+\item
+  \textbf{Who will be using it?} This will help you to write the user guides and to think carefully about how outputs are presented.
+\item
+  \textbf{When do you need it by?} Check their diary (especially during the summer months!). People will often say they need things immediately when they don't. Discuss the work and get a clear understanding of why they've set themselves these deadlines. Always factor in time for QA and also time to share analysis with your line manager or team leader.
+\item
+  \textbf{Do we have something already on the shelf?} Why produce new analysis when it has already been done before?
+\item
+  \textbf{Are you going to need this for public use?} Always use published data to answer queries if you can. This data is already QA'd.~If you do use public data, try to run things past the relevant team to double check, or at least cc them in. Be very careful about sharing pre-release data before the relevant SFR (Statistical First Release) and TSM (Teacher Supply Model) are published.
+\end{itemize}
+
+If in doubt\ldots{}
+
+ASK!
+
+It is better to ask someone a question that you might think of as being `daft' or `unnecessary' than to not ask it and then make a big mistake. The best person to ask is your line manager and team leader. If they aren't available, then ask your G6 or DD. DDs also like to know if data is being used publically.
+
+For some media queries (and some public queries) for teacher related issues, talk to Press Office.
+
+Think about policy input/views too, especially if you say something about a policy in your response/analysis.
+
+\hypertarget{qaing-your-own-work}{%
+\section{QAing your own work}\label{qaing-your-own-work}}
+
+\hypertarget{self-qa}{%
+\subsection{Self QA}\label{self-qa}}
+
+\includegraphics{pictures/self_qa_pic.jpg}
+
+Before you ask anyone else to QA your work, \textbf{you} should QA \textbf{your own} work.
+
+There are many examples of self QA that you can use:
+
+\begin{itemize}
+\item
+  Balance checks. Do percentages add up to 100\%? Do totals add up correctly?
+\item
+  Sense checks. Do outputs look right or logical?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Example: Suppose your analysis tells you that you have a mean average primary school size of 600 pupils across 20,000 schools. This means that you have 12 million primary pupils. Something has clearly gone wrong!
+  \item
+    Use your common sense, public data and analysis that other analysts have done to sense check your work.
+  \item
+    If things don't look right, \textbf{always} investigate further.
+  \end{itemize}
+\item
+  Spot checks. Do some spot checks of formulae, values and calculations. If your spot checks show some errors, it is worth investigating further as these errors may have been replicated elsewhere in the analysis.
+\end{itemize}
+
+Remember, before you ask anyone else to QA your work, you should try to \textbf{prove yourself wrong}.
+
+\hypertarget{odd-funny-or-unexpected-figures}{%
+\subsection{Odd, funny or unexpected figures}\label{odd-funny-or-unexpected-figures}}
+
+\includegraphics{pictures/outlier_pic.jpg}
+
+If your analysis gives you answers that are unexpected, \textbf{investigate them}!
+
+For example, if the Teacher Supply Model (TSM) estimates that every subject needs more Initial Teaching Training (ITT) places this year apart from English, investigate why this is. Is a trend reversing or running counter to expectation? Are values for this year very different to previous years?
+
+It is inevitable that someone senior will ask you about any unexpected results. It is important to understand why your model is giving you such answers, and to put these answers into some context using analysis that has been done previously. If you do not have the answers to these questions prepared, it will give people less faith in you and your work.
+
+Doing these checks will lead you to either find an error, or produce a logical answer to explain this oddity to stakeholders. Either way, it's a win!
+
+If you have calculated the outputs elsewhere (e.g.~a separate signed off model), do the outputs match? If you are modifying a simple version of a model for a more specific scenario, the first stage of this update should be ensuring that outputs match those that have been signed off.
+
+Being able to demonstrate that you haven't just taken analysis at face value makes you look good and makes your analysis better! Always ask yourself, when looking at results, what questions are your stakeholders likely to ask? Preparing anaswers for these types of questions is a very important skill for an analyst. You can guarantee that senior stakeholders are most likely to ask about numbers that stick out or look odd\ldots{}
+
+\hypertarget{finding-errors}{%
+\subsection{Finding errors}\label{finding-errors}}
+
+\includegraphics{pictures/error_pic.jpg}
+
+The best way to find errors, outliers or things that have gone wrong is to use charts. Charts enable quick sense checks and any `odd' results will stick out like a sore thumb. One of the first things a good QAer will often do is produce some charts.
+
+How about finding a small problem within a big spreadsheet or extensive code? It is useful to always work backwards to find errors. If something looks wrong, work backwards through your spreadsheet or syntax. Look at recent changes and updates. This will enable you to find the place where an oddity first started to appear, and help you to identify the specific problem or cause.
+
+When looking for errors, keep calm and focus on each step of a complex process one piece at a time. If you get flustered or stressed, you will often miss errors, so sometimes it pays to have a drink, take a break or sleep on it. A fresh mind will often be more capable of solving a complex issue.
+
+\includegraphics{pictures/work_pic.jpg}
+
+\hypertarget{coding}{%
+\section{Coding}\label{coding}}
+
+The aim of this chapter is to summarise the guidance set out in the DfE \href{https://dfe-analytical-services.github.io/good-code-practice/}{`Good Coding Guidance'}. Throughout this chapter, you will see sections of the `Good Coding Guidance' referred to - please see these sections for more information on each of the points raised.
+
+\hypertarget{what-you-should-do}{%
+\subsection{\texorpdfstring{What you \textbf{should} do}{What you should do}}\label{what-you-should-do}}
+
+\includegraphics{pictures/code_pic.jpg}
+
+QAing code can be a difficult job. Doing the following things will help others to QA your code.
+
+\begin{itemize}
+\tightlist
+\item
+  Annotate, always annotate!
+
+  \begin{itemize}
+  \tightlist
+  \item
+    You should explain what each step of the code does and why. It can be very difficult to understand someone else's code.
+  \item
+    It is much harder to QA someone else's code if you also have to work out what each step is meant to be doing. Making each step clearer not only helps them to QA your code properly, it will also save them time.
+  \item
+    It is much easier to annotate code as you go along rather than come back to it later. Annotating code can be a pain, but once you are in the routine of annotating as you write, you will find that it quickly becomes second nature.
+  \item
+    See \href{https://dfe-analytical-services.github.io/good-code-practice/good.html\#descriptive-and-informative-comments}{section 4.1} of the `Good Coding Guidance' for more information and examples of annotating code.
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{pictures/code-example.png}
+\caption{Code that has been annotated is much easier to follow.}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Keep analysis and the code used to produce it together.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Use a folder structure that makes it clear where code is stored and where data is stored.
+  \item
+    Ensure you have the code on a git version control, with a clear summary of changes that have been made each time the code is committed.
+  \item
+    For more information on version control, see \href{https://dfe-analytical-services.github.io/good-code-practice/VC.html}{chapter 7} of the `Good Coding Guidance'.
+  \end{itemize}
+\item
+  Self QA your code
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The best way to QA code is through self QA, producing output tables to physically examine/check the data produced by each step.
+  \item
+    For example, has a merge/join done what you wanted it to? Has the number of records in your dataset increased? Have the correct variables been added in? What had happened to those records that are missing variables/values? Are there duplicates?
+  \item
+    Never assume on blind faith that data has been processed as you wanted it to be. The merge you asked the computer to do might not be the merge that the computer actually did\ldots{}
+  \item
+    For more information on testing code, please see \href{https://dfe-analytical-services.github.io/good-code-practice/testing.html}{chapter 6} of the `Good Coding Guidance'.
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{pictures/merge_pic.png}
+\caption{Merges might not always work as you expected\ldots{}}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Think about how QAers will approach your code.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Can they understand what you have done?
+  \item
+    Is the process logical? Does it make sense? Should it be done in a different way?
+  \item
+    Are records with missing data being handled right?
+  \item
+    Have the correct checks been undertaken to reassure the QAer that the accuracy of analysis/data processing has been tested?
+  \item
+    The QAer should also check the data itself, and undertake or suggest tests that can help prove whether the data is right.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{what-you-could-do}{%
+\subsection{\texorpdfstring{What you \textbf{could} do}{What you could do}}\label{what-you-could-do}}
+
+\includegraphics{pictures/code-2.jpg}
+
+The following tips might not be appropriate for every code you write, but if you can do these things too, you'll help not only yourself, but your QAer as well!
+
+\begin{itemize}
+\item
+  Have a `super library' of code that you use/create that you can refer back to.
+\item
+  Where possible, cannibalise existing code rather than produce code from scratch.
+\item
+  Use shortcuts, e.g.~have the year/subject defined at the top of the code rather than throughout.
+\item
+  Run on a small sample first. It is good practice to run your code on less than 1000 observations to check that there are no simple errors. It is not worth running a huge piece of code on a million records for 20 minutes to get a message saying `ERROR:- missing semi colon'.
+\item
+  Build in checks as you go along. For example, you have 1 million records for teachers, and you merge in 1 million records on the favourite colours of those teachers. Have you still only got 1 millions teachers in your dataset?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    When performing merges, check that everything has gone smoothly by running off some quick output tables. Spot checks can also help here, e.g.~take a sample of 5 teachers and check that their data merged correctly.
+  \end{itemize}
+\item
+  A good folder structure can help other users to follow your code, and know where to look for different files. A recommended structure is to have separate folders for `Data', `Outputs' and `Scripts'. Then it is clear exactly what is being fed into the model, and what is being produced by the model.
+\item
+  See \href{https://dfe-analytical-services.github.io/good-code-practice/fundamentals.html}{chapter 3} of the `Good Coding Guidance' for a more comprehensive list of coding tips.
+\end{itemize}
+
+\hypertarget{qa-of-models}{%
+\subsection{QA of models}\label{qa-of-models}}
+
+\includegraphics{pictures/modelling_pic.jpg}
+
+QAing models can be a big job, particularly when the model is quite large and pulls in data from a variety of datasets. Here are a few things to bear in mind to assist QAers in their job. All of these are QA checks and build faith in a model being right.
+
+\begin{itemize}
+\item
+  Building in auto checks can be a great way to make QA easier. Lots of charts of outputs are also very helpful.
+\item
+  As with syntax, make sure that you annotate! What is each step of the model doing and why?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Always explain what assumptions have been made and why. What is the evidence behind making these assumptions?
+  \item
+    Big models should have an assumptions log or a guide explaining \emph{why} the model works the way it does. For example, \emph{why} have you assumed in your analysis that 5\% of teachers in future will be leaders?
+  \end{itemize}
+\item
+  All the input data should come into the model from one place within the model if possible.
+\item
+  When QAing a model, QA should focus most strongly on things that have changed or been added in. Otherwise, the normal QA procedures apply.
+\item
+  Many models are updated regularly, usually on an annual basis. Outputs will vary from year to year. One of the most effective forms of QA for models is to investigate \emph{how} output values change between versions of the model and discover what might be driving that. This can be done by testing the impact of and comparing input data values and assumptions between years and versions.
+\item
+  Scenario testing can be undertaken to examine how sensitive the model outputs are to different data to examine what drives the model.
+\end{itemize}
+
+\hypertarget{getting-qa-support-from-others}{%
+\section{Getting QA support from others}\label{getting-qa-support-from-others}}
+
+\includegraphics{pictures/together_pic.jpg}
+
+In this section, we will discuss some top tips that will allow others to QA your work easily. Most of these steps are straightforward, but make a huge difference to a Quality Assurer. It's important that you are a `nice' person to do QA for!
+
+\begin{itemize}
+\item
+  Arrange a QA resource early. Leaving it until the last minute may result in you struggling to find someone who has time to allocate to the QA, and you might end up with someone who is less than ideal QAing your work.
+\item
+  Make sure syntax and calculation are clear. Explain what you have done \emph{and why} in each calculation step. This is especially important if the calculations are complex or you have made assumptions that aren't immediately obvious.
+\item
+  Make sure workbooks are laid out nicely. This can include simple steps such as making sure that calculations flow from left to right, to including separate tabs for assumptions and version control. For more information, and to see some examples, take a look at the \href{https://dfe-analytical-services.github.io/spreadsheet-standards/}{DfE Spreadsheet Standards}.
+\item
+  If you have pasted numbers into a workbook, explain \emph{where} they came from. This will be useful both for QAing purposing and when carrying out future updates.
+\item
+  Make expectations on the QA that you need clear to the QAers. Which bits are those that need the most thorough QA? QA checklists can be very helpful. A checklist of mandatory QA activities is available on the \href{https://educationgovuk.sharepoint.com/sites/sarpi/g/SitePages/Quality-Assurance.aspx}{DfE Quality Assurance page}. This covers only the very basics of QA that you will need to carry out. You will need to carry out different, more specific QA checks depending on the type of work that you have done.
+\item
+  It can be useful to run through the work with a QAer beforehand. Taking half an hour to meet with a QAer and explain the purpose of the work and the expected outcomes can often save a lot of time and give the QAer a head start when it comes to reading your work.
+\item
+  Offer QA assistance to others in return.
+\end{itemize}
+
+\textbf{Remember}, don't make things needlessly complex! Nobody likes receiving workbooks that are a nightmare to understand, update or QA. Similarly, nobody likes long, complex formulae or syntax that tries to do 3 or 4 things in one step. These take up more time than necessary to QA and increase the likelihood of producing errors.
+
+The length of time a QAer should spend on a piece of work depends on the type of work being done. However, as a general rule of thumb, if it's taking a QAer longer than two hours to check a piece of work, it is likely that the work is too complex and needs to be simplified by splitting the work into smaller, more manageable chunks.
+
+Taking a little more time to divide processes into clearly explained baby steps makes things easier to QA in the short term and easier to update in the long term. In other words, the more time we spend on QA, the less time we have to spend on the model in future. Plus, taking these steps to `declutter' your notebooks can reduce pressure and stress.
+
+Writing a code in a certain way or using a certain figure may seem to be obvious at the time, but might not when you or someone else looks at it in the future. For example, that decision to use a value of 233.467 in a calculation this morning was very sensible, but in six months time you'll have completely forgotten why you did that or where that number came from\ldots{}
+
+\hypertarget{some-tips}{%
+\section{Some tips}\label{some-tips}}
+
+\hypertarget{keep-it-simple}{%
+\subsection{Keep it simple}\label{keep-it-simple}}
+
+\includegraphics{pictures/confused_pic.jpg}
+
+It is important to keep things as simple as possible. Analysis is difficult enough without over complicating things!
+
+Chances are the majority of your customers are \textbf{not} analysts. Tailor your advice accordingly.
+
+Using fancy terms can often scare people and put them off, especially if they have to describe it themeselves to other people later on. Clever, simple language that is understandable to a layperson is often so much better than clever, complex language that is only understandable to someone with significant amounts of statistical knowledge.
+
+It isn't always worth going into huge complexity for a spurious level of accuracy. Try to keep the level of complexity appropriate for the problem at hand.
+
+\hypertarget{use-critical-friends}{%
+\subsection{Use critical friends}\label{use-critical-friends}}
+
+\includegraphics{pictures/friends_pic.jpg}
+
+It is often useful to find friends or colleagues that you can run ideas past. Often, when we are working on a difficult problem, it is difficult to see the woods for the trees.
+
+A friend with expertise in a similar area may be able to help you take a step back and work out whether the analysis you are doing is correct for the task at hand. Some useful questions to ask are:
+
+\begin{itemize}
+\item
+  Is this a logical solution?
+\item
+  How would you do this?
+\item
+  Could I improve this?
+\end{itemize}
+
+If they do suggest differences or provide criticism, don't take it personally. Taking other people's comments and ideas and addressing/managing them can turn a good piece of work into a brilliant one.
+
+\hypertarget{make-things-unambiguous}{%
+\subsection{Make things unambiguous}\label{make-things-unambiguous}}
+
+Sometimes people will misinterpret analysis, especially if a `liberal interpretation' suits their ends. Where possible, try to make things crystal clear, especially in chats and when quoting results. Some things to think about\ldots{}
+
+\begin{itemize}
+\item
+  Are teacher numbers in FTE/headcount?
+\item
+  Are the numbers relating to all teachers, or qualified teachers?
+\item
+  Do years refer to academic year or GCSE examination year? Don't use `2020', use `AY19/20' or `AY20/21' to avoid any ambiguity. If talking about financial year, use `FY19-20', for example.
+\item
+  Make it clear whether values are estimates or actuals.
+\item
+  If there are caveats to results, communicate these caveats clearly.
+\item
+  Do figures differ to published figures? If so, make this clear, and say \textbf{WHY}.
+\end{itemize}
+
+\hypertarget{the-future}{%
+\subsection{The future}\label{the-future}}
+
+\includegraphics{pictures/future_pic.jpg}
+
+If you are asked to produce some analysis, it's likely that you (or someone else) will have to update it in the future. Therefore, everything that you do to make future updates of the analysis easier is a quick win. It may seem a pain at the time, but one day you will be grateful that you took that little bit of extra time because in the long run you will get that time back.
+
+Whenever you produce analysis you should annotate it and write notes explaining what you did as you go along. What does each step of the process do? Why did you do it? You did a conversion in your analysis - why? You used data from somewhere else - where did it come from?
+
+Annotating after you have completed your analysis is more time consuming and trickier to do. Something that is clear today won't be in the future.
+
+Give files sensible names to make different pieces of data etc. easier to find.
+
+It is extremely challenging being given some analysis and being asked to update it or change it slightly, especially when you have no idea of where different figures have come from, why weird conversions or adjustments were carried out, or how the process of the model works.
+
+You can waste hours trying to work out how you carried out some previous analysis. If other people can't replicate or understand some of your old analysis, there is a reasonable chance that folks will just assume that you were wrong in the first place. Don't take that chance! Make sure all of your work has been sensibly managed to allow you to benefit from it in the future.
+
+\hypertarget{conclusions}{%
+\section{Conclusions}\label{conclusions}}
+
+It is important to remember that QA is never really ``complete'' - there is always more that can be done, but you should assess what is proportional for the work you are doing.
+
+Towards the end of a project, you may wish to ``conclude'' your QA by:
+
+\begin{itemize}
+\item
+  Reviewing the QA that has been carried out, and discussing with the people involved
+\item
+  Ensuring that the DfE-standardised QA log is up to date and that all documentation has been stored in a suitable place
+\item
+  Summarise in an email to either the commissioner or the analytical assurer. This should explain how you have met the QA requested/required in the QA plan, and how/why you have deviated.
+\end{itemize}
+
+Remember that if the scope of a project changes, or some issues or alterations result in you beginning a new analytical cycle, then you should review your QA plan again to make sure your QA is suitable.
+
+\hypertarget{quiz}{%
+\section{Quiz}\label{quiz}}
+
+\href{https://rsconnect/rsc/content/197}{\includegraphics[width=1500px]{bookdownproj_files/figure-latex/unnamed-chunk-1-1} }
+
+If the quiz is not working, try refreshing the page. If you are still having problems, please email \href{mailto:thomas.morley@education.gov.uk}{\nolinkurl{thomas.morley@education.gov.uk}}
+
+\end{document}

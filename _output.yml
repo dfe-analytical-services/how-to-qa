@@ -4,6 +4,7 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      collapse: section
       before: |
         <li class="toc-logo"><a href="./"><img src="pictures/qa_logo.png"></a></li>
         <center><a><font size="3"><b>DfE How to QA</b></font></a></center>

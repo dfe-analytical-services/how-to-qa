@@ -1,0 +1,13 @@
+# Conclusions
+
+It is important to remember that QA is never really "complete" - there is always more that can be done, but you should assess what is proportional for the work you are doing.
+
+Towards the end of a project, you may wish to "conclude" your QA by:
+
+* Reviewing the QA that has been carried out, and discussing with the people involved
+
+* Ensuring that the DfE-standardised QA log is up to date and that all documentation has been stored in a suitable place
+
+* Summarise in an email to either the commissioner or the analytical assurer. This should explain how you have met the QA requested/required in the QA plan, and how/why you have deviated.
+
+Remember that if the scope of a project changes, or some issues or alterations result in you beginning a new analytical cycle, then you should review your QA plan again to make sure your QA is suitable.

@@ -44,7 +44,7 @@ Sometimes people will misinterpret analysis, especially if a 'liberal interpreta
 
 * Are the numbers relating to all teachers, or qualified teachers?
 
-* Do years refer to academic year or GCSE examination year? Don't use '2020', use '2019/20' or '2020/21' to avoid any ambiguity.
+* Do years refer to academic year or GCSE examination year? Don't use '2020', use 'AY19/20' or 'AY20/21' to avoid any ambiguity. If talking about financial year, use 'FY19-20', for example.
 
 * Make it clear whether values are estimates or actuals.
 

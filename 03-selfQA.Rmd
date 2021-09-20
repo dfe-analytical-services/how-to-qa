@@ -39,6 +39,8 @@ It is inevitable that someone senior will ask you about any unexpected results. 
 
 Doing these checks will lead you to either find an error, or produce a logical answer to explain this oddity to stakeholders. Either way, it's a win!
 
+If you have calculated the outputs elsewhere (e.g. a separate signed off model), do the outputs match? If you are modifying a simple version of a model for a more specific scenario, the first stage of this update should be ensuring that outputs match those that have been signed off.
+
 Being able to demonstrate that you haven't just taken analysis at face value makes you look good and makes your analysis better! Always ask yourself, when looking at results, what questions are your stakeholders likely to ask? Preparing anaswers for these types of questions is a very important skill for an analyst. You can guarantee that senior stakeholders are most likely to ask about numbers that stick out or look odd...
 
 ## Finding errors
